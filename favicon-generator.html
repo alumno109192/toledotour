@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Generador de Favicon - Toledo Tour</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        canvas {
+            border: 2px solid white;
+            border-radius: 8px;
+            margin: 20px;
+        }
+        button {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            margin: 10px;
+        }
+        button:hover {
+            background: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>🏛️ Generador de Favicon - Toledo Tour</h1>
+    
+    <canvas id="favicon32" width="32" height="32"></canvas>
+    <canvas id="favicon16" width="16" height="16"></canvas>
+    
+    <div>
+        <button onclick="generateFavicon()">🎨 Generar Favicon</button>
+        <button onclick="downloadFavicon(32)">📥 Descargar 32x32</button>
+        <button onclick="downloadFavicon(16)">📥 Descargar 16x16</button>
+    </div>
+    
+    <div style="margin-top: 20px;">
+        <h3>Vista previa del favicon en diferentes tamaños:</h3>
+        <div id="preview"></div>
+    </div>
+
+    <script>
+        function generateFavicon() {
+            // Generar favicon de 32x32
+            const canvas32 = document.getElementById('favicon32');
+            const ctx32 = canvas32.getContext('2d');
+            
+            // Fondo degradado
+            const gradient32 = ctx32.createLinearGradient(0, 0, 32, 32);
+            gradient32.addColorStop(0, '#667eea');
+            gradient32.addColorStop(1, '#764ba2');
+            ctx32.fillStyle = gradient32;
+            ctx32.fillRect(0, 0, 32, 32);
+            
+            // Borde
+            ctx32.strokeStyle = '#ffffff';
+            ctx32.lineWidth = 1;
+            ctx32.strokeRect(0, 0, 32, 32);
+            
+            // Letra T
+            ctx32.fillStyle = '#ffffff';
+            ctx32.font = 'bold 24px Arial';
+            ctx32.textAlign = 'center';
+            ctx32.textBaseline = 'middle';
+            ctx32.fillText('T', 16, 16);
+            
+            // Generar favicon de 16x16
+            const canvas16 = document.getElementById('favicon16');
+            const ctx16 = canvas16.getContext('2d');
+            
+            // Fondo degradado
+            const gradient16 = ctx16.createLinearGradient(0, 0, 16, 16);
+            gradient16.addColorStop(0, '#667eea');
+            gradient16.addColorStop(1, '#764ba2');
+            ctx16.fillStyle = gradient16;
+            ctx16.fillRect(0, 0, 16, 16);
+            
+            // Letra T
+            ctx16.fillStyle = '#ffffff';
+            ctx16.font = 'bold 12px Arial';
+            ctx16.textAlign = 'center';
+            ctx16.textBaseline = 'middle';
+            ctx16.fillText('T', 8, 8);
+            
+            // Mostrar vista previa
+            updatePreview();
+        }
+        
+        function updatePreview() {
+            const canvas32 = document.getElementById('favicon32');
+            const canvas16 = document.getElementById('favicon16');
+            const preview = document.getElementById('preview');
+            
+            preview.innerHTML = `
+                <div style="background: white; padding: 20px; border-radius: 8px; margin: 20px auto; max-width: 400px;">
+                    <div style="color: #333; margin-bottom: 15px;">
+                        <strong>Cómo se verá en la pestaña del navegador:</strong>
+                    </div>
+                    <div style="background: #f5f5f5; padding: 10px; border-radius: 4px; display: flex; align-items: center; color: #333;">
+                        <img src="${canvas16.toDataURL()}" style="width: 16px; height: 16px; margin-right: 8px;">
+                        <span>Toledo Tour - Guía Turística</span>
+                    </div>
+                    <div style="color: #333; margin-top: 15px;">
+                        <strong>Tamaño 32x32:</strong><br>
+                        <img src="${canvas32.toDataURL()}" style="width: 32px; height: 32px; margin-top: 5px;">
+                    </div>
+                </div>
+            `;
+        }
+        
+        function downloadFavicon(size) {
+            const canvas = document.getElementById(`favicon${size}`);
+            const link = document.createElement('a');
+            link.download = `favicon-${size}x${size}.png`;
+            link.href = canvas.toDataURL();
+            link.click();
+        }
+        
+        // Generar automáticamente al cargar
+        window.onload = function() {
+            generateFavicon();
+        };
+    </script>
+</body>
+</html>

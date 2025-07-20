@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Toledo Tour">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#667eea">
+    
+    <title>Contacto - Toledo Tour</title>
+    <meta name="description" content="Contacta con Toledo Tour. Envía tus sugerencias, comentarios o reporta problemas con nuestra guía turística de Toledo.">
+    
+    <link rel="canonical" href="https://toledotour.com/contact.html">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="icons/Icon-192.png">
+    
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3765163856747312" crossorigin="anonymous"></script>
+    
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            min-height: 100vh;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+        
+        .back-btn {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            color: white;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            border-radius: 25px;
+            margin-bottom: 1rem;
+            transition: background 0.3s;
+        }
+        
+        .back-btn:hover {
+            background: rgba(255,255,255,0.3);
+        }
+        
+        .content {
+            padding: 2rem;
+        }
+        
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        
+        h2 {
+            color: #667eea;
+            margin-top: 2rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #eee;
+        }
+        
+        .contact-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .contact-card {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 2px solid transparent;
+        }
+        
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            border-color: #667eea;
+        }
+        
+        .contact-icon {
+            font-size: 3em;
+            margin-bottom: 1rem;
+        }
+        
+        .contact-form {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+        }
+        
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #667eea;
+            font-weight: bold;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+            box-sizing: border-box;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 25px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            width: 100%;
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .ad-container {
+            text-align: center;
+            margin: 2rem 0;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+        
+        .highlight {
+            background: #e7f3ff;
+            padding: 1rem;
+            border-left: 4px solid #2196F3;
+            margin: 1rem 0;
+            border-radius: 0 10px 10px 0;
+        }
+        
+        .faq {
+            background: #fff3e0;
+            padding: 1.5rem;
+            border-radius: 15px;
+            margin: 1rem 0;
+        }
+        
+        .faq h3 {
+            color: #f57c00;
+            margin-top: 0;
+        }
+        
+        @media (max-width: 768px) {
+            .header {
+                padding: 1rem;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+            
+            .content {
+                padding: 1rem;
+            }
+            
+            .contact-methods {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-form {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="index.html" class="back-btn">← Volver a Toledo Tour</a>
+            <h1>📞 Contacto</h1>
+            <p>Estamos aquí para ayudarte con tu experiencia en Toledo</p>
+        </div>
+        
+        <div class="content">
+            <div class="highlight">
+                <strong>¿Necesitas ayuda?</strong> Nuestro equipo está disponible para resolver tus dudas sobre Toledo y mejorar tu experiencia turística.
+            </div>
+            
+            <h2>Formas de Contacto</h2>
+            
+            <div class="contact-methods">
+                <div class="contact-card">
+                    <div class="contact-icon">📧</div>
+                    <h3>Email</h3>
+                    <p><strong>contacto@toledotour.com</strong></p>
+                    <p>Respuesta en 24-48 horas</p>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">💬</div>
+                    <h3>Formulario</h3>
+                    <p>Usa el formulario de abajo para enviarnos tu mensaje directamente</p>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">🏛️</div>
+                    <h3>Toledo Tour</h3>
+                    <p>Guía turística oficial de Toledo</p>
+                    <p>Información actualizada diariamente</p>
+                </div>
+            </div>
+            
+            <div class="ad-container">
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-3765163856747312"
+                     data-ad-slot="1234567890"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+                <script>
+                     (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+            
+            <h2>Formulario de Contacto</h2>
+            
+            <div class="contact-form">
+                <form id="contactForm" action="#" method="post">
+                    <div class="form-group">
+                        <label for="name">Nombre completo *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject">Asunto</label>
+                        <select id="subject" name="subject">
+                            <option value="general">Consulta general</option>
+                            <option value="suggestion">Sugerencia de mejora</option>
+                            <option value="error">Reportar error</option>
+                            <option value="business">Colaboración comercial</option>
+                            <option value="content">Actualización de contenido</option>
+                            <option value="technical">Problema técnico</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Mensaje *</label>
+                        <textarea id="message" name="message" placeholder="Describe tu consulta, sugerencia o problema..." required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">📤 Enviar Mensaje</button>
+                </form>
+            </div>
+            
+            <div class="ad-container">
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-3765163856747312"
+                     data-ad-slot="1234567890"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+                <script>
+                     (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+            
+            <h2>Preguntas Frecuentes</h2>
+            
+            <div class="faq">
+                <h3>🔄 ¿Con qué frecuencia se actualiza la información?</h3>
+                <p>Actualizamos la información sobre restaurantes, horarios y eventos de forma continua. Si encuentras datos incorrectos, por favor repórtanos para corregirlos.</p>
+            </div>
+            
+            <div class="faq">
+                <h3>📱 ¿Funciona la app sin conexión a internet?</h3>
+                <p>Algunas funciones básicas están disponibles sin conexión, pero recomendamos tener conexión para acceder a información actualizada y mapas detallados.</p>
+            </div>
+            
+            <div class="faq">
+                <h3>🏛️ ¿Incluye información sobre todos los monumentos de Toledo?</h3>
+                <p>Incluimos los principales monumentos y sitios de interés. Continuamente añadimos nuevos lugares basándonos en sugerencias de usuarios y relevancia turística.</p>
+            </div>
+            
+            <div class="faq">
+                <h3>🍽️ ¿Cómo eligen los restaurantes recomendados?</h3>
+                <p>Seleccionamos restaurantes basándonos en calidad, autenticidad de la cocina toledana, opiniones de usuarios y ubicación estratégica para turistas.</p>
+            </div>
+            
+            <h2>Tipos de Consulta</h2>
+            
+            <div class="highlight">
+                <strong>Nos puedes contactar para:</strong>
+                <ul>
+                    <li>🏛️ <strong>Información turística:</strong> Horarios, precios, recomendaciones personalizadas</li>
+                    <li>🔧 <strong>Problemas técnicos:</strong> Errores en la app, problemas de navegación</li>
+                    <li>💡 <strong>Sugerencias:</strong> Nuevos lugares, mejoras en la funcionalidad</li>
+                    <li>📝 <strong>Actualizaciones:</strong> Cambios en horarios, cierres temporales</li>
+                    <li>🤝 <strong>Colaboraciones:</strong> Propuestas comerciales, partnerships</li>
+                    <li>⭐ <strong>Feedback:</strong> Opiniones sobre tu experiencia usando Toledo Tour</li>
+                </ul>
+            </div>
+            
+            <div class="ad-container">
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-3765163856747312"
+                     data-ad-slot="1234567890"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+                <script>
+                     (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Simulate form submission
+            const submitBtn = document.querySelector('.submit-btn');
+            const originalText = submitBtn.textContent;
+            
+            submitBtn.textContent = '📤 Enviando...';
+            submitBtn.disabled = true;
+            
+            setTimeout(() => {
+                submitBtn.textContent = '✅ ¡Mensaje enviado!';
+                setTimeout(() => {
+                    submitBtn.textContent = originalText;
+                    submitBtn.disabled = false;
+                    this.reset();
+                }, 2000);
+            }, 1500);
+        });
+        
+        // Initialize AdSense
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</body>
+</html>
