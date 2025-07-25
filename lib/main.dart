@@ -6,6 +6,7 @@ import 'package:toledotour/l10n/app_localizations.dart';
 import 'package:toledotour/naturaleza.dart';
 import 'package:toledotour/nocturno.dart';
 import 'package:toledotour/turismo_cultural.dart';
+import 'package:toledotour/free_tour.dart';
 import 'package:toledotour/app_info_page.dart';
 import 'package:flutter/foundation.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
@@ -108,6 +109,12 @@ class TourismOptionsCardView extends StatelessWidget {
         'icon': Icons.nightlife,
         'route': (BuildContext context) => NocturnoPage(),
       },
+      /*       {
+        'titleKey': 'free_tour',
+        'descriptionKey': 'free_tour_desc',
+        'icon': Icons.directions_walk,
+        'route': (BuildContext context) => FreeTourPage(),
+      }, */
     ];
 
     return Scaffold(

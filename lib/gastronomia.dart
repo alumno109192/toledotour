@@ -2,6 +2,7 @@ import 'package:toledotour/l10n/app_localizations.dart';
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'icon_utils.dart';
 import 'ad_banner_widget.dart';
 
@@ -16,11 +17,95 @@ class _GastronomiaPageState extends State<GastronomiaPage> {
   Position? _currentPosition;
   bool _isLoadingLocation = false;
   bool _sortByDistance = false;
+  final ScrollController _restaurantScrollController = ScrollController();
+  final ScrollController _barScrollController = ScrollController();
+  int? _selectedRestaurantIndex;
+  int? _selectedBarIndex;
 
   @override
   void initState() {
     super.initState();
     _getCurrentLocation();
+  }
+
+  @override
+  void dispose() {
+    _restaurantScrollController.dispose();
+    _barScrollController.dispose();
+    super.dispose();
+  }
+
+  void _selectRestaurant(int originalIndex, List<Map<String, Object>> lugares) {
+    // Determinar si es un restaurante o un bar basándose en el primer elemento
+    // Los restaurantes tienen iconos: restaurant, restaurant_menu, dining
+    // Los bares tienen iconos: local_bar, local_drink, sports_bar, fastfood
+    bool isRestaurant =
+        lugares.isNotEmpty &&
+        (lugares[0]['icon'].toString().contains('restaurant') ||
+            lugares[0]['icon'].toString().contains('dining'));
+
+    // Encontrar el nombre del lugar seleccionado
+    final selectedPlace = lugares[originalIndex];
+    final selectedName = selectedPlace['nombre'] as String;
+
+    // Crear la lista ordenada igual que en _buildList
+    List<Map<String, Object>> sortedLugares = List.from(lugares);
+
+    if (_sortByDistance && _currentPosition != null) {
+      // Calcular distancia para cada lugar
+      for (var lugar in sortedLugares) {
+        double distance = Geolocator.distanceBetween(
+          _currentPosition!.latitude,
+          _currentPosition!.longitude,
+          lugar['lat'] as double,
+          lugar['lng'] as double,
+        );
+        lugar['distance'] = distance;
+      }
+
+      // Ordenar por distancia
+      sortedLugares.sort((a, b) {
+        double distanceA = a['distance'] as double;
+        double distanceB = b['distance'] as double;
+        return distanceA.compareTo(distanceB);
+      });
+    }
+
+    // Encontrar el índice en la lista ordenada
+    int sortedIndex = sortedLugares.indexWhere(
+      (lugar) => lugar['nombre'] as String == selectedName,
+    );
+
+    setState(() {
+      if (isRestaurant) {
+        _selectedRestaurantIndex = sortedIndex;
+        _selectedBarIndex = null;
+      } else {
+        _selectedBarIndex = sortedIndex;
+        _selectedRestaurantIndex = null;
+      }
+    });
+
+    // Calcular la posición del elemento en la lista y hacer scroll
+    final itemHeight = 120.0; // Altura aproximada de cada card
+    final targetOffset = sortedIndex * itemHeight;
+
+    ScrollController controller = isRestaurant
+        ? _restaurantScrollController
+        : _barScrollController;
+
+    controller.animateTo(
+      targetOffset,
+      duration: const Duration(milliseconds: 500),
+      curve: Curves.easeInOut,
+    );
+
+    // Opcional: también mostrar el diálogo después de un breve delay
+    Future.delayed(const Duration(milliseconds: 600), () {
+      if (mounted) {
+        _showLugarDialog(context, selectedPlace);
+      }
+    });
   }
 
   Future<void> _getCurrentLocation() async {
@@ -65,6 +150,74 @@ class _GastronomiaPageState extends State<GastronomiaPage> {
         _isLoadingLocation = false;
       });
     }
+  }
+
+  Widget _buildGoogleMap(List<Map<String, Object>> lugares) {
+    // Crear marcadores directamente para esta vista específica
+    Set<Marker> currentMarkers = {};
+
+    // Determinar si es un restaurante o un bar basándose en el primer elemento
+    bool isRestaurant =
+        lugares.isNotEmpty &&
+        (lugares[0]['icon'].toString().contains('restaurant') ||
+            lugares[0]['icon'].toString().contains('dining'));
+
+    // Crear marcadores específicos para esta lista
+    for (int i = 0; i < lugares.length; i++) {
+      final lugar = lugares[i];
+      String markerPrefix = isRestaurant ? 'restaurant_' : 'bar_';
+
+      currentMarkers.add(
+        Marker(
+          markerId: MarkerId('$markerPrefix${lugar['nombre']}_$i'),
+          position: LatLng(lugar['lat'] as double, lugar['lng'] as double),
+          infoWindow: InfoWindow(
+            title: lugar['nombre'] as String,
+            snippet: lugar['direccion'] as String,
+          ),
+          onTap: () {
+            _selectRestaurant(i, lugares);
+          },
+          // Usar diferentes colores para los marcadores
+          icon: isRestaurant
+              ? BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueRed)
+              : BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueBlue),
+        ),
+      );
+    }
+
+    // Centro del mapa en Toledo
+    const LatLng toledoCenter = LatLng(39.8628, -4.0273);
+
+    return Container(
+      height: 250,
+      margin: const EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(12),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.2),
+            blurRadius: 8,
+            offset: const Offset(0, 4),
+          ),
+        ],
+      ),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(12),
+        child: GoogleMap(
+          onMapCreated: (GoogleMapController controller) {},
+          initialCameraPosition: const CameraPosition(
+            target: toledoCenter,
+            zoom: 14.0,
+          ),
+          markers: currentMarkers,
+          myLocationEnabled: _currentPosition != null,
+          myLocationButtonEnabled: true,
+          mapType: MapType.normal,
+          zoomControlsEnabled: false,
+        ),
+      ),
+    );
   }
 
   @override
@@ -253,6 +406,10 @@ class _GastronomiaPageState extends State<GastronomiaPage> {
                   ? () {
                       setState(() {
                         _sortByDistance = !_sortByDistance;
+                        _selectedRestaurantIndex =
+                            null; // Reset restaurant selection when sorting changes
+                        _selectedBarIndex =
+                            null; // Reset bar selection when sorting changes
                       });
                     }
                   : null,
@@ -279,8 +436,22 @@ class _GastronomiaPageState extends State<GastronomiaPage> {
         ),
         body: TabBarView(
           children: [
-            _buildList(restaurantes, context),
-            _buildList(bares, context),
+            Column(
+              children: [
+                // Mapa de Google con restaurantes
+                _buildGoogleMap(restaurantes),
+                // Lista de restaurantes
+                Expanded(child: _buildList(restaurantes, context)),
+              ],
+            ),
+            Column(
+              children: [
+                // Mapa de Google con bares
+                _buildGoogleMap(bares),
+                // Lista de bares
+                Expanded(child: _buildList(bares, context)),
+              ],
+            ),
           ],
         ),
         bottomNavigationBar: const AdBannerWidget(),
@@ -289,6 +460,11 @@ class _GastronomiaPageState extends State<GastronomiaPage> {
   }
 
   Widget _buildList(List<Map<String, Object>> lugares, BuildContext context) {
+    bool isRestaurantList =
+        lugares.isNotEmpty &&
+        (lugares[0]['icon'].toString().contains('restaurant') ||
+            lugares[0]['icon'].toString().contains('dining'));
+
     List<Map<String, Object>> sortedLugares = List.from(lugares);
 
     if (_sortByDistance && _currentPosition != null) {
@@ -312,12 +488,18 @@ class _GastronomiaPageState extends State<GastronomiaPage> {
     }
 
     return ListView.builder(
+      controller: isRestaurantList
+          ? _restaurantScrollController
+          : _barScrollController,
       padding: const EdgeInsets.all(16),
       itemCount: sortedLugares.length,
       shrinkWrap: true,
       physics: const BouncingScrollPhysics(),
       itemBuilder: (context, index) {
         final lugar = sortedLugares[index];
+        final isSelected = isRestaurantList
+            ? _selectedRestaurantIndex == index
+            : _selectedBarIndex == index;
 
         // Formatear distancia si está disponible
         String? distanceText;
@@ -332,19 +514,29 @@ class _GastronomiaPageState extends State<GastronomiaPage> {
 
         return Card(
           margin: const EdgeInsets.symmetric(vertical: 10),
-          elevation: 3,
+          elevation: isSelected ? 8 : 3,
+          color: isSelected
+              ? Theme.of(context).colorScheme.primaryContainer.withOpacity(0.3)
+              : null,
           child: ListTile(
             leading: Icon(
               getIconData(lugar['icon'] as String),
               size: 36,
-              color: Theme.of(context).colorScheme.primary,
+              color: isSelected
+                  ? Theme.of(context).colorScheme.primary
+                  : Theme.of(context).colorScheme.primary,
             ),
             title: Row(
               children: [
                 Expanded(
                   child: Text(
                     lugar['nombre'] as String,
-                    style: const TextStyle(fontWeight: FontWeight.bold),
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: isSelected
+                          ? Theme.of(context).colorScheme.primary
+                          : null,
+                    ),
                   ),
                 ),
                 if (distanceText != null)
@@ -372,7 +564,18 @@ class _GastronomiaPageState extends State<GastronomiaPage> {
               '${tr(context, lugar['descripcionKey'] as String)}\n${lugar['direccion'] as String}',
             ),
             isThreeLine: true,
-            onTap: () => _showLugarDialog(context, lugar),
+            onTap: () {
+              setState(() {
+                if (isRestaurantList) {
+                  _selectedRestaurantIndex = index;
+                  _selectedBarIndex = null;
+                } else {
+                  _selectedBarIndex = index;
+                  _selectedRestaurantIndex = null;
+                }
+              });
+              _showLugarDialog(context, lugar);
+            },
           ),
         );
       },
@@ -421,46 +624,44 @@ class _GastronomiaPageState extends State<GastronomiaPage> {
 
   Future<void> _navigateToLugar(String destinoDireccion) async {
     try {
-      bool serviceEnabled = await Geolocator.isLocationServiceEnabled();
-      if (!serviceEnabled) {
-        await Geolocator.openLocationSettings();
-        return;
-      }
-      LocationPermission permission = await Geolocator.checkPermission();
-      if (permission == LocationPermission.denied) {
-        permission = await Geolocator.requestPermission();
-        if (permission == LocationPermission.denied) {
-          if (!mounted) return;
-          _showErrorDialog(
-            tr(context, 'permission_denied'),
-            tr(context, 'location_needed'),
-            context,
-          );
-          return;
-        }
-      }
-      if (permission == LocationPermission.deniedForever) {
-        if (!mounted) return;
-        _showErrorDialog(
-          tr(context, 'permission_denied'),
-          tr(context, 'permission_denied_permanently'),
-          context,
-        );
-        return;
-      }
-      Position position = await Geolocator.getCurrentPosition();
-      final origen = "${position.latitude},${position.longitude}";
       final destino = Uri.encodeComponent(destinoDireccion);
-      final url =
-          "https://www.google.com/maps/dir/?api=1&origin=$origen&destination=$destino&travelmode=driving";
+      String url;
+
+      // Si tenemos la ubicación actual, usarla como origen
+      if (_currentPosition != null) {
+        final origen =
+            "${_currentPosition!.latitude},${_currentPosition!.longitude}";
+        url =
+            "https://www.google.com/maps/dir/?api=1&origin=$origen&destination=$destino&travelmode=driving";
+      } else {
+        // Si no tenemos ubicación, abrir Google Maps solo con el destino
+        url = "https://www.google.com/maps/search/?api=1&query=$destino";
+      }
+
       if (await canLaunchUrl(Uri.parse(url))) {
         await launchUrl(Uri.parse(url), mode: LaunchMode.externalApplication);
+      } else {
+        // Fallback: intentar con la URL web de Google Maps
+        final fallbackUrl = "https://www.google.com/maps/search/$destino";
+        if (await canLaunchUrl(Uri.parse(fallbackUrl))) {
+          await launchUrl(
+            Uri.parse(fallbackUrl),
+            mode: LaunchMode.externalApplication,
+          );
+        } else {
+          if (!mounted) return;
+          _showErrorDialog(
+            tr(context, 'navigation_error'),
+            'No se pudo abrir Google Maps',
+            context,
+          );
+        }
       }
     } catch (e) {
       if (!mounted) return;
       _showErrorDialog(
         tr(context, 'navigation_error'),
-        tr(context, 'error'),
+        'Error al intentar navegar: $e',
         context,
       );
     }
