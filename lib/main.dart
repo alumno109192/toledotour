@@ -8,6 +8,7 @@ import 'package:toledotour/nocturno.dart';
 import 'package:toledotour/turismo_cultural.dart';
 import 'package:toledotour/free_tour.dart';
 import 'package:toledotour/app_info_page.dart';
+import 'package:toledotour/welcome_page.dart';
 import 'package:flutter/foundation.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'ad_banner_widget.dart';
@@ -70,11 +71,81 @@ class TourismOptionsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Expanded(child: TourismOptionsCardView()),
-        AdBannerWidget(),
-      ],
+    return Scaffold(
+      body: CustomScrollView(
+        slivers: [
+          SliverAppBar(
+            expandedHeight: 200.0,
+            floating: false,
+            pinned: true,
+            flexibleSpace: FlexibleSpaceBar(
+              title: Text(tr(context, 'title')),
+              background: Container(
+                decoration: const BoxDecoration(
+                  gradient: LinearGradient(
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                    colors: [Color(0xFF2E5C8A), Color(0xFF4A90B8)],
+                  ),
+                ),
+              ),
+            ),
+            actions: [
+              IconButton(
+                icon: const Icon(Icons.info_outline),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const AppInfoPage(),
+                    ),
+                  );
+                },
+                tooltip: tr(context, 'app_info'),
+              ),
+            ],
+          ),
+          SliverToBoxAdapter(
+            child: Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  // Intro text
+                  Card(
+                    elevation: 2,
+                    child: Padding(
+                      padding: const EdgeInsets.all(16.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            tr(context, 'explore_toledo'),
+                            style: Theme.of(context).textTheme.headlineSmall
+                                ?.copyWith(fontWeight: FontWeight.bold),
+                          ),
+                          const SizedBox(height: 8),
+                          Text(
+                            tr(context, 'choose_experience'),
+                            style: Theme.of(context).textTheme.bodyLarge,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: 20),
+                ],
+              ),
+            ),
+          ),
+          SliverList(
+            delegate: SliverChildBuilderDelegate((context, index) {
+              return TourismOptionsCardView();
+            }, childCount: 1),
+          ),
+          SliverToBoxAdapter(child: AdBannerWidget()),
+        ],
+      ),
     );
   }
 }
@@ -117,25 +188,11 @@ class TourismOptionsCardView extends StatelessWidget {
       }, */
     ];
 
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(tr(context, 'title')),
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.info_outline),
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const AppInfoPage()),
-              );
-            },
-            tooltip: tr(context, 'app_info'),
-          ),
-        ],
-      ),
-      body: ListView.builder(
-        padding: const EdgeInsets.all(16),
+    return Padding(
+      padding: const EdgeInsets.all(16),
+      child: ListView.builder(
+        shrinkWrap: true,
+        physics: const NeverScrollableScrollPhysics(),
         itemCount: options.length,
         itemBuilder: (context, index) {
           final option = options[index];
@@ -201,7 +258,7 @@ class LanguageSelectorPage extends StatelessWidget {
                 ).setLocale(const Locale('es'));
                 Navigator.pushReplacement(
                   context,
-                  MaterialPageRoute(builder: (_) => const TourismOptionsPage()),
+                  MaterialPageRoute(builder: (_) => const WelcomePage()),
                 );
               },
               child: const Text('Español'),
@@ -215,7 +272,7 @@ class LanguageSelectorPage extends StatelessWidget {
                 ).setLocale(const Locale('en'));
                 Navigator.pushReplacement(
                   context,
-                  MaterialPageRoute(builder: (_) => const TourismOptionsPage()),
+                  MaterialPageRoute(builder: (_) => const WelcomePage()),
                 );
               },
               child: const Text('English'),
