@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 
 class AdBannerWidget extends StatefulWidget {
-  const AdBannerWidget({super.key});
+  final bool showOnlyAfterContent;
+
+  const AdBannerWidget({super.key, this.showOnlyAfterContent = true});
 
   @override
   State<AdBannerWidget> createState() => _AdBannerWidgetState();
@@ -41,30 +43,47 @@ class _AdBannerWidgetState extends State<AdBannerWidget> {
 
   @override
   Widget build(BuildContext context) {
-    // En web y modo debug, mostrar un banner simulado
+    // Si showOnlyAfterContent es true, no mostrar durante carga o pantallas vacías
+    if (widget.showOnlyAfterContent) {
+      // Verificar que estamos en una página con contenido establecido
+      final route = ModalRoute.of(context);
+      if (route == null || route.settings.name == null) {
+        return const SizedBox.shrink();
+      }
+    }
+
+    // En web y modo debug, mostrar un banner simulado con contenido valioso
     if (kIsWeb && kDebugMode) {
       return Container(
         width: double.infinity,
-        height: 60,
-        margin: const EdgeInsets.all(4),
+        padding: const EdgeInsets.all(16),
+        margin: const EdgeInsets.all(8),
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: [Colors.blue[100]!, Colors.blue[200]!],
+            colors: [Colors.blue[50]!, Colors.blue[100]!],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
           ),
-          borderRadius: BorderRadius.circular(8),
-          border: Border.all(color: Colors.blue[300]!, width: 2),
+          borderRadius: BorderRadius.circular(12),
+          border: Border.all(color: Colors.blue[200]!, width: 1),
         ),
-        child: const Center(
-          child: Text(
-            '📱 Banner de Publicidad (Debug Web) 📱',
-            style: TextStyle(
-              fontSize: 16,
-              fontWeight: FontWeight.bold,
-              color: Colors.blue,
+        child: Column(
+          children: [
+            const Text(
+              '🏛️ Descubre más sobre Toledo 🏛️',
+              style: TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.bold,
+                color: Colors.blue,
+              ),
             ),
-          ),
+            const SizedBox(height: 8),
+            Text(
+              'Encuentra los mejores tours, restaurantes y actividades',
+              style: TextStyle(fontSize: 14, color: Colors.blue[800]),
+              textAlign: TextAlign.center,
+            ),
+          ],
         ),
       );
     }

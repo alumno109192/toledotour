@@ -2,10 +2,22 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://toledotour.com/sitemap.xml
+Sitemap: https://toledotour-752a0.web.app/sitemap.xml
 
-# Archivos específicos
+# AdSense crawler
+User-agent: Mediapartners-Google
+Allow: /
+
+# Google crawlers
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+# Archivos específicos importantes para AdSense
 Allow: /index.html
+Allow: /guia-completa-toledo.html
 Allow: /contact.html
 Allow: /privacy-policy.html
 Allow: /terms-of-service.html
@@ -18,3 +30,6 @@ Allow: /icons/
 Disallow: /flutter_service_worker.js
 Disallow: /canvaskit/
 Disallow: /assets/packages/
+
+# Crawl delay for better server performance
+Crawl-delay: 1

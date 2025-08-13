@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'icon_utils.dart';
+import 'ad_banner_widget.dart';
 
 class DestinoPage extends StatelessWidget {
   final String title;
@@ -122,10 +123,9 @@ class DestinoPage extends StatelessWidget {
             icon: const Icon(Icons.location_on),
             label: const Text('Buscar dirección'),
             onPressed: () {
-              final lat = coords['lat'];
-              final lng = coords['lng'];
+              final query = Uri.encodeComponent(address);
               final url =
-                  'https://www.google.com/maps/search/?api=1&query=$lat,$lng';
+                  'https://www.google.com/maps/search/?api=1&query=$query';
               launchUrl(Uri.parse(url));
             },
           ),
