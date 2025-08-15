@@ -73,6 +73,183 @@
   }
   </script>
 
+    <!-- Preload critical resources -->
+  <link rel="preload" href="main.dart.js" as="script">
+  <link rel="preload" href="flutter.js" as="script">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://pagead2.googlesyndication.com">
+  
+  <!-- Critical CSS inline for faster loading -->
+  <style>
+/* Critical CSS for Toledo Tour - Inline loading optimization */
+
+/* Essential loading styles */
+.loading-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.loading-logo {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 30px;
+    border-radius: 50%;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+    animation: pulse 2s infinite;
+}
+
+.loading-text {
+    color: white;
+    font-size: 24px;
+    font-weight: 300;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.loading-subtext {
+    color: rgba(255,255,255,0.8);
+    font-size: 14px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.progress-container {
+    width: 300px;
+    height: 4px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 2px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.progress-bar {
+    height: 100%;
+    background: white;
+    border-radius: 2px;
+    width: 0%;
+    transition: width 0.15s ease; /* Faster transition */
+}
+
+.loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid rgba(255,255,255,0.3);
+    border-top: 3px solid white;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+/* Quick access buttons with faster animations */
+.quick-access {
+    position: absolute;
+    bottom: 40px;
+    display: flex;
+    gap: 15px;
+}
+
+.quick-btn {
+    padding: 10px 20px;
+    background: rgba(255,255,255,0.2);
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-size: 14px;
+    transition: all 0.15s ease; /* Faster hover */
+    backdrop-filter: blur(10px);
+}
+
+.quick-btn:hover {
+    background: rgba(255,255,255,0.3);
+    transform: translateY(-2px);
+}
+
+/* Animations - optimized for speed */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+/* Fast fade out for loading screen */
+.loading-container.fade-out {
+    animation: fadeOut 0.2s ease-out forwards;
+}
+
+/* Hardware acceleration for better performance */
+.loading-container, .loading-logo, .progress-bar {
+    will-change: transform, opacity;
+    transform: translateZ(0);
+}
+
+/* Error state */
+.error-message {
+    color: #ff6b6b;
+    background: rgba(255,255,255,0.9);
+    padding: 15px 25px;
+    border-radius: 8px;
+    margin: 20px;
+    text-align: center;
+    font-size: 14px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+
+/* Mobile optimization */
+@media (max-width: 768px) {
+    .loading-text {
+        font-size: 20px;
+    }
+    
+    .progress-container {
+        width: 250px;
+    }
+    
+    .quick-access {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    .quick-btn {
+        width: 200px;
+        text-align: center;
+    }
+}
+
+/* Performance optimization */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+  </style>
+
   <!-- iOS meta tags & icons -->
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -116,6 +293,21 @@
      
   <!-- Google Maps API -->
   <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCVCFmNSH59GoXPnWRZhGiXG78NkNxuiUY&libraries=places"></script>
+  
+  <!-- Register Service Worker for faster loading -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function() {
+        navigator.serviceWorker.register('/sw.js')
+          .then(function(registration) {
+            console.log('Toledo Tour: Service Worker registered successfully:', registration.scope);
+          })
+          .catch(function(error) {
+            console.log('Toledo Tour: Service Worker registration failed:', error);
+          });
+      });
+    }
+  </script>
   
   <style>
     /* Loading screen styles */
@@ -298,6 +490,12 @@
     <div class="spinner"></div>
     <p style="font-size: 1em; opacity: 0.8;">Cargando tu guía de Toledo...</p>
     
+    <!-- Progress indicator -->
+    <div style="width: 80%; max-width: 400px; background: rgba(255,255,255,0.2); border-radius: 10px; margin: 1rem auto;">
+      <div id="progress-bar" style="width: 0%; height: 8px; background: white; border-radius: 10px; transition: width 0.3s ease;"></div>
+    </div>
+    <p id="loading-text" style="font-size: 0.9em; opacity: 0.7;">Preparando la aplicación...</p>
+    
     <!-- Legal links for AdSense compliance -->
     <div style="margin-top: 2rem; font-size: 0.8em; opacity: 0.7;">
       <a href="privacy-policy.html" style="color: white; margin: 0 1rem;">Política de Privacidad</a>
@@ -312,22 +510,58 @@
   </div>
   
   <script>
-    // Show Flutter content after loading
+    // Progress simulation for better UX
+    let progress = 0;
+    const progressBar = document.getElementById('progress-bar');
+    const loadingText = document.getElementById('loading-text');
+    
+    const loadingMessages = [
+      'Preparando la aplicación...',
+      'Cargando información de Toledo...',
+      'Configurando mapas y ubicaciones...',
+      '¡Casi listo para explorar Toledo!'
+    ];
+    
+    // Accelerated progress with shorter intervals
+    const progressInterval = setInterval(() => {
+      progress += Math.random() * 25; // Increased from 15 to 25
+      if (progress > 95) progress = 95;
+      
+      progressBar.style.width = progress + '%';
+      
+      const messageIndex = Math.floor(progress / 25);
+      if (loadingMessages[messageIndex]) {
+        loadingText.textContent = loadingMessages[messageIndex];
+      }
+    }, 200); // Reduced from 500ms to 200ms
+    
+    // Show Flutter content after loading with faster transition
     window.addEventListener('flutter-first-frame', function () {
+      clearInterval(progressInterval);
+      progressBar.style.width = '100%';
+      loadingText.textContent = '¡Listo! Bienvenido a Toledo Tour';
+      
+      // Immediate transition without delay
       document.getElementById('loading').style.display = 'none';
       document.getElementById('flutter-content').style.display = 'block';
     });
     
-    // Fallback: hide loading screen after 5 seconds
+    // Faster fallback with aggressive timeout reduction
     setTimeout(function() {
       if (document.getElementById('loading').style.display !== 'none') {
+        clearInterval(progressInterval);
+        progressBar.style.width = '100%';
+        loadingText.textContent = 'Iniciando Toledo Tour...';
+        
+        // Immediate transition to content
         document.getElementById('loading').style.display = 'none';
         document.getElementById('flutter-content').style.display = 'block';
       }
-    }, 5000);
+    }, 1500); // Reduced from 3000ms to 1500ms
     
     // Initialize AdSense
     (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
   </script>
 </body>
 </html>

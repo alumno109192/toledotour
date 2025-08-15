@@ -1,7 +1,7 @@
 {
     "name": "Toledo Tour - Guía Turística",
     "short_name": "Toledo Tour",
-    "start_url": "/",
+    "start_url": "/fast-start.html",
     "display": "standalone",
     "background_color": "#667eea",
     "theme_color": "#667eea",
@@ -11,6 +11,30 @@
     "lang": "es",
     "scope": "/",
     "categories": ["travel", "tourism", "guide"],
+    "splash_pages": null,
+    "shortcuts": [
+        {
+            "name": "Monumentos",
+            "short_name": "Monumentos",
+            "description": "Explora los monumentos históricos de Toledo",
+            "url": "/guia-completa-toledo.html#monumentos",
+            "icons": [{ "src": "/icons/Icon-192.png", "sizes": "192x192" }]
+        },
+        {
+            "name": "Gastronomía",
+            "short_name": "Gastronomía",
+            "description": "Descubre la gastronomía toledana",
+            "url": "/guia-completa-toledo.html#gastronomia",
+            "icons": [{ "src": "/icons/Icon-192.png", "sizes": "192x192" }]
+        },
+        {
+            "name": "App Completa",
+            "short_name": "App",
+            "description": "Aplicación completa de Toledo Tour",
+            "url": "/index.html",
+            "icons": [{ "src": "/icons/Icon-192.png", "sizes": "192x192" }]
+        }
+    ],
     "icons": [
         {
             "src": "favicon.png",

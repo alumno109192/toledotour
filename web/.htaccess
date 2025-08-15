@@ -1,0 +1,106 @@
+# Toledo Tour - Server optimization for faster loading
+
+# Enable compression
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html
+    AddOutputFilterByType DEFLATE text/css
+    AddOutputFilterByType DEFLATE text/javascript
+    AddOutputFilterByType DEFLATE text/xml
+    AddOutputFilterByType DEFLATE text/plain
+    AddOutputFilterByType DEFLATE application/javascript
+    AddOutputFilterByType DEFLATE application/x-javascript
+    AddOutputFilterByType DEFLATE application/json
+    AddOutputFilterByType DEFLATE application/xml
+    AddOutputFilterByType DEFLATE application/xhtml+xml
+    AddOutputFilterByType DEFLATE application/rss+xml
+    AddOutputFilterByType DEFLATE application/atom_xml
+    AddOutputFilterByType DEFLATE image/svg+xml
+</IfModule>
+
+# Enable browser caching
+<IfModule mod_expires.c>
+    ExpiresActive on
+
+    # Cache static assets for 1 year
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/jpg "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType image/x-icon "access plus 1 year"
+
+    # Cache CSS and JS for 1 month
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+    ExpiresByType text/javascript "access plus 1 month"
+
+    # Cache fonts for 1 year
+    ExpiresByType font/woff "access plus 1 year"
+    ExpiresByType font/woff2 "access plus 1 year"
+    ExpiresByType application/font-woff "access plus 1 year"
+    ExpiresByType application/font-woff2 "access plus 1 year"
+
+    # Cache HTML files for 1 day
+    ExpiresByType text/html "access plus 1 day"
+
+    # Cache manifest and service worker for 1 hour
+    ExpiresByType application/manifest+json "access plus 1 hour"
+    ExpiresByType text/cache-manifest "access plus 1 hour"
+</IfModule>
+
+# Add cache headers
+<IfModule mod_headers.c>
+    # Cache static assets
+    <FilesMatch "\.(ico|pdf|flv|jpg|jpeg|png|gif|js|css|swf|woff|woff2)$">
+        Header set Cache-Control "max-age=31536000, public"
+    </FilesMatch>
+
+    # Cache HTML for shorter time
+    <FilesMatch "\.(html|htm)$">
+        Header set Cache-Control "max-age=86400, public"
+    </FilesMatch>
+
+    # Don't cache service worker
+    <FilesMatch "sw\.js$">
+        Header set Cache-Control "max-age=0, no-cache, no-store, must-revalidate"
+    </FilesMatch>
+
+    # Security headers
+    Header always set X-Content-Type-Options nosniff
+    Header always set X-Frame-Options DENY
+    Header always set X-XSS-Protection "1; mode=block"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# Redirect HTTP to HTTPS (uncomment if needed)
+# RewriteEngine On
+# RewriteCond %{HTTPS} off
+# RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Custom error pages
+ErrorDocument 404 /fast-start.html
+ErrorDocument 500 /fast-start.html
+
+# Prevent access to sensitive files
+<Files ".htaccess">
+    Order allow,deny
+    Deny from all
+</Files>
+
+<Files "*.log">
+    Order allow,deny
+    Deny from all
+</Files>
+
+# MIME types for better compatibility
+AddType application/font-woff .woff
+AddType application/font-woff2 .woff2
+AddType application/manifest+json .webmanifest
+
+# Preconnect headers for faster external resource loading
+<IfModule mod_headers.c>
+    Header add Link "</fonts.googleapis.com>; rel=preconnect; crossorigin"
+    Header add Link "</maps.googleapis.com>; rel=preconnect; crossorigin"
+    Header add Link "</pagead2.googlesyndication.com>; rel=preconnect; crossorigin"
+</IfModule>

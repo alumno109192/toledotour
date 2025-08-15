@@ -8,6 +8,27 @@ class WelcomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // Floating Action Button para acceso rápido
+      floatingActionButton: FloatingActionButton.extended(
+        onPressed: () {
+          // Navegación directa e inmediata al contenido principal
+          Navigator.pushReplacement(
+            context,
+            PageRouteBuilder(
+              pageBuilder: (context, animation, secondaryAnimation) =>
+                  const TourismOptionsPage(),
+              transitionDuration: Duration.zero, // Instant transition
+              transitionsBuilder:
+                  (context, animation, secondaryAnimation, child) {
+                    return child; // No animation for instant access
+                  },
+            ),
+          );
+        },
+        label: Text(tr(context, 'skip_to_content')),
+        icon: const Icon(Icons.skip_next),
+        backgroundColor: Theme.of(context).colorScheme.secondary,
+      ),
       body: CustomScrollView(
         slivers: [
           SliverAppBar(
@@ -196,14 +217,28 @@ class WelcomePage extends StatelessWidget {
 
                 const SizedBox(height: 32),
 
-                // Botón para continuar
+                // Botón para continuar con navegación más rápida
                 Center(
                   child: ElevatedButton.icon(
                     onPressed: () {
+                      // Navegación más rápida sin animación
                       Navigator.pushReplacement(
                         context,
-                        MaterialPageRoute(
-                          builder: (context) => const TourismOptionsPage(),
+                        PageRouteBuilder(
+                          pageBuilder:
+                              (context, animation, secondaryAnimation) =>
+                                  const TourismOptionsPage(),
+                          transitionDuration: const Duration(
+                            milliseconds: 150,
+                          ), // Reduced from default 300ms
+                          transitionsBuilder:
+                              (context, animation, secondaryAnimation, child) {
+                                // Fade transition más rápido
+                                return FadeTransition(
+                                  opacity: animation,
+                                  child: child,
+                                );
+                              },
                         ),
                       );
                     },

@@ -6,7 +6,6 @@ import 'package:toledotour/l10n/app_localizations.dart';
 import 'package:toledotour/naturaleza.dart';
 import 'package:toledotour/nocturno.dart';
 import 'package:toledotour/turismo_cultural.dart';
-import 'package:toledotour/free_tour.dart';
 import 'package:toledotour/app_info_page.dart';
 import 'package:toledotour/welcome_page.dart';
 import 'package:flutter/foundation.dart';
@@ -23,6 +22,7 @@ void main() async {
     await MobileAds.instance.initialize();
   }
 
+  // Acelerar el inicio de la aplicación
   runApp(
     ChangeNotifierProvider(
       create: (_) => LocaleProvider(),
@@ -47,6 +47,22 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final localeProvider = Provider.of<LocaleProvider>(context);
+
+    // Auto-detect locale if not set
+    if (localeProvider.locale == null) {
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        final systemLocale = WidgetsBinding.instance.platformDispatcher.locale;
+        final supportedLocale = systemLocale.languageCode == 'es'
+            ? const Locale('es')
+            : const Locale('en');
+
+        Provider.of<LocaleProvider>(
+          context,
+          listen: false,
+        ).setLocale(supportedLocale);
+      });
+    }
+
     return MaterialApp(
       navigatorKey: navigatorKey,
       title: 'Toledo Tour - Web Debug', // No uses tr(context, ...) aquí
@@ -60,7 +76,10 @@ class MyApp extends StatelessWidget {
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
       ],
-      home: const LanguageSelectorPage(),
+      // Skip language selector if locale is auto-detected
+      home: localeProvider.locale != null
+          ? const WelcomePage()
+          : const LanguageSelectorPage(),
     );
   }
 }
@@ -256,9 +275,18 @@ class LanguageSelectorPage extends StatelessWidget {
                   context,
                   listen: false,
                 ).setLocale(const Locale('es'));
+                // Navegación instantánea sin animación
                 Navigator.pushReplacement(
                   context,
-                  MaterialPageRoute(builder: (_) => const WelcomePage()),
+                  PageRouteBuilder(
+                    pageBuilder: (context, animation, secondaryAnimation) =>
+                        const WelcomePage(),
+                    transitionDuration: Duration.zero, // Instant transition
+                    transitionsBuilder:
+                        (context, animation, secondaryAnimation, child) {
+                          return child; // No animation
+                        },
+                  ),
                 );
               },
               child: const Text('Español'),
@@ -270,9 +298,18 @@ class LanguageSelectorPage extends StatelessWidget {
                   context,
                   listen: false,
                 ).setLocale(const Locale('en'));
+                // Navegación instantánea sin animación
                 Navigator.pushReplacement(
                   context,
-                  MaterialPageRoute(builder: (_) => const WelcomePage()),
+                  PageRouteBuilder(
+                    pageBuilder: (context, animation, secondaryAnimation) =>
+                        const WelcomePage(),
+                    transitionDuration: Duration.zero, // Instant transition
+                    transitionsBuilder:
+                        (context, animation, secondaryAnimation, child) {
+                          return child; // No animation
+                        },
+                  ),
                 );
               },
               child: const Text('English'),

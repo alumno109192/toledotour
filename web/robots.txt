@@ -1,21 +1,35 @@
 User-agent: *
 Allow: /
 
-# Sitemap
-Sitemap: https://toledotour-752a0.web.app/sitemap.xml
+# Sitemap (updated URLs)
+Sitemap: https://toledotour.es/sitemap.xml
+Sitemap: https://toledotour.es/sitemap-index.xml
 
-# AdSense crawler
+# AdSense crawler - priority access
 User-agent: Mediapartners-Google
 Allow: /
+Crawl-delay: 0.5
 
-# Google crawlers
+# Google crawlers - optimized crawling
 User-agent: Googlebot
 Allow: /
+Crawl-delay: 0.5
 
 User-agent: Googlebot-Image
 Allow: /
+Crawl-delay: 1
 
-# Archivos específicos importantes para AdSense
+# Other search engines
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: YandexBot
+Allow: /
+Crawl-delay: 2
+
+# Fast loading pages for priority crawling
+Allow: /fast-start.html
 Allow: /index.html
 Allow: /guia-completa-toledo.html
 Allow: /contact.html
@@ -26,10 +40,16 @@ Allow: /manifest.json
 Allow: /favicon.png
 Allow: /icons/
 
-# Disallow archivos innecesarios para SEO
+# Block slow or unnecessary resources during crawling
 Disallow: /flutter_service_worker.js
 Disallow: /canvaskit/
 Disallow: /assets/packages/
+Disallow: /build/
+Disallow: /*.log
+Disallow: /firebase-debug.log
 
-# Crawl delay for better server performance
+# General crawl delay for server performance
 Crawl-delay: 1
+
+# Host directive for canonical domain
+Host: https://toledotour.es
