@@ -193,9 +193,75 @@ const Map<String, Map<String, String>> translations = {
     'email_send_error': 'Error al enviar el email',
     'sort_by_distance': 'Ordenar por distancia',
     'sort_alphabetically': 'Ordenar alfabéticamente',
+    'change_to_english': 'Cambiar a inglés',
+    'change_to_spanish': 'Cambiar a español',
+    'change_language': 'Cambiar idioma',
+    'language_changed_spanish': '🇪🇸 Idioma cambiado a Español',
+    'language_changed_english': '🇺🇸 Idioma cambiado a Inglés',
+    'spanish': 'Español',
+    'english': 'Inglés',
   },
   'en': {
     'title': 'Toledo Tour',
+
+    // Welcome Page Content
+    'welcome_title': 'Welcome to Toledo',
+    'welcome_intro_title': 'Discover the Imperial City',
+    'welcome_intro_text':
+        'Toledo, the ancient capital of Spain, invites you to immerse yourself in more than 2000 years of history. Known as the "City of the Three Cultures", Toledo is an open-air museum where Christians, Muslims and Jews coexisted for centuries, leaving a unique architectural and cultural legacy in the world. Every stone tells a story, every corner hides a secret. Get ready for an unforgettable journey through one of the most beautiful cities in Spain.',
+
+    'history_title': 'Millenary History',
+    'history_text':
+        'Toledo was the capital of the Visigothic Kingdom, a caliphal city during the Muslim period, and later the capital of the Spanish Empire under Charles V. Its historic center, declared a World Heritage Site by UNESCO in 1986, preserves the medieval urban structure intact. The narrow cobblestone streets, hidden courtyards and stately houses will transport you to bygone eras. The city has been home to illustrious figures such as El Greco, who found his inspiration here for some of his most famous works.',
+
+    'heritage_title': 'UNESCO World Heritage',
+    'heritage_text':
+        'The historic ensemble of Toledo is considered one of the most important in Spain. The Primate Cathedral, a masterpiece of Spanish Gothic, houses unique treasures such as the transparent by Narciso Tomé. The Synagogue of El Tránsito and Santa María la Blanca testify to the richness of Sephardic culture. The Alcázar, former royal residence, dominates the city from above. The medieval walls, historic gates such as the Bisagra gate, and the numerous convents and churches form an exceptional urban landscape.',
+
+    'local_gastronomy_title': 'Traditional Gastronomy',
+    'local_gastronomy_text':
+        'Toledo cuisine combines tradition and innovation. Marzipan, handcrafted since the Middle Ages, is the most emblematic sweet. Carcamusas, a typical tavern dish, stewed partridges, cochifrito and venison are specialties not to be missed. Manchego cheeses, regional wine and olive oil from the Montes de Toledo complete a rich and varied gastronomic offer. Each restaurant in the city adds its personal touch to these centuries-old recipes.',
+
+    'start_exploring': 'Start Exploring',
+
+    // Main page content
+    'explore_toledo': 'Explore Toledo',
+    'choose_experience':
+        'Choose the experience that interests you most and discover all the secrets that Toledo has to offer.',
+
+    // Extended Cultural Content
+    'cultural_detailed_intro':
+        'Toledo\'s cultural heritage is extraordinary. The city preserves monuments from all the eras and cultures that inhabited it.',
+    'cultural_extended_description':
+        'Toledo houses more than 100 cataloged monuments. From Roman remains to Renaissance buildings, through unique Mudéjar architecture in the world. The influence of the three cultures can be appreciated in every detail: Islamic plasterwork, Mudéjar coffered ceilings, Renaissance decoration and Baroque altarpieces.',
+
+    // Extended Gastronomy Content
+    'gastronomy_intro_title': 'Toledo Culinary Tradition',
+    'gastronomy_intro_text':
+        'Toledo\'s gastronomy is a reflection of its multicultural history. Influenced by Christian, Muslim and Jewish traditions, it has developed a unique cuisine that combines products from the Castilian land with ancestral culinary techniques. Local products such as saffron, olives, Manchego cheeses and regional wines are the basis of a cuisine rich in flavors and tradition.',
+
+    'typical_dishes_title': 'Essential Typical Dishes',
+    'typical_dishes_text':
+        'Among the most representative dishes we find carcamusas, a pork stew with tomato and peas served in traditional taverns. Stewed partridge, prepared with seasonal vegetables and regional wine. Cochifrito, made with suckling lamb and spices. For hunting lovers, venison and wild boar prepared according to traditional recipes. Desserts are dominated by marzipan, whose recipe has been preserved since medieval times.',
+
+    // Extended Nature Content
+    'nature_intro_title': 'Privileged Natural Environment',
+    'nature_intro_text':
+        'Toledo is located in an exceptional natural environment. The Tagus River embraces the city creating a unique landscape of cliffs and river plains. The Montes de Toledo, south of the city, offer a Mediterranean ecosystem rich in native flora and fauna. The cigarrales, traditional Toledo estates, create a unique cultural landscape where traditional agriculture is combined with historic gardens.',
+
+    'natural_routes_title': 'Outstanding Natural Routes',
+    'natural_routes_text':
+        'The Tagus Ecological Path allows you to discover the riverside flora and fauna while enjoying panoramic views of the city. The Cigarrales Route runs through traditional Toledo estates with their historic gardens. In the Montes de Toledo you can take hiking routes among centenary holm oaks, cork oaks and Mediterranean scrubland, where species such as deer, wild boar and numerous birds of prey live.',
+
+    // Extended Nightlife Content
+    'nightlife_intro_title': 'Toledo by Night: Mystery and Legend',
+    'nightlife_intro_text':
+        'When night falls, Toledo is transformed. The medieval streets, illuminated by wrought iron streetlights, create a magical atmosphere full of mystery and legend. The night city offers from guided tours of emblematic places to a varied nightlife offer in pubs, nightclubs and show venues. Night tours reveal the legends and mysteries hidden in the centenary stones.',
+
+    'night_activities_title': 'Night Activities',
+    'night_activities_text':
+        'Themed night tours go through the most emblematic places while narrating legends of ghosts, apparitions and unsolved mysteries. The nightlife offer includes pubs with live music, nightclubs with unique atmosphere and terraces with panoramic views. Light and sound shows in historic monuments offer a unique audiovisual experience that combines history and technology.',
+
     'restaurants': 'Restaurants',
     'bars': 'Bars',
     'restaurant_map': 'Restaurant Map',
@@ -326,6 +392,13 @@ const Map<String, Map<String, String>> translations = {
     'email_send_error': 'Error sending email',
     'sort_by_distance': 'Sort by distance',
     'sort_alphabetically': 'Sort alphabetically',
+    'change_to_english': 'Change to English',
+    'change_to_spanish': 'Change to Spanish',
+    'change_language': 'Change language',
+    'language_changed_spanish': '🇪🇸 Language changed to Spanish',
+    'language_changed_english': '🇺🇸 Language changed to English',
+    'spanish': 'Spanish',
+    'english': 'English',
   },
 };
 

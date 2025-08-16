@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'icon_utils.dart';
-import 'ad_banner_widget.dart';
 
 class DestinoPage extends StatelessWidget {
   final String title;
