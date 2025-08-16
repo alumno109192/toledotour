@@ -1,4 +1,5 @@
 import 'package:toledotour/l10n/app_localizations.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -638,16 +639,18 @@ class _GastronomiaPageState extends State<GastronomiaPage> {
         url = "https://www.google.com/maps/search/?api=1&query=$destino";
       }
 
+      // Para web, usar LaunchMode.platformDefault; para móvil, externalApplication
+      final launchMode = kIsWeb
+          ? LaunchMode.platformDefault
+          : LaunchMode.externalApplication;
+
       if (await canLaunchUrl(Uri.parse(url))) {
-        await launchUrl(Uri.parse(url), mode: LaunchMode.externalApplication);
+        await launchUrl(Uri.parse(url), mode: launchMode);
       } else {
         // Fallback: intentar con la URL web de Google Maps
         final fallbackUrl = "https://www.google.com/maps/search/$destino";
         if (await canLaunchUrl(Uri.parse(fallbackUrl))) {
-          await launchUrl(
-            Uri.parse(fallbackUrl),
-            mode: LaunchMode.externalApplication,
-          );
+          await launchUrl(Uri.parse(fallbackUrl), mode: launchMode);
         } else {
           if (!mounted) return;
           _showErrorDialog(

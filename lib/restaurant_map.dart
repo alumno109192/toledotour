@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:geolocator/geolocator.dart';
@@ -420,6 +421,11 @@ class _RestaurantMapPageState extends State<RestaurantMapPage> {
   void _getDirections(double lat, double lng) async {
     Navigator.pop(context); // Cerrar bottom sheet
 
+    // Para web, usar LaunchMode.platformDefault; para móvil, externalApplication
+    final launchMode = kIsWeb
+        ? LaunchMode.platformDefault
+        : LaunchMode.externalApplication;
+
     if (_currentPosition != null) {
       final origen =
           "${_currentPosition!.latitude},${_currentPosition!.longitude}";
@@ -427,13 +433,13 @@ class _RestaurantMapPageState extends State<RestaurantMapPage> {
       final url = "https://www.google.com/maps/dir/$origen/$destino";
 
       if (await canLaunchUrl(Uri.parse(url))) {
-        await launchUrl(Uri.parse(url), mode: LaunchMode.externalApplication);
+        await launchUrl(Uri.parse(url), mode: launchMode);
       }
     } else {
       // Si no hay ubicación actual, abrir Google Maps con el destino
       final url = "https://www.google.com/maps/search/?api=1&query=$lat,$lng";
       if (await canLaunchUrl(Uri.parse(url))) {
-        await launchUrl(Uri.parse(url), mode: LaunchMode.externalApplication);
+        await launchUrl(Uri.parse(url), mode: launchMode);
       }
     }
   }
