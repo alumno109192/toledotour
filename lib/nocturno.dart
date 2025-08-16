@@ -3,7 +3,6 @@ import 'package:toledotour/l10n/app_localizations.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'icon_utils.dart';
 import 'ad_banner_widget.dart';
-import 'interstitial_ad_helper.dart';
 
 class NocturnoPage extends StatefulWidget {
   const NocturnoPage({super.key});
@@ -12,8 +11,6 @@ class NocturnoPage extends StatefulWidget {
 }
 
 class _NocturnoPageState extends State<NocturnoPage> {
-  final InterstitialAdHelper _adHelper = InterstitialAdHelper()..loadAd();
-
   @override
   Widget build(BuildContext context) {
     final actividadesNocturnas = [
@@ -121,21 +118,21 @@ class _NocturnoPageState extends State<NocturnoPage> {
   }
 
   void _abrirGoogleMaps(String direccion) {
-    _adHelper.showAd(
-      onAdClosed: () async {
-        if (!mounted) return;
-        final url = Uri.encodeFull(
-          'https://www.google.com/maps/search/?api=1&query=$direccion',
-        );
-        if (await canLaunchUrl(Uri.parse(url))) {
-          await launchUrl(Uri.parse(url));
-        } else {
-          if (!mounted) return;
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(content: Text(tr(context, 'error_opening_maps'))),
-          );
-        }
-      },
+    final url = Uri.encodeFull(
+      'https://www.google.com/maps/search/?api=1&query=$direccion',
     );
+    _launchUrl(url);
+  }
+
+  Future<void> _launchUrl(String url) async {
+    if (!mounted) return;
+    if (await canLaunchUrl(Uri.parse(url))) {
+      await launchUrl(Uri.parse(url));
+    } else {
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(tr(context, 'error_opening_maps'))),
+      );
+    }
   }
 }
