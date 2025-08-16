@@ -87,13 +87,18 @@ const Map<String, Map<String, String>> translations = {
     'gastronomy': 'Gastronomía',
     'error': 'Error',
     'ok': 'OK',
-    'rest_adolfo_desc': 'Cocina tradicional toledana con toques modernos.',
+    'rest_adolfo_desc':
+        'Restaurante Adolfo es un templo de la gastronomía toledana que combina magistralmente la tradición culinaria castellano-manchega con técnicas modernas. Ubicado en pleno casco histórico, ofrece especialidades como el cordero asado al horno de leña, perdiz estofada con chocolate y los famosos mazapanes caseros. Su carta de vinos incluye las mejores denominaciones de origen de la región, creando maridajes perfectos con cada plato.',
     'rest_laorza_desc':
-        'Restaurante acogedor con cocina castellana y carta de vinos.',
-    'rest_alfileritos_desc': 'Cocina de autor en un edificio histórico.',
-    'rest_ventaaires_desc': 'El restaurante más antiguo de Castilla-La Mancha.',
-    'rest_ermita_desc': 'Cocina tradicional con vistas panorámicas.',
-    'rest_clandestina_desc': 'Cocina creativa y ambiente moderno.',
+        'La Orza es un restaurante acogedor que destaca por su auténtica cocina castellana y su excepcional carta de vinos. Su ambiente cálido y familiar, combinado con recetas tradicionales transmitidas por generaciones, lo convierte en un favorito tanto de locales como visitantes. Especialidades incluyen el cochifrito toledano, migas manchegas y postres artesanales. La bodega cuenta con más de 200 referencias de vinos españoles.',
+    'rest_alfileritos_desc':
+        'Restaurante Alfileritos 24 ofrece cocina de autor en un edificio histórico del siglo XVI, donde cada plato es una obra de arte culinaria. El chef combina ingredientes de proximidad con técnicas innovadoras, creando una experiencia gastronómica única. Su menú degustación cambia estacionalmente, destacando productos como el azafrán de La Mancha, quesos artesanales y carnes de caza de los Montes de Toledo.',
+    'rest_ventaaires_desc':
+        'Venta de Aires ostenta el honor de ser el restaurante más antiguo de Castilla-La Mancha, con más de 400 años de historia ininterrumpida. Sus muros han sido testigos de celebraciones, reuniones de escritores y encuentros históricos. La cocina mantiene las recetas ancestrales manchegas, destacando el cabrito al horno, el pisto manchego y los dulces conventuales. Es un auténtico museo gastronómico viviente.',
+    'rest_ermita_desc':
+        'Restaurante Ermita combina cocina tradicional toledana con unas vistas panorámicas espectaculares de la ciudad imperial. Situado en una ubicación privilegiada, permite disfrutar de la gastronomía local mientras se contempla el perfil histórico de Toledo. Sus terrazas ofrecen el escenario perfecto para degustar especialidades como el venado con salsa de frutos rojos y los postres con vistas al atardecer.',
+    'rest_clandestina_desc':
+        'La Clandestina representa la nueva generación de restaurantes toledanos, fusionando cocina creativa con un ambiente moderno y sofisticado. Su propuesta gastronómica reinterpreta los sabores tradicionales manchegos con técnicas contemporáneas, creando platos sorprendentes que respetan la esencia local. El espacio, diseñado con elementos industriales y toques vintage, crea una atmósfera única en el panorama gastronómico toledano.',
     'rest_locum_desc': 'Cocina de autor en casa histórica.',
     'rest_fabrica_desc': 'Cocina mediterránea en hotel boutique.',
     'rest_albero_desc': 'Cocina manchega y carnes a la brasa.',
@@ -110,13 +115,13 @@ const Map<String, Map<String, String>> translations = {
     'bar_rinconjuan_desc': 'Tapas y vinos.',
     'bar_tabernita_desc': 'Tapas y ambiente acogedor.',
     'ruta_valle_desc':
-        'Recorrido panorámico por el Valle de Toledo con vistas al casco histórico.',
+        'La Ruta del Valle ofrece un recorrido panorámico incomparable por el Valle de Toledo, proporcionando las mejores vistas del casco histórico desde diferentes perspectivas. Este sendero de 5 kilómetros serpentea por miradores naturales que han inspirado a artistas durante siglos, incluyendo los mismos paisajes que inmortalizó El Greco en sus obras. La ruta incluye paradas en puntos históricos como antiguas ermitas y restos de molinos harineros, mientras se disfruta de la flora autóctona mediterránea.',
     'ruta_barrancas_desc':
-        'Impresionantes cortados arcillosos junto al embalse de Castrejón.',
-    'ruta_senda_tajo_desc':
-        'Sendero a orillas del río Tajo, ideal para paseos familiares.',
+        'Las impresionantes Barrancas de Burujón constituyen uno de los paisajes más espectaculares de la provincia de Toledo. Estos cortados arcillosos de hasta 100 metros de altura se alzan majestuosos junto al embalse de Castrejón, creando un escenario casi marciano que contrasta con la vegetación ribereña. La ruta de 6 kilómetros permite observar aves rapaces, explorar formaciones geológicas únicas y disfrutar de atardeceres que tiñen las barrancas de colores dorados y rojizos.',
+    'ruta_senda_ecologica_desc':
+        'La Senda Ecológica del Tajo es un sendero familiar de 8 kilómetros que discurre paralelo al río histórico que abraza Toledo. Esta ruta interpretativa cuenta con paneles informativos sobre la flora y fauna ribereña, incluyendo especies protegidas como la nutria ibérica y diversas aves acuáticas. El recorrido pasa por antiguos molinos restaurados, puentes medievales y zonas de descanso equipadas, siendo ideal para el senderismo familiar y la educación ambiental.',
     'ruta_cigarrales_desc':
-        'Ruta entre fincas antiguas y jardines típicos toledanos.',
+        'La Ruta de los Cigarrales atraviesa las históricas fincas de recreo toledanas, donde la nobleza y burguesía construyeron sus residencias de verano desde el siglo XVI. Este recorrido de 7 kilómetros permite descubrir jardines centenarios, alquerías tradicionales y miradores únicos de la ciudad imperial. Los cigarrales conservan especies vegetales autóctonas y constituyen un ejemplo excepcional de paisaje cultural mediterráneo, donde la intervención humana ha creado un ecosistema particular.',
     'ruta_piedra_rey_desc': 'Ruta circular con leyendas y vistas al río Tajo.',
     'ruta_montes_desc': 'Excursión por la sierra con flora y fauna autóctona.',
     'noche_magico_desc':
@@ -133,14 +138,17 @@ const Map<String, Map<String, String>> translations = {
     'noche_leyenda_desc':
         'Paseo nocturno por los lugares más legendarios de la ciudad.',
     'cultural_cristo_desc':
-        'Una de las mezquitas mejor conservadas de la ciudad.',
-    'cultural_santacruz_desc': 'Museo con arte y arqueología de Toledo.',
-    'cultural_sinagoga_desc': 'Antigua sinagoga convertida en iglesia.',
-    'cultural_greco_desc': 'Museo dedicado al pintor El Greco.',
-    'cultural_tornerias_desc': 'Pequeña mezquita del siglo XI.',
-    'cultural_sefardi_desc': 'Museo sobre la historia judía en Toledo.',
-    'ruta_senda_ecologica_desc':
-        'Sendero a orillas del río Tajo, ideal para paseos familiares.',
+        'La Mezquita del Cristo de la Luz, construida en el año 999, es uno de los monumentos más emblemáticos de Toledo. Esta pequeña mezquita de estilo califal tardío representa un testimonio único de la arquitectura islámica en la ciudad. Su estructura original se conserva prácticamente intacta, incluyendo los arcos de herradura y la decoración mudéjar posterior. Declarada Bien de Interés Cultural, ofrece visitas guiadas que narran su fascinante historia de transformación de mezquita a iglesia cristiana.',
+    'cultural_santacruz_desc':
+        'El Museo de Santa Cruz, ubicado en un magnífico hospital renacentista del siglo XVI, alberga una excepcional colección de arte y arqueología toledana. Sus salas exhiben obras maestras del Greco, arte visigodo, cerámica de Talavera y una importante colección de tapices flamencos. El edificio mismo es una joya arquitectónica con su impresionante escalera plateresca y su claustro renacentista. Es considerado uno de los museos más importantes de Castilla-La Mancha.',
+    'cultural_sinagoga_desc':
+        'La Sinagoga de Santa María la Blanca, construida en el siglo XII, es un excepcional ejemplo de la arquitectura mudéjar toledana. Sus cinco naves separadas por arcos de herradura sobre columnas octogonales crean un espacio único que refleja la convivencia de las tres culturas. Aunque fue transformada en iglesia cristiana en el siglo XV, conserva su estructura original y decoración geométrica islámica. Es considerada la sinagoga más antigua de Europa que se mantiene en pie.',
+    'cultural_greco_desc':
+        'El Museo del Greco rinde homenaje al genial pintor cretense que hizo de Toledo su hogar durante sus últimos años. La colección incluye obras maestras como "Vista y plano de Toledo" y "Las lágrimas de San Pedro", además de objetos personales y documentos que ilustran la vida del artista. El museo ocupa dos edificios históricos conectados: el Palacio de Villena y una casa del siglo XVI que recrea el ambiente doméstico de la época del pintor.',
+    'cultural_tornerias_desc':
+        'La Mezquita de las Tornerías, pequeña joya del siglo XI, es una de las construcciones islámicas mejor conservadas de Toledo. Su arquitectura refleja el periodo taifa, con elementos decorativos únicos que incluyen inscripciones cúficas y yeserías originales. Ubicada en el corazón del casco histórico, permite apreciar la técnica constructiva andalusí y su posterior adaptación cristiana. Es un testimonio excepcional de la Toledo medieval islámica.',
+    'cultural_sefardi_desc':
+        'El Museo Sefardí, ubicado en la Sinagoga del Tránsito (siglo XIV), narra la rica historia de la comunidad judía en España. Sus colecciones incluyen objetos rituales, manuscritos hebreos, documentos históricos y elementos arquitectónicos que ilustran ocho siglos de presencia sefardí. La sinagoga misma es una obra maestra del arte mudéjar judío, con yeserías polícromas y inscripciones hebráicas que la convierten en un espacio único en el mundo.',
     'ruta_piedra_rey_moro_desc':
         'Ruta circular con leyendas y vistas al río Tajo.',
     'ruta_montes_toledo_desc':
@@ -155,6 +163,19 @@ const Map<String, Map<String, String>> translations = {
         'Vive la noche toledana con tours, pubs, discotecas y actividades culturales.',
     'free_tour_desc':
         'Tours gratuitos guiados por Toledo. Descubre la historia con guías expertos.',
+    'toledo_guides': 'Guías de Toledo',
+    'guide_one_day_title': '¿Qué ver en Toledo en un día?',
+    'guide_one_day_summary':
+        'Itinerario optimizado para conocer lo esencial de Toledo en una jornada',
+    'guide_gastronomy_title': 'Historia de la Gastronomía Toledana',
+    'guide_gastronomy_summary':
+        'Descubre los orígenes y evolución de la cocina tradicional toledana',
+    'guide_cultures_title': 'Las Tres Culturas en Toledo',
+    'guide_cultures_summary':
+        'Un recorrido por la convivencia histórica de cristianos, musulmanes y judíos',
+    'guide_seasons_title': 'Rutas por Temporadas',
+    'guide_seasons_summary':
+        'Las mejores épocas y actividades para visitar Toledo según la estación',
     'reserva': 'Reservar',
     'como_llegar': 'Cómo llegar',
     'app_info': 'Información de la App',
@@ -332,12 +353,18 @@ const Map<String, Map<String, String>> translations = {
     'noche_ultimo_desc': 'Pub with alternative atmosphere and indie music.',
     'noche_leyenda_desc':
         'Night walk through the most legendary places in the city.',
-    'cultural_cristo_desc': 'One of the best-preserved mosques in the city.',
-    'cultural_santacruz_desc': 'Museum with art and archaeology of Toledo.',
-    'cultural_sinagoga_desc': 'Old synagogue converted into a church.',
-    'cultural_greco_desc': 'Museum dedicated to the painter El Greco.',
-    'cultural_tornerias_desc': 'Small mosque from the 11th century.',
-    'cultural_sefardi_desc': 'Museum about Jewish history in Toledo.',
+    'cultural_cristo_desc':
+        'The Mosque of Cristo de la Luz, built in 999 AD, is one of Toledo\'s most emblematic monuments. This small mosque of late Caliphal style represents a unique testimony of Islamic architecture in the city. Its original structure remains practically intact, including horseshoe arches and later Mudéjar decoration. Declared a Site of Cultural Interest, it offers guided tours that narrate its fascinating history of transformation from mosque to Christian church.',
+    'cultural_santacruz_desc':
+        'The Santa Cruz Museum, located in a magnificent 16th-century Renaissance hospital, houses an exceptional collection of Toledo art and archaeology. Its rooms display masterpieces by El Greco, Visigothic art, Talavera ceramics, and an important collection of Flemish tapestries. The building itself is an architectural gem with its impressive Plateresque staircase and Renaissance cloister. It is considered one of the most important museums in Castilla-La Mancha.',
+    'cultural_sinagoga_desc':
+        'The Synagogue of Santa María la Blanca, built in the 12th century, is an exceptional example of Toledo Mudéjar architecture. Its five naves separated by horseshoe arches on octagonal columns create a unique space that reflects the coexistence of three cultures. Although transformed into a Christian church in the 15th century, it preserves its original structure and Islamic geometric decoration. It is considered the oldest standing synagogue in Europe.',
+    'cultural_greco_desc':
+        'The El Greco Museum pays tribute to the brilliant Cretan painter who made Toledo his home during his final years. The collection includes masterpieces such as "View and Plan of Toledo" and "The Tears of Saint Peter," along with personal objects and documents that illustrate the artist\'s life. The museum occupies two connected historic buildings: the Villena Palace and a 16th-century house that recreates the domestic atmosphere of the painter\'s era.',
+    'cultural_tornerias_desc':
+        'The Mosque of Las Tornerías, a small 11th-century gem, is one of Toledo\'s best-preserved Islamic constructions. Its architecture reflects the Taifa period, with unique decorative elements including Kufic inscriptions and original plasterwork. Located in the heart of the historic center, it allows appreciation of Andalusi construction techniques and their later Christian adaptation. It is an exceptional testimony of medieval Islamic Toledo.',
+    'cultural_sefardi_desc':
+        'The Sephardic Museum, located in the Synagogue del Tránsito (14th century), tells the rich history of the Jewish community in Spain. Its collections include ritual objects, Hebrew manuscripts, historical documents, and architectural elements that illustrate eight centuries of Sephardic presence. The synagogue itself is a masterpiece of Jewish Mudéjar art, with polychrome plasterwork and Hebrew inscriptions that make it a unique space in the world.',
     'ruta_senda_ecologica_desc':
         'Trail along the Tagus River, ideal for family walks.',
     'ruta_piedra_rey_moro_desc':
@@ -354,6 +381,19 @@ const Map<String, Map<String, String>> translations = {
         'Experience Toledo\'s nightlife with tours, pubs, nightclubs, and cultural activities.',
     'free_tour_desc':
         'Free guided tours of Toledo. Discover the history with expert guides.',
+    'toledo_guides': 'Toledo Guides',
+    'guide_one_day_title': 'What to see in Toledo in one day?',
+    'guide_one_day_summary':
+        'Optimized itinerary to discover the essentials of Toledo in one day',
+    'guide_gastronomy_title': 'History of Toledo Gastronomy',
+    'guide_gastronomy_summary':
+        'Discover the origins and evolution of traditional Toledo cuisine',
+    'guide_cultures_title': 'The Three Cultures in Toledo',
+    'guide_cultures_summary':
+        'A journey through the historical coexistence of Christians, Muslims and Jews',
+    'guide_seasons_title': 'Seasonal Routes',
+    'guide_seasons_summary':
+        'The best times and activities to visit Toledo according to the season',
     'reserva': 'Book',
     'como_llegar': 'How to get there',
     'app_info': 'App Info',
