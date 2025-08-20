@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:toledotour/l10n/app_localizations.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'icon_utils.dart';
-import 'ad_banner_widget.dart';
 
 class NaturalezaPage extends StatefulWidget {
   const NaturalezaPage({super.key});
@@ -116,7 +115,7 @@ class _NaturalezaPageState extends State<NaturalezaPage> {
             ),
         ],
       ),
-      bottomNavigationBar: const AdBannerWidget(),
+      // Removed ads from this page - insufficient editorial content for AdSense
     );
   }
 

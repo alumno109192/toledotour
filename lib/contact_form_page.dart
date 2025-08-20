@@ -4,7 +4,6 @@ import 'package:file_picker/file_picker.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:toledotour/l10n/app_localizations.dart';
 import 'package:toledotour/email_service.dart';
-import 'ad_banner_widget.dart';
 
 class ContactFormPage extends StatefulWidget {
   const ContactFormPage({super.key});
@@ -213,7 +212,7 @@ class _ContactFormPageState extends State<ContactFormPage> {
               ),
             ),
           ),
-          const AdBannerWidget(),
+          // Removed ads from contact form - not editorial content
         ],
       ),
     );

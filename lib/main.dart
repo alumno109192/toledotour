@@ -11,7 +11,6 @@ import 'package:toledotour/toledo_guide_page.dart';
 import 'package:toledotour/free_tour.dart';
 import 'package:flutter/foundation.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
-import 'ad_banner_widget.dart';
 import 'adsense_config.dart';
 
 final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
@@ -462,7 +461,8 @@ class TourismOptionsPage extends StatelessWidget {
               return TourismOptionsCardView();
             }, childCount: 1),
           ),
-          SliverToBoxAdapter(child: AdBannerWidget()),
+          // Removed AdBannerWidget from main navigation page
+          // Ads will only appear on content-rich pages
         ],
       ),
     );

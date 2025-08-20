@@ -48,6 +48,9 @@
 
 	<key>GADApplicationIdentifier</key>
 	<string>ca-app-pub-3765163856747312~8073288879</string>
+	<!-- Google Maps API Key -->
+	<key>GMSApiKey</key>
+	<string>AIzaSyCVCFmNSH59GoXPnWRZhGiXG78NkNxuiUY</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Esta app necesita acceder a tu ubicación para mostrar rutas.</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>

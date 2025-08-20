@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import 'package:toledotour/l10n/app_localizations.dart';
 import 'package:toledotour/contact_form_page.dart';
-import 'ad_banner_widget.dart';
 
 class AppInfoPage extends StatefulWidget {
   const AppInfoPage({super.key});
@@ -257,7 +256,7 @@ class _AppInfoPageState extends State<AppInfoPage> {
               ),
             ),
           ),
-          const AdBannerWidget(),
+          // Removed ads from info page - insufficient editorial content
         ],
       ),
     );

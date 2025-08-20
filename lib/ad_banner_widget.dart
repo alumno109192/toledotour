@@ -56,14 +56,15 @@ class _AdBannerWidgetState extends State<AdBannerWidget> {
     if (kIsWeb) return const SizedBox.shrink();
 
     // Para móvil, mostrar banner real si está cargado
-    if (_bannerAd == null) return const SizedBox.shrink();
-    
+    final bannerAd = _bannerAd;
+    if (bannerAd == null) return const SizedBox.shrink();
+
     return Container(
       margin: const EdgeInsets.symmetric(vertical: 8),
       child: SizedBox(
-        width: _bannerAd!.size.width.toDouble(),
-        height: _bannerAd!.size.height.toDouble(),
-        child: AdWidget(ad: _bannerAd!),
+        width: bannerAd.size.width.toDouble(),
+        height: bannerAd.size.height.toDouble(),
+        child: AdWidget(ad: bannerAd),
       ),
     );
   }
