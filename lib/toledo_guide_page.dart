@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:toledotour/l10n/app_localizations.dart';
-import 'ad_banner_widget.dart';
 
 class ToledoGuidePage extends StatelessWidget {
   const ToledoGuidePage({super.key});
@@ -53,8 +52,7 @@ class ToledoGuidePage extends StatelessWidget {
       ),
       body: Column(
         children: [
-          // Banner de anuncios
-          const AdBannerWidget(),
+          // DISABLED: All ads removed for AdSense editorial content policy compliance
 
           // Contenido principal
           Expanded(
@@ -854,8 +852,7 @@ class GuideDetailPage extends StatelessWidget {
       ),
       body: Column(
         children: [
-          // Banner de anuncios
-          const AdBannerWidget(),
+          // DISABLED: All ads removed for AdSense editorial content policy compliance
 
           // Contenido del artículo
           Expanded(

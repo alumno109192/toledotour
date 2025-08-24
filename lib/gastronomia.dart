@@ -5,7 +5,6 @@ import 'package:geolocator/geolocator.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'icon_utils.dart';
-import 'ad_banner_widget.dart';
 
 class GastronomiaPage extends StatefulWidget {
   const GastronomiaPage({super.key});
@@ -455,7 +454,7 @@ class _GastronomiaPageState extends State<GastronomiaPage> {
             ),
           ],
         ),
-        bottomNavigationBar: const AdBannerWidget(),
+        // DISABLED: All ads removed for AdSense editorial content policy compliance
       ),
     );
   }

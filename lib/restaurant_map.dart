@@ -4,7 +4,6 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:toledotour/l10n/app_localizations.dart';
-import 'ad_banner_widget.dart';
 
 class RestaurantMapPage extends StatefulWidget {
   const RestaurantMapPage({super.key});
@@ -547,9 +546,7 @@ class _RestaurantMapPageState extends State<RestaurantMapPage> {
               zoomGesturesEnabled: true,
             ),
           ),
-
-          // Banner de anuncios
-          const AdBannerWidget(),
+          // DISABLED: All ads removed for AdSense editorial content policy compliance
         ],
       ),
 

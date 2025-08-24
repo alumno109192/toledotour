@@ -8,10 +8,16 @@ class AdSenseConfig {
   static const String rectangleSlotId = '0987654321';
   static const String mobileSlotId = '1122334455';
 
-  // Inicializar AdSense para web
+  // Inicializar AdSense para web - DISABLED para cumplir políticas
   static void initializeAdSense() {
     if (!kIsWeb) return;
 
+    // DISABLED: Auto Ads causaban violación de políticas de contenido editorial
+    // Auto Ads se mostraban en páginas sin contenido editorial suficiente
+    print('AdSense Auto Ads disabled for editorial content policy compliance');
+    return;
+
+    /* COMENTADO - Auto Ads deshabilitados
     try {
       // Crear el script de AdSense si no existe
       if (html.document.querySelector('script[src*="adsbygoogle.js"]') ==
@@ -37,6 +43,7 @@ class AdSenseConfig {
     } catch (e) {
       print('Error initializing AdSense: $e');
     }
+    */
   }
 
   // Cargar un anuncio específico

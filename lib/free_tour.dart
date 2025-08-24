@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:toledotour/l10n/app_localizations.dart';
 import 'package:toledotour/destino_simple.dart';
-import 'ad_banner_widget.dart';
 
 class FreeTourPage extends StatelessWidget {
   const FreeTourPage({super.key});
@@ -189,7 +188,7 @@ class FreeTourPage extends StatelessWidget {
               },
             ),
           ),
-          AdBannerWidget(),
+          // DISABLED: All ads removed for AdSense editorial content policy compliance
         ],
       ),
     );

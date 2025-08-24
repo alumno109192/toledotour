@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:toledotour/l10n/app_localizations.dart';
 import 'destino_simple.dart';
 import 'icon_utils.dart';
-import 'ad_banner_widget.dart';
 
 class CulturalTourismPage extends StatelessWidget {
   const CulturalTourismPage({super.key});
@@ -114,7 +113,7 @@ class CulturalTourismPage extends StatelessWidget {
           );
         },
       ),
-      bottomNavigationBar: const AdBannerWidget(),
+      // DISABLED: All ads removed for AdSense editorial content policy compliance
     );
   }
 }
