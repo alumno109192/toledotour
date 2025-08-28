@@ -71,6 +71,47 @@ class _NaturalezaPageState extends State<NaturalezaPage> {
       body: ListView(
         padding: const EdgeInsets.all(16),
         children: [
+          // Introducción editorial sobre naturaleza en Toledo
+          Card(
+            elevation: 4,
+            margin: const EdgeInsets.only(bottom: 20),
+            child: Padding(
+              padding: const EdgeInsets.all(20),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    tr(context, 'nature_intro_title'),
+                    style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                      fontWeight: FontWeight.bold,
+                      color: Theme.of(context).primaryColor,
+                    ),
+                  ),
+                  const SizedBox(height: 16),
+                  Text(
+                    tr(context, 'nature_intro_text'),
+                    style: Theme.of(context).textTheme.bodyLarge,
+                    textAlign: TextAlign.justify,
+                  ),
+                  const SizedBox(height: 16),
+                  Text(
+                    tr(context, 'natural_routes_title'),
+                    style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  const SizedBox(height: 8),
+                  Text(
+                    tr(context, 'natural_routes_text'),
+                    style: Theme.of(context).textTheme.bodyMedium,
+                    textAlign: TextAlign.justify,
+                  ),
+                ],
+              ),
+            ),
+          ),
+
+          // Lista de rutas existente
           for (var ruta in rutas)
             Card(
               margin: const EdgeInsets.symmetric(vertical: 10),

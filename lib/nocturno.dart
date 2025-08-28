@@ -71,6 +71,47 @@ class _NocturnoPageState extends State<NocturnoPage> {
       body: ListView(
         padding: const EdgeInsets.all(16),
         children: [
+          // Introducción editorial sobre vida nocturna en Toledo
+          Card(
+            elevation: 4,
+            margin: const EdgeInsets.only(bottom: 20),
+            child: Padding(
+              padding: const EdgeInsets.all(20),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    tr(context, 'nightlife_intro_title'),
+                    style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                      fontWeight: FontWeight.bold,
+                      color: Theme.of(context).primaryColor,
+                    ),
+                  ),
+                  const SizedBox(height: 16),
+                  Text(
+                    tr(context, 'nightlife_intro_text'),
+                    style: Theme.of(context).textTheme.bodyLarge,
+                    textAlign: TextAlign.justify,
+                  ),
+                  const SizedBox(height: 16),
+                  Text(
+                    tr(context, 'night_activities_title'),
+                    style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  const SizedBox(height: 8),
+                  Text(
+                    tr(context, 'night_activities_text'),
+                    style: Theme.of(context).textTheme.bodyMedium,
+                    textAlign: TextAlign.justify,
+                  ),
+                ],
+              ),
+            ),
+          ),
+
+          // Lista de actividades existente
           for (var actividad in actividadesNocturnas)
             Card(
               margin: const EdgeInsets.symmetric(vertical: 10),

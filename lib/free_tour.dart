@@ -14,6 +14,56 @@ class FreeTourPage extends StatelessWidget {
       ),
       body: Column(
         children: [
+          // Contenido editorial sobre Free Tours
+          Container(
+            width: double.infinity,
+            padding: const EdgeInsets.all(20),
+            margin: const EdgeInsets.all(16),
+            decoration: BoxDecoration(
+              color: Theme.of(context).colorScheme.surface,
+              borderRadius: BorderRadius.circular(12),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.grey.withValues(alpha: 0.2),
+                  spreadRadius: 2,
+                  blurRadius: 8,
+                  offset: const Offset(0, 3),
+                ),
+              ],
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  tr(context, 'free_tour_intro_title'),
+                  style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                    fontWeight: FontWeight.bold,
+                    color: Theme.of(context).primaryColor,
+                  ),
+                ),
+                const SizedBox(height: 16),
+                Text(
+                  tr(context, 'free_tour_intro_text'),
+                  style: Theme.of(context).textTheme.bodyLarge,
+                  textAlign: TextAlign.justify,
+                ),
+                const SizedBox(height: 16),
+                Text(
+                  tr(context, 'free_tour_benefits_title'),
+                  style: Theme.of(
+                    context,
+                  ).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold),
+                ),
+                const SizedBox(height: 8),
+                Text(
+                  tr(context, 'free_tour_benefits_text'),
+                  style: Theme.of(context).textTheme.bodyMedium,
+                  textAlign: TextAlign.justify,
+                ),
+              ],
+            ),
+          ),
+
           Expanded(
             child: ListView.builder(
               padding: const EdgeInsets.all(16),

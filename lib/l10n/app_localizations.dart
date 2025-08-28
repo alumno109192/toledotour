@@ -45,13 +45,13 @@ const Map<String, Map<String, String>> translations = {
         'Entre los platos más representativos encontramos las carcamusas, un guiso de cerdo con tomate y guisantes que se sirve en las tabernas tradicionales. La perdiz estofada, preparada con verduras de temporada y vino de la región. El cochifrito, elaborado con cordero lechal y especias. Para los amantes de la caza, el venado y el jabalí preparados según recetas tradicionales. Los postres están dominados por el mazapán, cuya receta se conserva desde la época medieval.',
 
     // Extended Nature Content
-    'nature_intro_title': 'Entorno Natural Privilegiado',
+    'nature_intro_title': 'Entorno Natural Privilegiado de Toledo',
     'nature_intro_text':
-        'Toledo se encuentra en un entorno natural excepcional. El río Tajo abraza la ciudad creando un paisaje único de cortados y vegas fluviales. Los Montes de Toledo, al sur de la ciudad, ofrecen un ecosistema mediterráneo rico en flora y fauna autóctona. Los cigarrales, tradicionales fincas toledanas, crean un paisaje cultural único donde se combina la agricultura tradicional con jardines históricos.',
+        'Toledo se encuentra en un entorno natural excepcional que combina el patrimonio cultural con paisajes de extraordinaria belleza. El río Tajo abraza la ciudad creando un paisaje único de cortados y vegas fluviales, mientras que los Montes de Toledo, al sur de la ciudad, ofrecen un ecosistema mediterráneo rico en flora y fauna autóctona. Los cigarrales, tradicionales fincas toledanas, crean un paisaje cultural único donde se combina la agricultura tradicional con jardines históricos. La privilegiada ubicación de Toledo, en el centro de la península ibérica, la convierte en punto de encuentro de diferentes ecosistemas y rutas migratorias, proporcionando una biodiversidad excepcional que se puede descubrir a través de rutas señalizadas y senderos interpretativos.',
 
-    'natural_routes_title': 'Rutas Naturales Destacadas',
+    'natural_routes_title': 'Rutas de Senderismo y Naturaleza',
     'natural_routes_text':
-        'La Senda Ecológica del Tajo permite descubrir la flora y fauna ribereña mientras se disfruta de vistas panorámicas de la ciudad. La Ruta de los Cigarrales recorre las tradicionales fincas toledanas con sus jardines históricos. En los Montes de Toledo se pueden realizar rutas de senderismo entre encinas centenarias, alcornoques y monte mediterráneo, donde habitan especies como el ciervo, el jabalí y numerosas aves rapaces.',
+        'Las rutas naturales de Toledo ofrecen diferentes niveles de dificultad y duración, adaptándose a senderistas principiantes y expertos. Cada sendero cuenta con señalización específica, paneles interpretativos sobre flora y fauna local, y puntos de descanso equipados. Las rutas están diseñadas para mostrar la riqueza paisajística de la región, desde miradores panorámicos hasta bosques mediterráneos y riberas fluviales. La Senda Ecológica del Tajo permite descubrir la flora y fauna ribereña, mientras que la Ruta de los Cigarrales recorre las tradicionales fincas toledanas. En los Montes de Toledo se pueden realizar rutas entre encinas centenarias donde habitan ciervos, jabalíes y numerosas aves rapaces. Recomendamos llevar calzado adecuado, agua suficiente y consultar las condiciones meteorológicas.',
 
     // Extended Nightlife Content
     'nightlife_intro_title': 'Toledo de Noche: Misterio y Leyenda',
@@ -122,12 +122,14 @@ const Map<String, Map<String, String>> translations = {
         'La Senda Ecológica del Tajo es un sendero familiar de 8 kilómetros que discurre paralelo al río histórico que abraza Toledo. Esta ruta interpretativa cuenta con paneles informativos sobre la flora y fauna ribereña, incluyendo especies protegidas como la nutria ibérica y diversas aves acuáticas. El recorrido pasa por antiguos molinos restaurados, puentes medievales y zonas de descanso equipadas, siendo ideal para el senderismo familiar y la educación ambiental.',
     'ruta_cigarrales_desc':
         'La Ruta de los Cigarrales atraviesa las históricas fincas de recreo toledanas, donde la nobleza y burguesía construyeron sus residencias de verano desde el siglo XVI. Este recorrido de 7 kilómetros permite descubrir jardines centenarios, alquerías tradicionales y miradores únicos de la ciudad imperial. Los cigarrales conservan especies vegetales autóctonas y constituyen un ejemplo excepcional de paisaje cultural mediterráneo, donde la intervención humana ha creado un ecosistema particular.',
-    'ruta_piedra_rey_desc': 'Ruta circular con leyendas y vistas al río Tajo.',
-    'ruta_montes_desc': 'Excursión por la sierra con flora y fauna autóctona.',
+    'ruta_piedra_rey_desc':
+        'La Ruta de la Piedra del Rey Moro es un sendero circular de 4 kilómetros que combina naturaleza, historia y leyenda en uno de los parajes más emblemáticos de Toledo. Este mirador natural ofrece vistas espectaculares del meandro que forma el río Tajo al abrazar la ciudad imperial. Según la tradición, desde esta roca el último rey moro de Toledo contempló por última vez su ciudad antes de entregarla a los cristianos en 1085. El recorrido incluye bosques de encinas centenarias, formaciones rocosas únicas y pequeñas cuevas naturales que sirvieron de refugio durante siglos. La ruta está equipada con paneles interpretativos que explican la geología local, la flora mediterránea y las leyendas asociadas al lugar.',
+    'ruta_montes_desc':
+        'La excursión por los Montes de Toledo constituye una aventura de 12 kilómetros a través de uno de los ecosistemas mediterráneos mejor conservados de la península ibérica. Esta ruta de alta dificultad atraviesa bosques mixtos de encinas, alcornoques y quejigos, hogar de especies emblemáticas como el águila imperial, el buitre negro y el esquivo lince ibérico. El recorrido incluye ascensiones a varios cerros que superan los 1400 metros de altitud, desde donde se divisan panorámicas únicas de la meseta castellana. Los senderos pasan por antiguas carboneras, colmenas tradicionales y fuentes naturales que han abastecido a los pueblos serranos durante generaciones. La ruta requiere experiencia en montaña y está recomendada realizarla con guía local, especialmente en épocas de celo de ciervos y jabalíes.',
     'noche_magico_desc':
-        'Recorrido guiado por las leyendas y misterios de la ciudad iluminada.',
+        'El tour nocturno "Toledo Mágico" es una experiencia única que transforma la ciudad imperial en un escenario de ensueño. Durante dos horas, un guía especializado conduce a los visitantes por las calles empedradas iluminadas tenuemente, creando una atmósfera misteriosa que realza la belleza de los monumentos históricos. El recorrido incluye paradas en la Catedral Primada, donde las vidrieras góticas cobran vida con la iluminación nocturna, el Alcázar majestuoso dominando la ciudad, y los rincones más secretos del barrio judío. Las leyendas de templarios, alquimistas y personajes históricos se entrelazan con datos históricos verificados, ofreciendo una perspectiva fascinante de Toledo. El tour incluye acceso a miradores especiales para contemplar vistas nocturnas exclusivas.',
     'noche_fantasmas_desc':
-        'Tour nocturno por los rincones más enigmáticos de Toledo.',
+        'El Tour de Fantasmas y Misterios es una aventura sobrenatural que explora los aspectos más enigmáticos de Toledo. Este recorrido de hora y media se adentra en los casos paranormales documentados, leyendas urbanas y sucesos inexplicables que han marcado la historia de la ciudad. Los participantes visitan antiguos conventos donde se reportan apariciones, casas señoriales con historias de fantasmas y rincones donde la tradición oral ha conservado relatos escalofriantes. El guía, especializado en historia local y fenómenos paranormales, presenta evidencias históricas, fotografías antiguas y testimonios de vecinos. La experiencia combina entretenimiento con rigor histórico, separando mitos de hechos documentados.',
     'noche_circulo_desc':
         'Discoteca situada en una antigua iglesia, ambiente único y música variada.',
     'noche_picaro_desc':
@@ -382,6 +384,16 @@ const Map<String, Map<String, String>> translations = {
     'free_tour_desc':
         'Free guided tours of Toledo. Discover the history with expert guides.',
     'toledo_guides': 'Toledo Guides',
+
+    // Free Tour Content
+    'free_tour_intro_title':
+        'Free Tours de Toledo: Descubre la Ciudad Imperial sin Coste',
+    'free_tour_intro_text':
+        'Los Free Tours de Toledo representan una oportunidad única para conocer en profundidad la rica historia de la Ciudad Imperial de la mano de guías especializados y sin coste fijo. Estos recorridos gratuitos, basados en el sistema de propinas voluntarias, han revolucionado el turismo cultural permitiendo el acceso democrático al patrimonio histórico de Toledo. Los guías, expertos en historia local, arte y leyendas toledanas, comparten su pasión por la ciudad ofreciendo explicaciones detalladas, anécdotas históricas y contexto cultural que enriquece enormemente la visita. La filosofía de los Free Tours se basa en la calidad del servicio y la satisfacción del visitante, creando una experiencia auténtica y personalizada.',
+    'free_tour_benefits_title': 'Ventajas de los Free Tours',
+    'free_tour_benefits_text':
+        'Los Free Tours ofrecen múltiples ventajas para el visitante: flexibilidad económica al pagar según la satisfacción, grupos reducidos que permiten atención personalizada, guías apasionados que transmiten amor por la ciudad, rutas optimizadas que cubren los puntos más importantes en tiempo limitado, y la posibilidad de hacer preguntas específicas sobre historia, cultura o recomendaciones locales. Además, muchos tours incluyen acceso a miradores exclusivos, explicaciones sobre simbologías ocultas en monumentos, y consejos prácticos para aprovechar al máximo la estancia en Toledo. La interacción directa con guías locales proporciona una perspectiva auténtica que difícilmente se obtiene en visitas autoguiadas.',
+
     'guide_one_day_title': 'What to see in Toledo in one day?',
     'guide_one_day_summary':
         'Optimized itinerary to discover the essentials of Toledo in one day',
