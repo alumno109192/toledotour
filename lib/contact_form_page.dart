@@ -48,10 +48,150 @@ class _ContactFormPageState extends State<ContactFormPage> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      tr(context, 'contact_form_description'),
-                      style: Theme.of(context).textTheme.bodyLarge,
+                    // Introducción al contacto
+                    Card(
+                      elevation: 4,
+                      child: Padding(
+                        padding: const EdgeInsets.all(20),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(
+                              children: [
+                                Icon(
+                                  Icons.support_agent,
+                                  color: Theme.of(context).primaryColor,
+                                  size: 28,
+                                ),
+                                const SizedBox(width: 12),
+                                Text(
+                                  'Soporte y Atención al Usuario',
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .headlineSmall
+                                      ?.copyWith(
+                                        fontWeight: FontWeight.bold,
+                                        color: Theme.of(context).primaryColor,
+                                      ),
+                                ),
+                              ],
+                            ),
+                            const SizedBox(height: 16),
+                            const Text(
+                              'Nuestro equipo de soporte está compuesto por guías turísticos '
+                              'oficiales y expertos locales en Toledo que te ayudarán con '
+                              'cualquier consulta sobre la aplicación o sobre tu visita a '
+                              'la Ciudad Imperial. Respondemos en español e inglés, y nos '
+                              'comprometemos a contestar todas las consultas en un plazo '
+                              'máximo de 24 horas.',
+                              style: TextStyle(fontSize: 16, height: 1.6),
+                              textAlign: TextAlign.justify,
+                            ),
+                          ],
+                        ),
+                      ),
                     ),
+
+                    const SizedBox(height: 20),
+
+                    // Tipos de consultas
+                    Card(
+                      elevation: 4,
+                      child: Padding(
+                        padding: const EdgeInsets.all(20),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(
+                              children: [
+                                Icon(
+                                  Icons.help_outline,
+                                  color: Theme.of(context).primaryColor,
+                                  size: 28,
+                                ),
+                                const SizedBox(width: 12),
+                                Text(
+                                  '¿En Qué Podemos Ayudarte?',
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .headlineSmall
+                                      ?.copyWith(
+                                        fontWeight: FontWeight.bold,
+                                        color: Theme.of(context).primaryColor,
+                                      ),
+                                ),
+                              ],
+                            ),
+                            const SizedBox(height: 16),
+                            _buildHelpCategory(
+                              '🏛️ Información Turística',
+                              'Consultas sobre monumentos, horarios, precios, accesibilidad, '
+                                  'rutas recomendadas según duración de visita, y actividades '
+                                  'específicas para familias, grupos o visitantes con movilidad reducida.',
+                            ),
+                            _buildHelpCategory(
+                              '🍽️ Recomendaciones Gastronómicas',
+                              'Sugerencias de restaurantes según presupuesto, especialidades '
+                                  'toledanas auténticas, opciones veganas o vegetarianas, reservas '
+                                  'en establecimientos recomendados, y experiencias gastronómicas únicas.',
+                            ),
+                            _buildHelpCategory(
+                              '📱 Soporte Técnico',
+                              'Problemas con la aplicación, errores de navegación GPS, '
+                                  'dificultades con las traducciones, sugerencias de mejora, '
+                                  'y reportes de información desactualizada.',
+                            ),
+                            _buildHelpCategory(
+                              '🎯 Experiencias Personalizadas',
+                              'Planificación de rutas específicas, actividades según intereses '
+                                  'particulares, consejos para fotografía, mejores momentos para '
+                                  'visitar sin multitudes, y eventos especiales en Toledo.',
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+
+                    const SizedBox(height: 20),
+
+                    // Formulario de contacto
+                    Card(
+                      elevation: 4,
+                      child: Padding(
+                        padding: const EdgeInsets.all(20),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(
+                              children: [
+                                Icon(
+                                  Icons.contact_mail,
+                                  color: Theme.of(context).primaryColor,
+                                  size: 28,
+                                ),
+                                const SizedBox(width: 12),
+                                Text(
+                                  'Formulario de Contacto',
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .headlineSmall
+                                      ?.copyWith(
+                                        fontWeight: FontWeight.bold,
+                                        color: Theme.of(context).primaryColor,
+                                      ),
+                                ),
+                              ],
+                            ),
+                            const SizedBox(height: 16),
+                            Text(
+                              tr(context, 'contact_form_description'),
+                              style: Theme.of(context).textTheme.bodyLarge,
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+
                     const SizedBox(height: 24),
 
                     // Campo nombre
@@ -213,6 +353,35 @@ class _ContactFormPageState extends State<ContactFormPage> {
             ),
           ),
           // Removed ads from contact form - not editorial content
+        ],
+      ),
+    );
+  }
+
+  Widget _buildHelpCategory(String title, String description) {
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 16.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            title,
+            style: const TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 16,
+              color: Colors.black87,
+            ),
+          ),
+          const SizedBox(height: 6),
+          Text(
+            description,
+            style: const TextStyle(
+              fontSize: 14,
+              height: 1.5,
+              color: Colors.black54,
+            ),
+            textAlign: TextAlign.justify,
+          ),
         ],
       ),
     );

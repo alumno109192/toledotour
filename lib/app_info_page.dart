@@ -192,6 +192,102 @@ class _AppInfoPageState extends State<AppInfoPage> {
 
                   const SizedBox(height: 20),
 
+                  // Guía completa de Toledo
+                  Card(
+                    elevation: 4,
+                    child: Padding(
+                      padding: const EdgeInsets.all(20),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(
+                            children: [
+                              Icon(
+                                Icons.tour,
+                                color: Theme.of(context).primaryColor,
+                                size: 28,
+                              ),
+                              const SizedBox(width: 12),
+                              Text(
+                                'Tu Guía Completa de Toledo',
+                                style: Theme.of(context).textTheme.headlineSmall
+                                    ?.copyWith(
+                                      fontWeight: FontWeight.bold,
+                                      color: Theme.of(context).primaryColor,
+                                    ),
+                              ),
+                            ],
+                          ),
+                          const SizedBox(height: 16),
+                          const Text(
+                            'Toledo Tour ha sido desarrollada en colaboración con la Oficina de Turismo '
+                            'de Toledo y guías turísticos oficiales para ofrecerte la experiencia más '
+                            'completa y auténtica de la ciudad. Nuestra aplicación incluye rutas '
+                            'optimizadas para diferentes duraciones de visita, desde escapadas de un día '
+                            'hasta estancias prolongadas para conocer cada rincón de la Ciudad Imperial.\n\n'
+                            'Los contenidos han sido creados por historiadores especializados en Toledo, '
+                            'con especial atención a la época medieval, el legado judío, árabe y cristiano, '
+                            'y las obras de El Greco. Cada punto de interés incluye coordenadas GPS '
+                            'precisas, horarios actualizados, precios de entrada, y recomendaciones '
+                            'específicas según la época del año.',
+                            style: TextStyle(fontSize: 16, height: 1.6),
+                            textAlign: TextAlign.justify,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+
+                  const SizedBox(height: 20),
+
+                  // Experiencia personalizada
+                  Card(
+                    elevation: 4,
+                    child: Padding(
+                      padding: const EdgeInsets.all(20),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(
+                            children: [
+                              Icon(
+                                Icons.person,
+                                color: Theme.of(context).primaryColor,
+                                size: 28,
+                              ),
+                              const SizedBox(width: 12),
+                              Text(
+                                'Experiencia Personalizada',
+                                style: Theme.of(context).textTheme.headlineSmall
+                                    ?.copyWith(
+                                      fontWeight: FontWeight.bold,
+                                      color: Theme.of(context).primaryColor,
+                                    ),
+                              ),
+                            ],
+                          ),
+                          const SizedBox(height: 16),
+                          const Text(
+                            'Toledo Tour se adapta a tus preferencias e intereses. Tanto si eres un '
+                            'amante de la historia, un aficionado a la gastronomía, un entusiasta de '
+                            'la naturaleza o buscas aventuras nocturnas, nuestra app te proporciona '
+                            'rutas e información específicas para cada tipo de viajero.\n\n'
+                            'La sección gastronómica incluye más de 40 establecimientos recomendados, '
+                            'desde tabernas centenarias hasta restaurantes con estrella Michelin, '
+                            'todos con sus especialidades toledanas como el mazapán artesanal, '
+                            'el cochifrito, las carcamusas, y los vinos de la D.O. Méntrida. '
+                            'Para los amantes de la naturaleza, encontrarás senderos por la orilla '
+                            'del Tajo, rutas por los cigarrales, y miradores únicos de la ciudad.',
+                            style: TextStyle(fontSize: 16, height: 1.6),
+                            textAlign: TextAlign.justify,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+
+                  const SizedBox(height: 20),
+
                   // Información de la app
                   Card(
                     elevation: 4,

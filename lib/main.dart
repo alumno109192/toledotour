@@ -432,7 +432,41 @@ class TourismOptionsPage extends StatelessWidget {
                             tr(context, 'welcome_intro_text'),
                             style: Theme.of(context).textTheme.bodyLarge,
                           ),
+                          const SizedBox(height: 20),
+
+                          // Contenido editorial expandido
+                          Text(
+                            tr(context, 'toledo_history_section_title'),
+                            style: Theme.of(context).textTheme.titleLarge
+                                ?.copyWith(
+                                  fontWeight: FontWeight.bold,
+                                  color: Theme.of(context).primaryColor,
+                                ),
+                          ),
+                          const SizedBox(height: 12),
+                          Text(
+                            tr(context, 'toledo_history_section_text'),
+                            style: Theme.of(context).textTheme.bodyMedium,
+                            textAlign: TextAlign.justify,
+                          ),
+                          const SizedBox(height: 20),
+
+                          Text(
+                            tr(context, 'toledo_culture_section_title'),
+                            style: Theme.of(context).textTheme.titleLarge
+                                ?.copyWith(
+                                  fontWeight: FontWeight.bold,
+                                  color: Theme.of(context).primaryColor,
+                                ),
+                          ),
+                          const SizedBox(height: 12),
+                          Text(
+                            tr(context, 'toledo_culture_section_text'),
+                            style: Theme.of(context).textTheme.bodyMedium,
+                            textAlign: TextAlign.justify,
+                          ),
                           const SizedBox(height: 16),
+
                           // Add explore section directly here
                           Text(
                             tr(context, 'explore_toledo'),

@@ -29,6 +29,14 @@ const Map<String, Map<String, String>> translations = {
     'choose_experience':
         'Elige la experiencia que más te interese y descubre todos los secretos que Toledo tiene para ofrecerte.',
 
+    // Main page editorial content
+    'toledo_history_section_title': 'Historia Milenaria de la Ciudad Imperial',
+    'toledo_history_section_text':
+        'Toledo fue capital del Reino Visigodo, ciudad califal durante la época musulmana, y posteriormente capital del Imperio Español bajo Carlos V. Su casco histórico, declarado Patrimonio de la Humanidad por la UNESCO en 1986, conserva intacta la estructura urbana medieval con calles empedradas, patios escondidos y casas señoriales que te transportan a épocas pasadas. La ciudad ha sido hogar de personajes ilustres como El Greco, quien encontró aquí su inspiración para sus obras más famosas. Las murallas medievales, las puertas históricas como la de Bisagra, y los numerosos conventos y iglesias conforman un paisaje urbano excepcional que testimonia más de 2000 años de historia continua.',
+    'toledo_culture_section_title': 'Capital de las Tres Culturas',
+    'toledo_culture_section_text':
+        'Toledo es conocida mundialmente como la "Ciudad de las Tres Culturas" por la convivencia histórica de cristianos, musulmanes y judíos durante siglos. Esta convivencia dejó un legado arquitectónico y cultural único: la Catedral Primada gótica, las sinagogas mudéjares como Santa María la Blanca y del Tránsito, las mezquitas del Cristo de la Luz y de las Tornerías, y numerosos edificios que combinan elementos artísticos de las tres tradiciones. El barrio judío conserva su trazado medieval original, mientras que los vestigios musulmanes se integran armoniosamente con el arte cristiano posterior. Esta síntesis cultural convierte a Toledo en un ejemplo único de tolerancia y mestizaje artístico en Europa.',
+
     // Extended Cultural Content
     'cultural_detailed_intro':
         'El patrimonio cultural de Toledo es extraordinario. La ciudad conserva monumentos de todas las épocas y culturas que la habitaron.',
