@@ -1,15 +1,20 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
+import 'editorial_content_guard.dart';
 
 class AdBannerWidget extends StatefulWidget {
   final bool showOnlyAfterContent;
   final String? customSlot;
+  final String pageName;
+  final String pageContent;
 
   const AdBannerWidget({
     super.key,
     this.showOnlyAfterContent = true,
     this.customSlot,
+    this.pageName = 'unknown',
+    this.pageContent = '',
   });
 
   @override
@@ -22,7 +27,7 @@ class _AdBannerWidgetState extends State<AdBannerWidget> {
   @override
   void initState() {
     super.initState();
-    // Solo cargar anuncios en móvil - Web usa Auto Ads
+    // Solo cargar anuncios en móvil - WEB COMPLETAMENTE DESHABILITADO
     if (!kIsWeb) {
       _loadMobileAd();
     }
@@ -52,12 +57,55 @@ class _AdBannerWidgetState extends State<AdBannerWidget> {
 
   @override
   Widget build(BuildContext context) {
-    // En web, no mostrar nada - Auto Ads se encarga
-    if (kIsWeb) return const SizedBox.shrink();
+    // VERIFICACIÓN DE CONTENIDO EDITORIAL
+    final canShowAds = EditorialContentGuard.canShowAdsOnPage(
+      widget.pageName,
+      widget.pageContent,
+    );
 
-    // Para móvil, mostrar banner real si está cargado
+    EditorialContentGuard.logContentCheck(
+      widget.pageName,
+      widget.pageContent,
+      canShowAds,
+    );
+
+    if (!canShowAds) {
+      if (kDebugMode) {
+        print(
+          '🚫 AdBanner bloqueado: ${EditorialContentGuard.getBlockingReason(widget.pageName, widget.pageContent)}',
+        );
+      }
+      return const SizedBox.shrink();
+    }
+
+    // Para móvil, mostrar banner real si está cargado Y hay contenido editorial suficiente
     final bannerAd = _bannerAd;
     if (bannerAd == null) return const SizedBox.shrink();
+
+    // Solo mostrar después del contenido principal (no en páginas vacías)
+    if (widget.showOnlyAfterContent) {
+      return Container(
+        margin: const EdgeInsets.symmetric(vertical: 8),
+        child: Column(
+          children: [
+            // Indicador de que hay contenido editorial antes del anuncio
+            if (kDebugMode)
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(
+                  '📄 Anuncio tras contenido editorial válido (${widget.pageContent.length} chars)',
+                  style: const TextStyle(fontSize: 10, color: Colors.grey),
+                ),
+              ),
+            SizedBox(
+              width: bannerAd.size.width.toDouble(),
+              height: bannerAd.size.height.toDouble(),
+              child: AdWidget(ad: bannerAd),
+            ),
+          ],
+        ),
+      );
+    }
 
     return Container(
       margin: const EdgeInsets.symmetric(vertical: 8),

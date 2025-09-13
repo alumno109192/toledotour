@@ -7,7 +7,7 @@ echo "🏗️  Building Toledo Tour for Firebase..."
 flutter clean
 flutter build web --release
 
-# Copy essential files for AdSense and SEO
+# Copy essential files for SEO (ads.txt mantenido por compatibilidad)
 echo "📋 Copying ads.txt and sitemap.xml..."
 cp web/ads.txt build/web/ads.txt
 cp web/sitemap.xml build/web/sitemap.xml
