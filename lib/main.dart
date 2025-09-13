@@ -7,6 +7,8 @@ import 'package:toledotour/naturaleza.dart';
 import 'package:toledotour/nocturno.dart';
 import 'package:toledotour/turismo_cultural.dart';
 import 'package:toledotour/app_info_page.dart';
+import 'package:toledotour/free_tour.dart';
+import 'package:toledotour/toledo_guide_page.dart';
 // import 'package:toledotour/welcome_page.dart'; // REMOVIDO: archivo vacío no utilizado
 import 'package:flutter/foundation.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
@@ -110,9 +112,125 @@ class TourismOptionsPage extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  // Intro text
+                  // Bienvenido a Toledo - Intro Principal
+                  Card(
+                    elevation: 4,
+                    margin: const EdgeInsets.only(bottom: 16),
+                    child: Padding(
+                      padding: const EdgeInsets.all(20.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            tr(context, 'welcome_title'),
+                            style: Theme.of(context).textTheme.headlineMedium
+                                ?.copyWith(
+                                  fontWeight: FontWeight.bold,
+                                  color: const Color(0xFF2E5C8A),
+                                ),
+                          ),
+                          const SizedBox(height: 12),
+                          Text(
+                            tr(context, 'welcome_intro_text'),
+                            style: Theme.of(
+                              context,
+                            ).textTheme.bodyLarge?.copyWith(height: 1.6),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+
+                  // Historia Milenaria de la Ciudad Imperial
+                  Card(
+                    elevation: 4,
+                    margin: const EdgeInsets.only(bottom: 16),
+                    child: Padding(
+                      padding: const EdgeInsets.all(20.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(
+                            children: [
+                              const Icon(
+                                Icons.history_edu,
+                                color: Color(0xFF2E5C8A),
+                                size: 28,
+                              ),
+                              const SizedBox(width: 8),
+                              Expanded(
+                                child: Text(
+                                  tr(context, 'history_title'),
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .headlineSmall
+                                      ?.copyWith(
+                                        fontWeight: FontWeight.bold,
+                                        color: const Color(0xFF2E5C8A),
+                                      ),
+                                ),
+                              ),
+                            ],
+                          ),
+                          const SizedBox(height: 12),
+                          Text(
+                            tr(context, 'history_text'),
+                            style: Theme.of(
+                              context,
+                            ).textTheme.bodyLarge?.copyWith(height: 1.6),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+
+                  // Capital de las Tres Culturas
+                  Card(
+                    elevation: 4,
+                    margin: const EdgeInsets.only(bottom: 16),
+                    child: Padding(
+                      padding: const EdgeInsets.all(20.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(
+                            children: [
+                              const Icon(
+                                Icons.account_balance,
+                                color: Color(0xFF2E5C8A),
+                                size: 28,
+                              ),
+                              const SizedBox(width: 8),
+                              Expanded(
+                                child: Text(
+                                  tr(context, 'heritage_title'),
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .headlineSmall
+                                      ?.copyWith(
+                                        fontWeight: FontWeight.bold,
+                                        color: const Color(0xFF2E5C8A),
+                                      ),
+                                ),
+                              ),
+                            ],
+                          ),
+                          const SizedBox(height: 12),
+                          Text(
+                            tr(context, 'heritage_text'),
+                            style: Theme.of(
+                              context,
+                            ).textTheme.bodyLarge?.copyWith(height: 1.6),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+
+                  // Explora Toledo - Call to Action
                   Card(
                     elevation: 2,
+                    margin: const EdgeInsets.only(bottom: 20),
                     child: Padding(
                       padding: const EdgeInsets.all(16.0),
                       child: Column(
@@ -120,7 +238,8 @@ class TourismOptionsPage extends StatelessWidget {
                         children: [
                           Text(
                             tr(context, 'explore_toledo'),
-                            style: Theme.of(context).textTheme.bodyLarge,
+                            style: Theme.of(context).textTheme.bodyLarge
+                                ?.copyWith(fontWeight: FontWeight.w600),
                           ),
                           const SizedBox(height: 8),
                           Text(
@@ -131,7 +250,6 @@ class TourismOptionsPage extends StatelessWidget {
                       ),
                     ),
                   ),
-                  const SizedBox(height: 20),
                 ],
               ),
             ),
@@ -180,12 +298,18 @@ class TourismOptionsCardView extends StatelessWidget {
         'icon': Icons.nightlife,
         'route': (BuildContext context) => NocturnoPage(),
       },
-      /*       {
+      {
+        'titleKey': 'toledo_guides',
+        'descriptionKey': 'toledo_guides_desc',
+        'icon': Icons.book,
+        'route': (BuildContext context) => ToledoGuidePage(),
+      },
+      {
         'titleKey': 'free_tour',
         'descriptionKey': 'free_tour_desc',
         'icon': Icons.directions_walk,
         'route': (BuildContext context) => FreeTourPage(),
-      }, */
+      },
     ];
 
     return Padding(
