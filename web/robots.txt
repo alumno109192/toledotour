@@ -1,0 +1,33 @@
+# robots.txt para Toledo Tour
+# Permite indexación completa del sitio
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://toledotour.es/sitemap.xml
+Sitemap: https://toledotour.es/sitemap-index.xml
+
+# Directrices específicas para crawlers principales
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Bloquear archivos innecesarios para SEO
+Disallow: /flutter_service_worker.js
+Disallow: /main.dart.js
+Disallow: /flutter.js
+Disallow: /flutter_bootstrap.js
+Disallow: /version.json
+Disallow: /assets/FontManifest.json
+Disallow: /assets/AssetManifest.json
+
+# Permitir páginas importantes
+Allow: /privacy-policy.html
+Allow: /terms-of-service.html
+Allow: /contact.html
+Allow: /guia-completa-toledo.html
