@@ -3,14 +3,15 @@ import 'package:flutter/foundation.dart';
 /// Guardia de contenido editorial para cumplir con políticas de Google AdSense
 /// Esta clase asegura que los anuncios SOLO aparezcan en páginas con contenido editorial rico y valioso
 class EditorialContentGuard {
-  // Requisitos MÁS ESTRICTOS para web para cumplir con políticas de Google AdSense
-  static const int _minContentLengthWeb = 800; // Mínimo 800 caracteres para web
+  // Requisitos MÁS ESTRICTOS para cumplir con políticas de Google AdSense
+  static const int _minContentLengthWeb =
+      1200; // Mínimo 1200 caracteres para web (AUMENTADO)
   static const int _minContentLengthMobile =
-      400; // Mínimo 400 caracteres para móvil
-  static const int _minParagraphs = 4; // Mínimo 4 párrafos
-  static const int _minWords = 100; // Mínimo 100 palabras
+      600; // Mínimo 600 caracteres para móvil (AUMENTADO)
+  static const int _minParagraphs = 6; // Mínimo 6 párrafos (AUMENTADO)
+  static const int _minWords = 150; // Mínimo 150 palabras (AUMENTADO)
 
-  // Páginas que requieren contenido extra para anuncios
+  // Páginas que NUNCA deben mostrar anuncios (LISTA EXPANDIDA)
   static const Set<String> _highContentPages = {
     'cultural_tourism',
     'gastronomia',
@@ -18,6 +19,26 @@ class EditorialContentGuard {
     'destination_detail',
     'toledo_history',
     'restaurant_detail',
+    'free_tour',
+    'nocturno',
+  };
+
+  // Páginas completamente prohibidas para anuncios (LISTA EXPANDIDA)
+  static const Set<String> _forbiddenPages = {
+    'language_selector',
+    'app_info',
+    'contact_form',
+    'empty_page',
+    'loading_page',
+    'error_page',
+    'welcome_page',
+    'privacy_policy',
+    'terms_of_service',
+    'main_page',
+    'home_page',
+    'root_page',
+    'language_selection',
+    'initial_page',
   };
 
   /// Verifica si una página tiene suficiente contenido editorial para mostrar anuncios
@@ -70,29 +91,31 @@ class EditorialContentGuard {
 
   /// Verifica si una página específica puede mostrar anuncios basado en su tipo
   static bool canShowAdsOnPage(String pageName, String content) {
-    // Lista de páginas que NUNCA deben mostrar anuncios
-    const forbiddenPages = [
-      'language_selector',
-      'app_info',
-      'contact_form',
-      'empty_page',
-      'loading_page',
-      'error_page',
-      'welcome_page',
-      'privacy_policy',
-      'terms_of_service',
-    ];
-
-    if (forbiddenPages.contains(pageName.toLowerCase())) {
+    // ❌ ANUNCIOS COMPLETAMENTE DESHABILITADOS EN WEB
+    if (kIsWeb) {
       if (kDebugMode) {
-        print('🚫 Página "$pageName" en lista de páginas sin anuncios');
+        print(
+          '🚫 Anuncios deshabilitados en web para cumplimiento de políticas de Google AdSense',
+        );
+        print('📄 Página: $pageName');
+        print('📝 Contenido: ${content.length} caracteres');
+      }
+      return false; // NUNCA mostrar anuncios en web
+    }
+
+    // Lista de páginas que NUNCA deben mostrar anuncios (EXPANDIDA)
+    if (_forbiddenPages.contains(pageName.toLowerCase())) {
+      if (kDebugMode) {
+        print(
+          '🚫 Página "$pageName" en lista de páginas prohibidas para anuncios',
+        );
       }
       return false;
     }
 
     // Verificación extra para páginas de alto contenido
     if (_highContentPages.contains(pageName.toLowerCase())) {
-      final extraMinLength = kIsWeb ? 1200 : 600; // Más contenido requerido
+      final extraMinLength = kIsWeb ? 1500 : 800; // Más contenido requerido
       if (content.trim().length < extraMinLength) {
         if (kDebugMode) {
           print(
@@ -108,19 +131,12 @@ class EditorialContentGuard {
 
   /// Obtiene el motivo por el cual no se pueden mostrar anuncios
   static String getBlockingReason(String pageName, String content) {
-    const forbiddenPages = [
-      'language_selector',
-      'app_info',
-      'contact_form',
-      'empty_page',
-      'loading_page',
-      'error_page',
-      'welcome_page',
-      'privacy_policy',
-      'terms_of_service',
-    ];
+    // ❌ PRIMERA VERIFICACIÓN: Anuncios deshabilitados en web
+    if (kIsWeb) {
+      return 'Anuncios completamente deshabilitados en web para cumplimiento de políticas de Google AdSense';
+    }
 
-    if (forbiddenPages.contains(pageName.toLowerCase())) {
+    if (_forbiddenPages.contains(pageName.toLowerCase())) {
       return 'Página "$pageName" en lista de exclusión de anuncios';
     }
 

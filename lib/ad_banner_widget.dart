@@ -57,7 +57,20 @@ class _AdBannerWidgetState extends State<AdBannerWidget> {
 
   @override
   Widget build(BuildContext context) {
-    // VERIFICACIÓN DE CONTENIDO EDITORIAL
+    // ❌ ANUNCIOS COMPLETAMENTE DESHABILITADOS EN WEB
+    // MOTIVO: Google AdSense reportó "Anuncios servidos por Google en pantallas sin contenido del editor"
+    if (kIsWeb) {
+      if (kDebugMode) {
+        print(
+          '🚫 AdBanner bloqueado: Anuncios completamente deshabilitados en web para cumplimiento de políticas',
+        );
+        print('📄 Página: ${widget.pageName}');
+        print('📝 Contenido: ${widget.pageContent.length} caracteres');
+      }
+      return const SizedBox.shrink(); // No mostrar NADA en web
+    }
+
+    // VERIFICACIÓN DE CONTENIDO EDITORIAL SOLO PARA MÓVIL
     final canShowAds = EditorialContentGuard.canShowAdsOnPage(
       widget.pageName,
       widget.pageContent,

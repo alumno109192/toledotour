@@ -9,10 +9,9 @@ import 'package:toledotour/turismo_cultural.dart';
 import 'package:toledotour/app_info_page.dart';
 import 'package:toledotour/free_tour.dart';
 import 'package:toledotour/toledo_guide_page.dart';
-// import 'package:toledotour/welcome_page.dart'; // REMOVIDO: archivo vacío no utilizado
 import 'package:flutter/foundation.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
-// import 'ad_banner_widget.dart'; // REMOVIDO: No se utilizan anuncios en la app web
+// NO importar widgets de anuncios para evitar uso accidental en web
 
 final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 

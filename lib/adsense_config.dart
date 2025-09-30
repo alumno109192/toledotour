@@ -13,49 +13,26 @@ class AdSenseConfig {
   static const String mobileSlotId = '9876543210'; // Banner móvil
   static const String leaderboardSlotId = '5432109876'; // Leaderboard
 
-  // Estado de habilitación de anuncios
-  static bool _adsEnabled = true;
+  // Estado de habilitación de anuncios - COMPLETAMENTE DESHABILITADO EN WEB
+  static bool _adsEnabled =
+      false; // ❌ ANUNCIOS DESHABILITADOS POR POLÍTICAS DE GOOGLE
 
-  /// Inicializar AdSense para web - SOLO ANUNCIOS MANUALES SEGUROS
+  /// Inicializar AdSense para web - COMPLETAMENTE DESHABILITADO
   static void initializeAdSense() {
-    if (!kIsWeb || !_adsEnabled) {
-      if (kDebugMode) {
-        print(
-          '🚫 AdSense no inicializado: ${!kIsWeb ? "No es web" : "Anuncios deshabilitados"}',
-        );
-      }
-      return;
+    // ❌ ADSENSE COMPLETAMENTE DESHABILITADO EN WEB
+    // MOTIVO: Google reportó "Anuncios servidos por Google en pantallas sin contenido del editor"
+    // SOLUCIÓN: Eliminar todos los anuncios de web hasta cumplir políticas de contenido editorial
+
+    if (kDebugMode) {
+      print('🚫 AdSense COMPLETAMENTE DESHABILITADO en web');
+      print('📋 Motivo: Cumplimiento de políticas de Google AdSense');
+      print('🎯 Estado: Sin anuncios en pantallas sin contenido editorial');
     }
 
-    try {
-      // Verificar si el script ya está cargado
-      if (html.document.querySelector('script[src*="adsbygoogle.js"]') ==
-          null) {
-        final script = html.ScriptElement()
-          ..async = true
-          ..src =
-              'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=$publisherId'
-          ..setAttribute('crossorigin', 'anonymous');
-        html.document.head?.append(script);
-
-        if (kDebugMode) {
-          print('✅ Script de AdSense cargado correctamente');
-        }
-      }
-
-      // NO USAR AUTO ADS - Solo anuncios manuales
-      if (kDebugMode) {
-        print('🎯 AdSense inicializado SOLO para anuncios manuales');
-        print('❌ Auto Ads DESHABILITADOS para cumplir políticas');
-      }
-    } catch (e) {
-      if (kDebugMode) {
-        print('❌ Error inicializando AdSense: $e');
-      }
-    }
+    return; // No inicializar AdSense bajo ninguna circunstancia
   }
 
-  /// Cargar un anuncio manual específico con validación de contenido
+  /// Cargar un anuncio manual específico - COMPLETAMENTE DESHABILITADO
   static Future<void> loadManualAd({
     required String containerId,
     required String slotId,
@@ -64,51 +41,18 @@ class AdSenseConfig {
     String adFormat = 'auto',
     bool isResponsive = true,
   }) async {
-    if (!kIsWeb || !_adsEnabled) {
-      if (kDebugMode) {
-        print(
-          '🚫 Anuncio no cargado: ${!kIsWeb ? "No es web" : "Anuncios deshabilitados"}',
-        );
-      }
-      return;
+    // ❌ FUNCIÓN COMPLETAMENTE DESHABILITADA
+    // MOTIVO: Google AdSense reportó violación de políticas
+    // NO SE CARGAN ANUNCIOS EN WEB BAJO NINGUNA CIRCUNSTANCIA
+
+    if (kDebugMode) {
+      print('🚫 ANUNCIO BLOQUEADO: AdSense deshabilitado en web');
+      print('📄 Página: $pageName');
+      print('� Contenido: ${pageContent.length} caracteres');
+      print('⚠️  Motivo: Cumplimiento de políticas de Google AdSense');
     }
 
-    // IMPORTADO: Usar EditorialContentGuard para validar contenido
-    // Esta validación es CRÍTICA para cumplir políticas de Google
-    try {
-      final container = html.document.getElementById(containerId);
-      if (container == null) {
-        if (kDebugMode) {
-          print('❌ Contenedor de anuncio no encontrado: $containerId');
-        }
-        return;
-      }
-
-      // Crear el elemento de anuncio manual
-      (container as html.HtmlElement).innerHtml =
-          '''
-        <ins class="adsbygoogle"
-             style="display:block"
-             data-ad-client="$publisherId"
-             data-ad-slot="$slotId"
-             data-ad-format="$adFormat"
-             ${isResponsive ? 'data-full-width-responsive="true"' : ''}></ins>
-      ''';
-
-      // Activar el anuncio
-      js.context.callMethod('eval', [
-        '(adsbygoogle = window.adsbygoogle || []).push({});',
-      ]);
-
-      if (kDebugMode) {
-        print('✅ Anuncio manual cargado: $slotId en página $pageName');
-        print('📄 Contenido validado: ${pageContent.length} caracteres');
-      }
-    } catch (e) {
-      if (kDebugMode) {
-        print('❌ Error cargando anuncio: $e');
-      }
-    }
+    return; // No cargar anuncios
   }
 
   /// Verificar si AdSense está disponible y habilitado

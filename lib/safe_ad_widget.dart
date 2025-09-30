@@ -192,12 +192,26 @@ class _SafeAdWidgetState extends State<SafeAdWidget> {
 
   @override
   Widget build(BuildContext context) {
-    // Si no pasa las validaciones, no mostrar nada
+    // ❌ ANUNCIOS COMPLETAMENTE DESHABILITADOS EN WEB
+    // MOTIVO: Google AdSense reportó "Anuncios servidos por Google en pantallas sin contenido del editor"
+    if (kIsWeb) {
+      if (kDebugMode) {
+        print(
+          '🚫 SafeAdWidget bloqueado: Anuncios completamente deshabilitados en web',
+        );
+        print('📄 Página: ${widget.pageName}');
+        print('📝 Contenido: ${widget.pageContent.length} caracteres');
+        print('⚠️  Cumplimiento de políticas de Google AdSense');
+      }
+      return const SizedBox.shrink(); // No mostrar NADA en web
+    }
+
+    // Si no pasa las validaciones EN MÓVIL, no mostrar nada
     if (_validationResult == null || !_validationResult!.isValidForAds) {
       return _buildDebugInfo();
     }
 
-    // Si no se ha cargado el anuncio exitosamente, no mostrar nada
+    // Si no se ha cargado el anuncio exitosamente EN MÓVIL, no mostrar nada
     if (!_adLoadSuccess) {
       return _buildDebugInfo();
     }
