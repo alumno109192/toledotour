@@ -13,9 +13,8 @@ class AdSenseConfig {
   static const String mobileSlotId = '9876543210'; // Banner móvil
   static const String leaderboardSlotId = '5432109876'; // Leaderboard
 
-  // Estado de habilitación de anuncios - COMPLETAMENTE DESHABILITADO EN WEB
-  static bool _adsEnabled =
-      false; // ❌ ANUNCIOS DESHABILITADOS POR POLÍTICAS DE GOOGLE
+  // Estado de habilitación de anuncios - MODO SEGURO PARA EVALUACIÓN GOOGLE
+  static bool _adsEnabled = true; // ✅ HABILITADO PERO CON VALIDACIÓN ESTRICTA
 
   /// Inicializar AdSense para web - COMPLETAMENTE DESHABILITADO
   static void initializeAdSense() {
