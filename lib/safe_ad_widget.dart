@@ -5,6 +5,7 @@ import 'editorial_content_guard.dart';
 import 'content_quality_validator.dart';
 import 'adsense_config.dart';
 import 'ad_compliance_monitor.dart';
+import 'adsense_policy_validator.dart';
 
 /// Widget de anuncio seguro que cumple 100% con políticas de Google AdSense
 class SafeAdWidget extends StatefulWidget {
@@ -40,40 +41,60 @@ class _SafeAdWidgetState extends State<SafeAdWidget> {
   }
 
   Future<void> _validateAndLoadAd() async {
-    // 1. Validación exhaustiva de contenido
+    // 🔐 VALIDACIÓN ESTRICTA DE POLÍTICAS DE ADSENSE (2 nov 2025)
+    // Esta validación es CRÍTICA para prevenir violaciones de políticas
+
+    // 1. VALIDACIÓN PRINCIPAL: AdSense Policy Validator
+    final policyValidation = AdSensePolicyValidator.validatePage(
+      pageName: widget.pageName,
+      content: widget.pageContent,
+      isWeb: kIsWeb,
+    );
+
+    // 2. Validación exhaustiva de contenido (legacy)
     _validationResult = ContentQualityValidator.validateContent(
       content: widget.pageContent,
       pageName: widget.pageName,
       pageType: widget.pageType,
     );
 
-    // 2. Verificación con EditorialContentGuard
+    // 3. Verificación con EditorialContentGuard (legacy)
     final guardApproval = EditorialContentGuard.canShowAdsOnPage(
       widget.pageName,
       widget.pageContent,
     );
 
-    // 3. Registrar métricas de la página
+    // 4. Registrar métricas de la página
     final metrics = AdMetrics(
       pageName: widget.pageName,
       contentLength: widget.pageContent.length,
-      qualityScore: _validationResult!.score,
+      qualityScore: policyValidation.score,
     );
     AdComplianceMonitor.recordPageMetrics(widget.pageName, metrics);
 
     if (kDebugMode) {
       print('🔍 Validación de anuncio para ${widget.pageName}:');
+      print('   📊 Puntuación AdSense: ${policyValidation.score}/100');
       print('   📊 Puntuación de calidad: ${_validationResult!.score}/100');
       print(
         '   🛡️  Guardia de contenido: ${guardApproval ? "APROBADO" : "RECHAZADO"}',
       );
       print(
-        '   🎯 Apto para anuncios: ${_validationResult!.isValidForAds && guardApproval}',
+        '   🔐 Política AdSense: ${policyValidation.canShowAds ? "APROBADO" : "RECHAZADO"}',
+      );
+      print(
+        '   🎯 Apto para anuncios: ${policyValidation.canShowAds && _validationResult!.isValidForAds && guardApproval}',
       );
     }
 
-    // 4. Solo cargar anuncio si pasa TODAS las validaciones
-    if (_validationResult!.isValidForAds && guardApproval) {
+    // 5. DECISIÓN FINAL: Solo cargar si TODAS las validaciones pasan
+    // PRIORIDAD: AdSense Policy Validator es el más importante
+    final allValidationsPassed =
+        policyValidation.canShowAds &&
+        _validationResult!.isValidForAds &&
+        guardApproval;
+
+    if (allValidationsPassed) {
       await _loadAd();
       AdComplianceMonitor.recordAdShown(
         widget.pageName,
@@ -81,17 +102,26 @@ class _SafeAdWidgetState extends State<SafeAdWidget> {
         'Anuncio mostrado tras validación exitosa de contenido editorial',
       );
     } else {
-      // Registrar bloqueo de anuncio
-      final blockReason = !guardApproval
-          ? EditorialContentGuard.getBlockingReason(
-              widget.pageName,
-              widget.pageContent,
-            )
-          : 'Puntuación de calidad insuficiente: ${_validationResult!.score}/100';
+      // Registrar bloqueo de anuncio con motivo detallado
+      String blockReason;
+      if (!policyValidation.canShowAds) {
+        blockReason =
+            'Política AdSense: ${policyValidation.reason} (Violaciones: ${policyValidation.violations.join(", ")})';
+      } else if (!guardApproval) {
+        blockReason = EditorialContentGuard.getBlockingReason(
+          widget.pageName,
+          widget.pageContent,
+        );
+      } else {
+        blockReason =
+            'Puntuación de calidad insuficiente: ${_validationResult!.score}/100';
+      }
 
       AdComplianceMonitor.recordAdBlocked(widget.pageName, blockReason, {
+        'policyScore': policyValidation.score,
         'qualityScore': _validationResult!.score,
         'contentLength': widget.pageContent.length,
+        'violations': policyValidation.violations,
         'errors': _validationResult!.errors,
         'warnings': _validationResult!.warnings,
       });
@@ -194,14 +224,22 @@ class _SafeAdWidgetState extends State<SafeAdWidget> {
   Widget build(BuildContext context) {
     // ❌ ANUNCIOS COMPLETAMENTE DESHABILITADOS EN WEB
     // MOTIVO: Google AdSense reportó "Anuncios servidos por Google en pantallas sin contenido del editor"
+    // FECHA: 2 de noviembre de 2025
+    // POLÍTICA: Solo contenido editorial rico y valioso puede mostrar anuncios
     if (kIsWeb) {
       if (kDebugMode) {
-        print(
-          '🚫 SafeAdWidget bloqueado: Anuncios completamente deshabilitados en web',
-        );
+        print('');
+        print('=' * 60);
+        print('🚫 BLOQUEO DE ANUNCIOS - CUMPLIMIENTO ADSENSE');
+        print('=' * 60);
         print('📄 Página: ${widget.pageName}');
         print('📝 Contenido: ${widget.pageContent.length} caracteres');
-        print('⚠️  Cumplimiento de políticas de Google AdSense');
+        print('🌐 Plataforma: WEB');
+        print('⚠️  Política: Anuncios completamente deshabilitados en web');
+        print('📋 Motivo: Prevención de violaciones de políticas de AdSense');
+        print('🔒 Estado: BLOQUEADO');
+        print('=' * 60);
+        print('');
       }
       return const SizedBox.shrink(); // No mostrar NADA en web
     }

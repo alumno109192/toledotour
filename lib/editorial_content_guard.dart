@@ -26,8 +26,11 @@ class EditorialContentGuard {
   // Páginas completamente prohibidas para anuncios (LISTA EXPANDIDA)
   static const Set<String> _forbiddenPages = {
     'language_selector',
+    'language_selector_page',
     'app_info',
+    'app_info_page',
     'contact_form',
+    'contact_form_page',
     'empty_page',
     'loading_page',
     'error_page',
@@ -39,6 +42,8 @@ class EditorialContentGuard {
     'root_page',
     'language_selection',
     'initial_page',
+    'tourism_options_page', // Página principal sin suficiente contenido editorial
+    'tourismoptionspage',
   };
 
   /// Verifica si una página tiene suficiente contenido editorial para mostrar anuncios
