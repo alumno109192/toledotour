@@ -25,7 +25,7 @@
     "description": "Descripción extendida de naturaleza"
   },
   
-  "nightlife_desc": "Descubre la vibrante vida nocturna de Toledo, donde la historia milenaria se encuentra con el ocio contemporáneo en un ambiente único. Comienza tu noche en las terrazas panorámicas con vistas espectaculares a la ciudad iluminada y el río Tajo bajo las estrellas, disfrutando de cócteles premium elaborados con licores artesanales toledanos. Explora la Zona de las Cuevas, bares ambientados en bóvedas medievales del siglo XIII donde podrás tomar cervezas artesanas locales mientras escuchas música en vivo desde flamenco auténtico hasta jazz contemporáneo. Vive la magia de las rutas nocturnas guiadas con leyendas y misterios toledanos, recorriendo callejones iluminados con antorchas donde escucharás historias de templarios, fantasmas y alquimistas que habitaron la ciudad. Disfruta de los espectáculos de luz y sonido en la Catedral y el Alcázar, proyecciones monumentales que narran la historia de Toledo con tecnología láser de última generación. Visita los pubs temáticos en casas históricas del barrio judío, con decoración original de los siglos XVI y XVII, que ofrecen tapas gourmet acompañadas de vinos premium de bodegas toledanas. Baila en las discotecas modernas con DJs internacionales o disfruta de conciertos en vivo en espacios únicos como claustros renacentistas convertidos en salas de música. Participa en las catas nocturnas de vino maridadas con quesos y embutidos ibéricos en bodegas con solera centenaria. Asiste a representaciones teatrales en el Teatro de Rojas, edificio histórico del siglo XIX con programación cultural durante todo el año. Disfruta de las fiestas tradicionales como el Corpus Christi o las noches toledanas de verano con verbenas populares en las plazas históricas.",
+  "nightlife_desc": "Descubre la vibrante vida cultural nocturna de Toledo, donde la historia milenaria se encuentra con el entretenimiento contemporáneo en un ambiente único y familiar. Comienza tu noche en las terrazas panorámicas con vistas espectaculares a la ciudad iluminada y el río Tajo bajo las estrellas. Explora la Zona de las Cuevas, locales ambientados en bóvedas medievales del siglo XIII donde podrás disfrutar de música en vivo desde flamenco auténtico hasta jazz contemporáneo. Vive la magia de las rutas nocturnas guiadas con leyendas y misterios toledanos, recorriendo callejones iluminados con antorchas donde escucharás historias de templarios, fantasmas y alquimistas que habitaron la ciudad. Disfruta de los espectáculos de luz y sonido en la Catedral y el Alcázar, proyecciones monumentales que narran la historia de Toledo con tecnología láser de última generación. Visita los espacios culturales en casas históricas del barrio judío, con decoración original de los siglos XVI y XVII, que ofrecen tapas gourmet y gastronomía local. Participa en eventos culturales en espacios únicos como claustros renacentistas convertidos en salas de espectáculos. Asiste a las catas gastronómicas maridadas con quesos y embutidos ibéricos en bodegas con solera centenaria. Disfruta de representaciones teatrales en el Teatro de Rojas, edificio histórico del siglo XIX con programación cultural durante todo el año. Vive las fiestas tradicionales como el Corpus Christi o las noches toledanas de verano con eventos populares en las plazas históricas.",
   "@nightlife_desc": {
     "description": "Descripción extendida de vida nocturna"
   },
@@ -41,9 +41,37 @@
   "nightlife": "Vida Nocturna",
   "free_tour": "Tour Gratuito",
   
+  "nightlife_intro_title": "Cultura y Entretenimiento Nocturno en Toledo",
+  "nightlife_intro_text": "Toledo ofrece una experiencia nocturna única que combina historia, cultura y entretenimiento en un ambiente familiar. Descubre espectáculos de luz y sonido, tours nocturnos guiados, música en vivo en espacios históricos y eventos culturales que hacen de la noche toledana algo inolvidable.",
+  "night_activities_title": "Actividades Nocturnas Recomendadas",
+  "night_activities_text": "Desde rutas de leyendas por callejones medievales hasta espectáculos teatrales y musicales en edificios históricos, Toledo ofrece múltiples opciones para disfrutar de la noche de forma cultural y entretenida.",
+  
+  "nature_intro_title": "Naturaleza y Paisajes en Toledo",
+  "nature_intro_text": "Los alrededores de Toledo ofrecen paisajes naturales impresionantes, rutas de senderismo para todos los niveles y espacios naturales protegidos donde disfrutar de la flora y fauna autóctonas en un entorno único.",
+  "natural_routes_title": "Rutas Naturales Recomendadas",
+  "natural_routes_text": "Descubre los mejores senderos y rutas naturales que rodean Toledo, desde las Barrancas de Burujón hasta los Montes de Toledo, pasando por las riberas del río Tajo.",
+  
+  "free_tour_intro_title": "Tours Gratuitos por Toledo",
+  "free_tour_intro_text": "Descubre Toledo con guías profesionales en tours gratuitos diarios. Una experiencia perfecta para conocer la historia, cultura y secretos de la Ciudad Imperial de la mano de expertos locales.",
+  "free_tour_benefits_title": "Beneficios de los Free Tours",
+  "free_tour_benefits_text": "Nuestros tours gratuitos te permiten conocer Toledo a tu ritmo, con guías apasionados que comparten su conocimiento sin coste fijo. Tú decides cuánto valorar la experiencia al final del recorrido.",
+  
+  "reserva": "Reservar",
+  "como_llegar": "Cómo llegar",
+  "error_opening_maps": "Error al abrir el mapa",
+  
   "select_language": "Selecciona tu idioma",
   "spanish": "Español",
   "english": "English",
+  
+  "welcome_title": "Bienvenido a Toledo",
+  "welcome_intro_text": "Descubre la Ciudad Imperial, declarada Patrimonio de la Humanidad por la UNESCO. Toledo es un tesoro histórico donde convivieron tres culturas y cada rincón cuenta una historia milenaria.",
+  "history_title": "Historia Milenaria",
+  "history_text": "Toledo, fundada en época romana, fue capital del Reino Visigodo y posteriormente importante enclave musulmán y cristiano. Su rica historia la convierte en una de las ciudades más fascinantes de Europa.",
+  "heritage_title": "Patrimonio Cultural",
+  "heritage_text": "La Ciudad de las Tres Culturas alberga sinagogas, mezquitas, iglesias y catedrales que testimonian la convivencia histórica de cristianos, musulmanes y judíos. Un museo vivo de la historia española.",
+  
+  "title": "Toledo Tour",
   
   "welcome": "Bienvenido a Toledo",
   "start_tour": "Comenzar Tour",
