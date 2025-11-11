@@ -155,9 +155,9 @@ class AdSensePolicyValidator {
     List<String> violations,
   ) {
     print('');
-    print('╔' + '═' * 58 + '╗');
-    print('║  📋 VALIDACIÓN DE POLÍTICAS DE ADSENSE' + ' ' * 18 + '║');
-    print('╠' + '═' * 58 + '╣');
+    print('╔${'═' * 58}╗');
+    print('║  📋 VALIDACIÓN DE POLÍTICAS DE ADSENSE${' ' * 18}║');
+    print('╠${'═' * 58}╣');
     print('║  📄 Página: ${pageName.padRight(44)}║');
     print(
       '║  📊 Puntuación: $score/100${' ' * (40 - score.toString().length)}║',
@@ -167,8 +167,8 @@ class AdSensePolicyValidator {
     );
 
     if (violations.isNotEmpty) {
-      print('╠' + '═' * 58 + '╣');
-      print('║  ⚠️  VIOLACIONES:' + ' ' * 40 + '║');
+      print('╠${'═' * 58}╣');
+      print('║  ⚠️  VIOLACIONES:${' ' * 40}║');
       for (final violation in violations) {
         final truncated = violation.length > 54
             ? '${violation.substring(0, 51)}...'
@@ -177,7 +177,7 @@ class AdSensePolicyValidator {
       }
     }
 
-    print('╚' + '═' * 58 + '╝');
+    print('╚${'═' * 58}╝');
     print('');
   }
 

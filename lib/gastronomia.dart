@@ -434,23 +434,61 @@ class _GastronomiaPageState extends State<GastronomiaPage> {
             ],
           ),
         ),
-        body: TabBarView(
+        body: Column(
           children: [
-            Column(
-              children: [
-                // Mapa de Google con restaurantes
-                _buildGoogleMap(restaurantes),
-                // Lista de restaurantes
-                Expanded(child: _buildList(restaurantes, context)),
-              ],
+            // Contenido editorial rico para cumplir políticas de AdSense
+            Container(
+              width: double.infinity,
+              padding: const EdgeInsets.all(16),
+              color: Theme.of(
+                context,
+              ).colorScheme.surfaceVariant.withOpacity(0.3),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Gastronomía de Toledo',
+                    style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                      fontWeight: FontWeight.bold,
+                      color: Theme.of(context).colorScheme.primary,
+                    ),
+                  ),
+                  const SizedBox(height: 8),
+                  const Text(
+                    'Toledo ofrece una rica tradición gastronómica que combina sabores de las tres culturas que convivieron en la ciudad. '
+                    'Desde el famoso mazapán hasta el carcamusas, la cocina toledana es un reflejo de su historia multicultural.',
+                    style: TextStyle(fontSize: 14, height: 1.4),
+                  ),
+                  const SizedBox(height: 8),
+                  const Text(
+                    'Descubre los mejores restaurantes y bares donde disfrutar de la auténtica gastronomía manchega y toledana.',
+                    style: TextStyle(fontSize: 14, height: 1.4),
+                  ),
+                ],
+              ),
             ),
-            Column(
-              children: [
-                // Mapa de Google con bares
-                _buildGoogleMap(bares),
-                // Lista de bares
-                Expanded(child: _buildList(bares, context)),
-              ],
+            // TabBarView existente
+            Expanded(
+              child: TabBarView(
+                children: [
+                  Column(
+                    children: [
+                      // Mapa de Google con restaurantes
+                      _buildGoogleMap(restaurantes),
+                      // Lista de restaurantes
+                      Expanded(child: _buildList(restaurantes, context)),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      // Mapa de Google con bares
+                      _buildGoogleMap(bares),
+                      // Lista de bares
+                      Expanded(child: _buildList(bares, context)),
+                    ],
+                  ),
+                ],
+              ),
             ),
           ],
         ),
