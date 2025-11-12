@@ -32,8 +32,8 @@ void main() async {
 }
 
 class LocaleProvider extends ChangeNotifier {
-  Locale? _locale;
-  Locale? get locale => _locale;
+  Locale _locale = const Locale('es'); // Español por defecto
+  Locale get locale => _locale;
 
   void setLocale(Locale locale) {
     _locale = locale;
@@ -60,7 +60,7 @@ class MyApp extends StatelessWidget {
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
       ],
-      home: const LanguageSelectorPage(),
+      home: const TourismOptionsPage(),
     );
   }
 }
@@ -91,6 +91,54 @@ class TourismOptionsPage extends StatelessWidget {
               ),
             ),
             actions: [
+              // Language Switcher con banderas
+              PopupMenuButton<Locale>(
+                icon: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text(
+                      Provider.of<LocaleProvider>(
+                                context,
+                              ).locale.languageCode ==
+                              'en'
+                          ? '🇺🇸'
+                          : '🇪🇸',
+                      style: const TextStyle(fontSize: 24),
+                    ),
+                    const SizedBox(width: 4),
+                    const Icon(Icons.arrow_drop_down, size: 20),
+                  ],
+                ),
+                tooltip: 'Cambiar idioma / Change language',
+                onSelected: (Locale locale) {
+                  Provider.of<LocaleProvider>(
+                    context,
+                    listen: false,
+                  ).setLocale(locale);
+                },
+                itemBuilder: (BuildContext context) => [
+                  const PopupMenuItem<Locale>(
+                    value: Locale('es'),
+                    child: Row(
+                      children: [
+                        Text('🇪🇸', style: TextStyle(fontSize: 24)),
+                        SizedBox(width: 12),
+                        Text('Español', style: TextStyle(fontSize: 16)),
+                      ],
+                    ),
+                  ),
+                  const PopupMenuItem<Locale>(
+                    value: Locale('en'),
+                    child: Row(
+                      children: [
+                        Text('🇺🇸', style: TextStyle(fontSize: 24)),
+                        SizedBox(width: 12),
+                        Text('English', style: TextStyle(fontSize: 16)),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
               IconButton(
                 icon: const Icon(Icons.info_outline),
                 onPressed: () {
@@ -357,51 +405,6 @@ class TourismOptionsCardView extends StatelessWidget {
             ),
           );
         },
-      ),
-    );
-  }
-}
-
-class LanguageSelectorPage extends StatelessWidget {
-  const LanguageSelectorPage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text('Selecciona idioma / Select language')),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            ElevatedButton(
-              onPressed: () {
-                Provider.of<LocaleProvider>(
-                  context,
-                  listen: false,
-                ).setLocale(const Locale('es'));
-                Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(builder: (_) => const TourismOptionsPage()),
-                );
-              },
-              child: const Text('Español'),
-            ),
-            const SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () {
-                Provider.of<LocaleProvider>(
-                  context,
-                  listen: false,
-                ).setLocale(const Locale('en'));
-                Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(builder: (_) => const TourismOptionsPage()),
-                );
-              },
-              child: const Text('English'),
-            ),
-          ],
-        ),
       ),
     );
   }
