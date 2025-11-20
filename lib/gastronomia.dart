@@ -446,7 +446,9 @@ class _GastronomiaPageState extends State<GastronomiaPage> {
                 ).colorScheme.surfaceContainerHighest.withOpacity(0.5),
                 border: Border(
                   bottom: BorderSide(
-                    color: Theme.of(context).colorScheme.primary.withOpacity(0.2),
+                    color: Theme.of(
+                      context,
+                    ).colorScheme.primary.withOpacity(0.2),
                     width: 2,
                   ),
                 ),
