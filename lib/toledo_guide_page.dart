@@ -52,7 +52,56 @@ class ToledoGuidePage extends StatelessWidget {
       ),
       body: Column(
         children: [
-          // DISABLED: All ads removed for AdSense editorial content policy compliance
+          // Contenido editorial sobre las guías de Toledo
+          Container(
+            width: double.infinity,
+            padding: const EdgeInsets.all(20),
+            margin: const EdgeInsets.all(16),
+            decoration: BoxDecoration(
+              color: Theme.of(context).colorScheme.surface,
+              borderRadius: BorderRadius.circular(12),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.grey.withValues(alpha: 0.2),
+                  spreadRadius: 2,
+                  blurRadius: 8,
+                  offset: const Offset(0, 3),
+                ),
+              ],
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'Guías Completas de Toledo',
+                  style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                    fontWeight: FontWeight.bold,
+                    color: Theme.of(context).primaryColor,
+                  ),
+                ),
+                const SizedBox(height: 16),
+                const Text(
+                  'Toledo, declarada Patrimonio de la Humanidad por la UNESCO en 1986, '
+                  'es una ciudad única que requiere conocimiento especializado para '
+                  'apreciar toda su riqueza histórica y cultural. Nuestras guías completas '
+                  'han sido elaboradas por historiadores y guías turísticos oficiales, '
+                  'ofreciendo información detallada y contextualizada sobre los aspectos '
+                  'más relevantes de la Ciudad Imperial.',
+                  style: TextStyle(fontSize: 16, height: 1.6),
+                  textAlign: TextAlign.justify,
+                ),
+                const SizedBox(height: 12),
+                const Text(
+                  'Cada guía profundiza en temas específicos, desde itinerarios optimizados '
+                  'hasta análisis históricos de la convivencia de las Tres Culturas, '
+                  'pasando por la evolución de la gastronomía toledana y recomendaciones '
+                  'estacionales para sacar el máximo provecho a tu visita.',
+                  style: TextStyle(fontSize: 16, height: 1.6),
+                  textAlign: TextAlign.justify,
+                ),
+              ],
+            ),
+          ),
 
           // Contenido principal
           Expanded(

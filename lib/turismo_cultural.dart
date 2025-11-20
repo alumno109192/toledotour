@@ -79,48 +79,93 @@ class CulturalTourismPage extends StatelessWidget {
             elevation: 2,
             margin: const EdgeInsets.only(bottom: 24),
             child: Padding(
-              padding: const EdgeInsets.all(16),
+              padding: const EdgeInsets.all(20),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Turismo Cultural en Toledo',
+                    'Turismo Cultural en Toledo: Guía Completa de la Ciudad Imperial',
                     style: Theme.of(context).textTheme.headlineSmall?.copyWith(
                       fontWeight: FontWeight.bold,
                       color: Theme.of(context).colorScheme.primary,
                     ),
                   ),
+                  const SizedBox(height: 20),
+                  Text(
+                    'La Ciudad de las Tres Culturas',
+                    style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black87,
+                    ),
+                  ),
+                  const SizedBox(height: 12),
+                  const Text(
+                    'Toledo es conocida mundialmente como la "Ciudad de las Tres Culturas" debido a la convivencia '
+                    'histórica y pacífica de cristianos, musulmanes y judíos durante siglos. Este legado único '
+                    'se refleja de manera extraordinaria en su impresionante patrimonio arquitectónico, artístico '
+                    'y cultural. Declarada Patrimonio de la Humanidad por la UNESCO en 1986, Toledo representa '
+                    'uno de los conjuntos históricos más importantes y mejor conservados de Europa.',
+                    style: TextStyle(fontSize: 16, height: 1.6),
+                    textAlign: TextAlign.justify,
+                  ),
                   const SizedBox(height: 16),
-                  const Text(
-                    'Toledo es conocida como la "Ciudad de las Tres Culturas" por la convivencia '
-                    'histórica de cristianos, musulmanes y judíos. Este legado único se refleja en '
-                    'su impresionante patrimonio arquitectónico y cultural.',
-                    style: TextStyle(fontSize: 16, height: 1.5),
+                  Text(
+                    'Patrimonio Arquitectónico Excepcional',
+                    style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black87,
+                    ),
                   ),
                   const SizedBox(height: 12),
                   const Text(
-                    'La ciudad alberga magníficos ejemplos de arquitectura mudéjar, declarada '
-                    'Patrimonio de la Humanidad por la UNESCO. Sus monumentos cuentan siglos de '
-                    'historia, desde la época romana hasta el Renacimiento español.',
-                    style: TextStyle(fontSize: 16, height: 1.5),
+                    'La ciudad alberga magníficos ejemplos de arquitectura mudéjar, un estilo único que fusiona '
+                    'elementos cristianos e islámicos, también declarado Patrimonio de la Humanidad por la UNESCO. '
+                    'Sus monumentos narran más de dos mil años de historia, desde vestigios de la época romana '
+                    'y visigoda, pasando por el esplendor medieval, hasta alcanzar su máximo apogeo durante el '
+                    'Renacimiento español cuando fue capital del Imperio bajo Carlos V.',
+                    style: TextStyle(fontSize: 16, height: 1.6),
+                    textAlign: TextAlign.justify,
+                  ),
+                  const SizedBox(height: 16),
+                  Text(
+                    'Museos y Sitios Culturales de Referencia',
+                    style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black87,
+                    ),
                   ),
                   const SizedBox(height: 12),
                   const Text(
-                    'Visitar Toledo es sumergirse en un museo al aire libre donde cada calle, '
-                    'cada plaza y cada edificio tiene una historia que contar. Los museos y sitios '
-                    'culturales de la ciudad ofrecen experiencias únicas para entender la riqueza '
-                    'histórica y artística de España.',
-                    style: TextStyle(fontSize: 16, height: 1.5),
+                    'Visitar Toledo es sumergirse en un auténtico museo al aire libre donde cada calle empedrada, '
+                    'cada plaza centenaria y cada edificio histórico tiene una fascinante historia que contar. '
+                    'Los museos y sitios culturales de la ciudad ofrecen experiencias únicas e irrepetibles para '
+                    'comprender en profundidad la riqueza histórica, artística y cultural no solo de Toledo, '
+                    'sino de toda España. Desde la Mezquita del Cristo de la Luz, joya del arte islámico, hasta '
+                    'el Museo del Greco, cada rincón es testimonio vivo de siglos de civilización.',
+                    style: TextStyle(fontSize: 16, height: 1.6),
+                    textAlign: TextAlign.justify,
+                  ),
+                  const SizedBox(height: 16),
+                  Text(
+                    'Planifica tu Visita Cultural',
+                    style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black87,
+                    ),
                   ),
                   const SizedBox(height: 12),
                   const Text(
-                    'A continuación, descubre los principales destinos culturales que no puedes '
-                    'perderte en tu visita a Toledo:',
+                    'Para aprovechar al máximo tu experiencia cultural en Toledo, te recomendamos dedicar al menos '
+                    'dos días completos a la visita de sus principales monumentos y museos. Cada sitio cultural '
+                    'requiere tiempo para ser apreciado en toda su magnitud. A continuación, te presentamos una '
+                    'selección cuidadosamente elaborada de los principales destinos culturales que no puedes '
+                    'perderte durante tu visita a la Ciudad Imperial:',
                     style: TextStyle(
                       fontSize: 16,
-                      height: 1.5,
+                      height: 1.6,
                       fontWeight: FontWeight.w500,
                     ),
+                    textAlign: TextAlign.justify,
                   ),
                 ],
               ),
@@ -163,7 +208,7 @@ class CulturalTourismPage extends StatelessWidget {
                 },
               ),
             );
-          }).toList(),
+          }),
         ],
       ),
       // DISABLED: All ads removed for AdSense editorial content policy compliance

@@ -439,30 +439,83 @@ class _GastronomiaPageState extends State<GastronomiaPage> {
             // Contenido editorial rico para cumplir políticas de AdSense
             Container(
               width: double.infinity,
-              padding: const EdgeInsets.all(16),
-              color: Theme.of(
-                context,
-              ).colorScheme.surfaceVariant.withOpacity(0.3),
+              padding: const EdgeInsets.all(20),
+              decoration: BoxDecoration(
+                color: Theme.of(
+                  context,
+                ).colorScheme.surfaceContainerHighest.withOpacity(0.5),
+                border: Border(
+                  bottom: BorderSide(
+                    color: Theme.of(context).colorScheme.primary.withOpacity(0.2),
+                    width: 2,
+                  ),
+                ),
+              ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Gastronomía de Toledo',
+                    'Gastronomía de Toledo: Sabores de las Tres Culturas',
                     style: Theme.of(context).textTheme.titleLarge?.copyWith(
                       fontWeight: FontWeight.bold,
                       color: Theme.of(context).colorScheme.primary,
+                      fontSize: 22,
                     ),
                   ),
-                  const SizedBox(height: 8),
+                  const SizedBox(height: 16),
                   const Text(
-                    'Toledo ofrece una rica tradición gastronómica que combina sabores de las tres culturas que convivieron en la ciudad. '
-                    'Desde el famoso mazapán hasta el carcamusas, la cocina toledana es un reflejo de su historia multicultural.',
-                    style: TextStyle(fontSize: 14, height: 1.4),
+                    'Una Tradición Culinaria Milenaria',
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black87,
+                    ),
                   ),
-                  const SizedBox(height: 8),
+                  const SizedBox(height: 12),
                   const Text(
-                    'Descubre los mejores restaurantes y bares donde disfrutar de la auténtica gastronomía manchega y toledana.',
-                    style: TextStyle(fontSize: 14, height: 1.4),
+                    'Toledo ofrece una rica y variada tradición gastronómica que combina magistralmente los sabores '
+                    'y técnicas culinarias de las tres culturas que convivieron en la ciudad durante siglos: cristiana, '
+                    'musulmana y judía. Esta fusión única ha dado lugar a una cocina excepcional que es, al mismo tiempo, '
+                    'un reflejo fiel de la historia multicultural de la Ciudad Imperial.',
+                    style: TextStyle(fontSize: 15, height: 1.5),
+                    textAlign: TextAlign.justify,
+                  ),
+                  const SizedBox(height: 16),
+                  const Text(
+                    'Platos Emblemáticos y Productos Artesanales',
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black87,
+                    ),
+                  ),
+                  const SizedBox(height: 12),
+                  const Text(
+                    'Desde el mundialmente famoso mazapán, elaborado artesanalmente en los conventos toledanos desde '
+                    'la Edad Media, hasta platos tan contundentes como el carcamusas (guiso de carne con tomate y guisantes), '
+                    'la perdiz estofada a la toledana, o las tradicionales migas manchegas, la cocina toledana es un '
+                    'auténtico festín para los sentidos. No hay que olvidar tampoco el queso manchego con Denominación '
+                    'de Origen, los vinos de La Mancha, y el aceite de oliva virgen extra de producción local.',
+                    style: TextStyle(fontSize: 15, height: 1.5),
+                    textAlign: TextAlign.justify,
+                  ),
+                  const SizedBox(height: 16),
+                  const Text(
+                    'Restaurantes y Bares Tradicionales',
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black87,
+                    ),
+                  ),
+                  const SizedBox(height: 12),
+                  const Text(
+                    'A continuación encontrarás una selección de los mejores restaurantes y bares donde disfrutar de la '
+                    'auténtica gastronomía manchega y toledana, preparada con recetas tradicionales y productos locales de '
+                    'primera calidad. Cada establecimiento ha sido cuidadosamente seleccionado por su compromiso con la '
+                    'tradición culinaria y la excelencia gastronómica.',
+                    style: TextStyle(fontSize: 15, height: 1.5),
+                    textAlign: TextAlign.justify,
                   ),
                 ],
               ),
