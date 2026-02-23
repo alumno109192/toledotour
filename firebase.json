@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "build/web",
+    "public": "web",
     "ignore": [
       "firebase.json",
       "**/.*",
@@ -8,29 +8,11 @@
     ],
     "headers": [
       {
-        "source": "**/*.@(js|css|png|jpg|jpeg|gif|ico|svg|woff|woff2)",
-        "headers": [
-          {
-            "key": "Cache-Control",
-            "value": "max-age=31536000"
-          }
-        ]
-      },
-      {
         "source": "**/*.@(html|htm)",
         "headers": [
           {
             "key": "Cache-Control",
             "value": "max-age=86400"
-          }
-        ]
-      },
-      {
-        "source": "**/sw.js",
-        "headers": [
-          {
-            "key": "Cache-Control",
-            "value": "max-age=0, no-cache, no-store, must-revalidate"
           }
         ]
       },
@@ -43,7 +25,7 @@
           },
           {
             "key": "X-Frame-Options",
-            "value": "DENY"
+            "value": "SAMEORIGIN"
           },
           {
             "key": "X-XSS-Protection",
@@ -54,24 +36,6 @@
             "value": "strict-origin-when-cross-origin"
           }
         ]
-      }
-    ],
-    "rewrites": [
-      {
-        "source": "**",
-        "destination": "/index.html"
-      }
-    ],
-    "redirects": [
-      {
-        "source": "/home",
-        "destination": "/",
-        "type": 301
-      },
-      {
-        "source": "/inicio",
-        "destination": "/",
-        "type": 301
       }
     ],
     "cleanUrls": true,
