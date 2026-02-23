@@ -25,15 +25,15 @@
     .nav-links{display:flex;gap:8px;flex-wrap:wrap}
     .nav-links a{color:rgba(255,255,255,0.85);font-size:0.8rem;padding:4px 10px;border-radius:15px;border:1px solid rgba(255,255,255,0.25)}
     .nav-links a:hover,.nav-links a.active{background:rgba(255,255,255,0.2);text-decoration:none;color:white}
-    .hero{background:linear-gradient(135deg,#4A1966 0%,#7B2D8B 50%,#A855C0 100%);color:white;padding:48px 24px;text-align:center}
-    .hero h1{font-size:clamp(1.6rem,3.5vw,2.4rem);font-weight:800;margin-bottom:12px;text-shadow:0 2px 8px rgba(0,0,0,0.3)}
-    .hero p{max-width:680px;margin:0 auto;opacity:0.92;font-size:1rem}
-    .container{max-width:1040px;margin:0 auto;padding:0 16px}
+    .page-hero{color:white;padding:40px 24px;text-align:center;background:linear-gradient(135deg,#870000,#C62828)}
+    .page-hero h1{font-size:clamp(1.6rem,3.5vw,2.4rem);font-weight:800;margin-bottom:12px}
+    .page-hero p{max-width:700px;margin:0 auto;opacity:0.9;font-size:1rem}
+    .container{max-width:1000px;margin:0 auto;padding:0 16px}
     .cb{background:white;border-radius:12px;padding:28px;margin:20px 0;box-shadow:0 1px 8px rgba(0,0,0,0.07)}
-    .cb h2{color:#4A1966;font-size:1.4rem;margin-bottom:14px;border-bottom:3px solid #A855C0;padding-bottom:8px;display:flex;align-items:center;gap:10px}
-    .cb h3{color:#7B2D8B;font-size:1.05rem;margin:16px 0 8px}
+    .cb h2{color:#2E5C8A;font-size:1.4rem;margin-bottom:14px;border-bottom:3px solid #4A90B8;padding-bottom:8px}
+    .cb h3{color:#4A90B8;font-size:1.1rem;margin:18px 0 8px}
     .cb p{color:#444;margin-bottom:12px;text-align:justify}
-    .cb ul{color:#444;padding-left:20px;margin-bottom:14px} .cb ul li{margin-bottom:6px}
+    .cb ul{color:#444;padding-left:20px;margin-bottom:14px} .cb ul li{margin-bottom:8px}
     .tour-card{background:white;border-radius:14px;padding:24px;margin:16px 0;border:2px solid #e8d0f5;box-shadow:0 2px 12px rgba(74,25,102,0.08)}
     .tour-card h3{color:#4A1966;font-size:1.15rem;margin-bottom:12px}
     .tour-meta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
@@ -44,8 +44,8 @@
     .tour-stops ul{padding-left:16px;margin:0}
     .tour-stops ul li{font-size:0.85rem;color:#555;margin-bottom:4px}
     .free-badge{display:inline-block;background:#FF6B35;color:white;font-size:0.8rem;font-weight:700;padding:3px 10px;border-radius:10px;margin-left:8px}
-    .hbox{background:#fff8e1;border-left:4px solid #FFA000;padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0}
-    .hbox p{margin:0;color:#5D4037}
+    .hbox{background:#fff8e1;border-left:4px solid #FFA000;padding:14px 18px;border-radius:0 8px 8px 0;margin:20px 0}
+    .hbox p{margin:0;color:#5D4037;font-weight:500}
     .tip{background:#e8f5e9;border-left:4px solid #43A047;padding:12px 16px;border-radius:0 8px 8px 0;margin:14px 0}
     .tip p{margin:0;color:#2E7D32;font-size:0.9rem}
     .faq-item{border-bottom:1px solid #e8d0f5;padding:16px 0}
@@ -57,11 +57,13 @@
     .info-item strong{display:block;color:#4A1966;font-size:0.88rem;margin-bottom:4px}
     .info-item span{color:#555;font-size:0.85rem}
     .ad-unit{min-height:90px;margin:24px 0;overflow:hidden}
-    .footer-simple{background:#1a3d5c;color:rgba(255,255,255,0.7);padding:28px 24px;text-align:center;margin-top:40px;font-size:0.85rem}
+    .btn-app{display:inline-flex;align-items:center;gap:6px;background:#FF6B35;color:white;padding:10px 22px;border-radius:25px;font-weight:700;font-size:0.9rem;margin:8px 4px}
+    .btn-app:hover{opacity:0.9;text-decoration:none;color:white}
+    .btn-back{display:inline-flex;align-items:center;gap:6px;background:#2E5C8A;color:white;padding:10px 22px;border-radius:25px;font-weight:700;font-size:0.9rem;margin:8px 4px}
+    .footer-simple{background:#1a3d5c;color:rgba(255,255,255,0.7);padding:24px;text-align:center;margin-top:40px;font-size:0.85rem}
     .footer-simple a{color:rgba(255,255,255,0.7);margin:0 8px}
-    .footer-simple p{margin-bottom:6px}
     .lang-btn{color:rgba(255,255,255,0.9);font-size:0.8rem;padding:4px 12px;border-radius:15px;border:2px solid rgba(255,255,255,0.5);font-weight:700;white-space:nowrap;text-decoration:none}.lang-btn:hover{background:rgba(255,255,255,0.25);text-decoration:none;color:white}
-    @media(max-width:600px){.site-nav{flex-direction:column}.hero{padding:36px 16px}}
+    @media(max-width:600px){.site-nav{flex-direction:column}.page-hero{padding:36px 16px}}
   </style>
 </head>
 <body>
@@ -79,7 +81,7 @@
   <a href="/free-tour" class="lang-btn">🇪🇸 ES</a>
 </nav>
 
-<div class="hero">
+<div class="page-hero">
   <h1>🎙️ Free Tours in Toledo</h1>
   <p>Expert Local Historian Guides · Pay-What-You-Wish · Daily Departures · Jewish Quarter · Arabic Toledo · Night Legends</p>
 </div>
@@ -233,6 +235,10 @@
       <h3>Can I visit monument interiors on a free tour?</h3>
       <p>Free tours cover exterior visits and public spaces. Monument interiors (Cathedral, Synagogues, Alcázar) require separate entrance tickets. The tour guide will recommend which monuments to visit independently and the best order to visit them after the tour finishes.</p>
     </div>
+
+    <div style="text-align:center;margin-top:20px">
+      <a href="/en/" class="btn-back">← Back to home</a>
+    </div>
   </div>
 
   <div class="ad-unit">
@@ -243,15 +249,7 @@
 </div>
 
 <footer class="footer-simple">
-  <p>© 2026 Toledo Tour · Tourism Guide for Toledo, Spain</p>
-  <p>
-    <a href="/en/">Home</a> ·
-    <a href="/en/cultural-tourism">Culture</a> ·
-    <a href="/en/gastronomy">Gastronomy</a> ·
-    <a href="/en/nature">Nature</a> ·
-    <a href="/en/nightlife">Nightlife</a>
-  </p>
-  <p style="margin-top:8px"><a href="/privacy-policy">Privacy</a> · <a href="/terms-of-service">Terms</a></p>
+  <p>© 2026 Toledo Tour · <a href="/en/">Home</a> · <a href="/privacy-policy">Privacy</a> · <a href="/terms-of-service">Terms</a></p>
 </footer>
 </body>
 </html>

@@ -25,23 +25,23 @@
     .nav-links{display:flex;gap:8px;flex-wrap:wrap}
     .nav-links a{color:rgba(255,255,255,0.85);font-size:0.8rem;padding:4px 10px;border-radius:15px;border:1px solid rgba(255,255,255,0.25)}
     .nav-links a:hover,.nav-links a.active{background:rgba(255,255,255,0.2);text-decoration:none;color:white}
-    .hero{background:linear-gradient(135deg,#1B4332 0%,#2D6A4F 50%,#52B788 100%);color:white;padding:48px 24px;text-align:center}
-    .hero h1{font-size:clamp(1.6rem,3.5vw,2.4rem);font-weight:800;margin-bottom:12px;text-shadow:0 2px 8px rgba(0,0,0,0.3)}
-    .hero p{max-width:680px;margin:0 auto;opacity:0.92;font-size:1rem}
-    .container{max-width:1040px;margin:0 auto;padding:0 16px}
+    .page-hero{color:white;padding:40px 24px;text-align:center;background:linear-gradient(135deg,#1B5E20,#388E3C)}
+    .page-hero h1{font-size:clamp(1.6rem,3.5vw,2.4rem);font-weight:800;margin-bottom:12px}
+    .page-hero p{max-width:700px;margin:0 auto;opacity:0.9;font-size:1rem}
+    .container{max-width:1000px;margin:0 auto;padding:0 16px}
     .cb{background:white;border-radius:12px;padding:28px;margin:20px 0;box-shadow:0 1px 8px rgba(0,0,0,0.07)}
-    .cb h2{color:#1B4332;font-size:1.4rem;margin-bottom:14px;border-bottom:3px solid #52B788;padding-bottom:8px;display:flex;align-items:center;gap:10px}
-    .cb h3{color:#2D6A4F;font-size:1.05rem;margin:16px 0 8px}
+    .cb h2{color:#2E5C8A;font-size:1.4rem;margin-bottom:14px;border-bottom:3px solid #4A90B8;padding-bottom:8px}
+    .cb h3{color:#4A90B8;font-size:1.1rem;margin:18px 0 8px}
     .cb p{color:#444;margin-bottom:12px;text-align:justify}
-    .cb ul{color:#444;padding-left:20px;margin-bottom:14px} .cb ul li{margin-bottom:6px}
+    .cb ul{color:#444;padding-left:20px;margin-bottom:14px} .cb ul li{margin-bottom:8px}
     .route-card{background:#f0faf4;border-radius:12px;padding:20px;margin:14px 0;border-left:5px solid #2D6A4F}
     .route-card h3{color:#1B4332;margin-bottom:10px;font-size:1.1rem}
     .route-meta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
     .meta-tag{background:white;border:1px solid #b7e4c7;border-radius:8px;padding:4px 10px;font-size:0.8rem;color:#2D6A4F;font-weight:600}
     .route-card p{color:#444;font-size:0.9rem;margin-bottom:8px}
     .route-card .addr{font-size:0.82rem;color:#555}
-    .hbox{background:#fff8e1;border-left:4px solid #FFA000;padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0}
-    .hbox p{margin:0;color:#5D4037}
+    .hbox{background:#fff8e1;border-left:4px solid #FFA000;padding:14px 18px;border-radius:0 8px 8px 0;margin:20px 0}
+    .hbox p{margin:0;color:#5D4037;font-weight:500}
     .tip{background:#e8f5e9;border-left:4px solid #43A047;padding:12px 16px;border-radius:0 8px 8px 0;margin:14px 0}
     .tip p{margin:0;color:#2E7D32;font-size:0.9rem}
     .diff-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px;margin:14px 0}
@@ -52,11 +52,13 @@
     .dl{font-weight:700;font-size:1rem;margin-bottom:4px}
     .diff-item p{font-size:0.8rem;color:#555;margin:0}
     .ad-unit{min-height:90px;margin:24px 0;overflow:hidden}
-    .footer-simple{background:#1a3d5c;color:rgba(255,255,255,0.7);padding:28px 24px;text-align:center;margin-top:40px;font-size:0.85rem}
+    .btn-app{display:inline-flex;align-items:center;gap:6px;background:#FF6B35;color:white;padding:10px 22px;border-radius:25px;font-weight:700;font-size:0.9rem;margin:8px 4px}
+    .btn-app:hover{opacity:0.9;text-decoration:none;color:white}
+    .btn-back{display:inline-flex;align-items:center;gap:6px;background:#2E5C8A;color:white;padding:10px 22px;border-radius:25px;font-weight:700;font-size:0.9rem;margin:8px 4px}
+    .footer-simple{background:#1a3d5c;color:rgba(255,255,255,0.7);padding:24px;text-align:center;margin-top:40px;font-size:0.85rem}
     .footer-simple a{color:rgba(255,255,255,0.7);margin:0 8px}
-    .footer-simple p{margin-bottom:6px}
     .lang-btn{color:rgba(255,255,255,0.9);font-size:0.8rem;padding:4px 12px;border-radius:15px;border:2px solid rgba(255,255,255,0.5);font-weight:700;white-space:nowrap;text-decoration:none}.lang-btn:hover{background:rgba(255,255,255,0.25);text-decoration:none;color:white}
-    @media(max-width:600px){.site-nav{flex-direction:column}.hero{padding:36px 16px}}
+    @media(max-width:600px){.site-nav{flex-direction:column}.page-hero{padding:36px 16px}}
   </style>
 </head>
 <body>
@@ -74,7 +76,7 @@
   <a href="/naturaleza" class="lang-btn">🇪🇸 ES</a>
 </nav>
 
-<div class="hero">
+<div class="page-hero">
   <h1>🌿 Nature &amp; Hiking in Toledo</h1>
   <p>Barrancas de Burujón · Tagus River · Montes de Toledo · 6 Routes for All Levels · Nature 15 Minutes from the City</p>
 </div>
@@ -191,6 +193,10 @@
       <li><strong>Puerta del Cambrón:</strong> View over the northwest of the old city and the San Juan de los Reyes bell tower.</li>
     </ul>
     <div class="hbox"><p>📸 For photography, the Mirador del Valle at dawn (before 8:00 AM) is the best time: no tourist buses, soft blue light and occasional morning mist over the Tagus. Sunset is the most dramatic for colour.</p></div>
+
+    <div style="text-align:center;margin-top:20px">
+      <a href="/en/" class="btn-back">← Back to home</a>
+    </div>
   </div>
 
   <div class="ad-unit">
@@ -201,15 +207,7 @@
 </div>
 
 <footer class="footer-simple">
-  <p>© 2026 Toledo Tour · Tourism Guide for Toledo, Spain</p>
-  <p>
-    <a href="/en/">Home</a> ·
-    <a href="/en/cultural-tourism">Culture</a> ·
-    <a href="/en/gastronomy">Gastronomy</a> ·
-    <a href="/en/nightlife">Nightlife</a> ·
-    <a href="/en/free-tour">Free Tours</a>
-  </p>
-  <p style="margin-top:8px"><a href="/privacy-policy">Privacy</a> · <a href="/terms-of-service">Terms</a></p>
+  <p>© 2026 Toledo Tour · <a href="/en/">Home</a> · <a href="/privacy-policy">Privacy</a> · <a href="/terms-of-service">Terms</a></p>
 </footer>
 </body>
 </html>
