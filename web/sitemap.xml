@@ -135,9 +135,22 @@
     <mobile:mobile/>
   </url>
 
-  <!-- Guía Completa de Toledo -->
+  <!-- Guía Completa de Toledo ES -->
   <url>
-    <loc>https://toledotour-752a0.web.app/guia-completa-toledo.html</loc>
+    <loc>https://toledotour-752a0.web.app/guia-completa-toledo</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toledotour-752a0.web.app/guia-completa-toledo"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toledotour-752a0.web.app/en/complete-guide"/>
+    <lastmod>2026-02-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <mobile:mobile/>
+  </url>
+
+  <!-- Complete Guide EN -->
+  <url>
+    <loc>https://toledotour-752a0.web.app/en/complete-guide</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toledotour-752a0.web.app/guia-completa-toledo"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toledotour-752a0.web.app/en/complete-guide"/>
     <lastmod>2026-02-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
