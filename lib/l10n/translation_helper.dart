@@ -181,6 +181,112 @@ String tr(BuildContext context, String key) {
       return localizations.how_to_get;
     case 'navigation_error':
       return localizations.navigation_error;
+    case 'email':
+      return localizations.email;
+    // Toledo Guides
+    case 'toledo_guides_desc':
+      return localizations.toledo_guides_desc;
+    case 'guide_one_day_title':
+      return localizations.guide_one_day_title;
+    case 'guide_one_day_summary':
+      return localizations.guide_one_day_summary;
+    case 'guide_gastronomy_title':
+      return localizations.guide_gastronomy_title;
+    case 'guide_gastronomy_summary':
+      return localizations.guide_gastronomy_summary;
+    case 'guide_cultures_title':
+      return localizations.guide_cultures_title;
+    case 'guide_cultures_summary':
+      return localizations.guide_cultures_summary;
+    case 'guide_seasons_title':
+      return localizations.guide_seasons_title;
+    case 'guide_seasons_summary':
+      return localizations.guide_seasons_summary;
+    // Cultural Tourism Sites
+    case 'cultural_cristo_desc':
+      return localizations.cultural_cristo_desc;
+    case 'cultural_santacruz_desc':
+      return localizations.cultural_santacruz_desc;
+    case 'cultural_sinagoga_desc':
+      return localizations.cultural_sinagoga_desc;
+    case 'cultural_greco_desc':
+      return localizations.cultural_greco_desc;
+    case 'cultural_tornerias_desc':
+      return localizations.cultural_tornerias_desc;
+    case 'cultural_sefardi_desc':
+      return localizations.cultural_sefardi_desc;
+    // Restaurants
+    case 'rest_adolfo_desc':
+      return localizations.rest_adolfo_desc;
+    case 'rest_laorza_desc':
+      return localizations.rest_laorza_desc;
+    case 'rest_alfileritos_desc':
+      return localizations.rest_alfileritos_desc;
+    case 'rest_ventaaires_desc':
+      return localizations.rest_ventaaires_desc;
+    case 'rest_ermita_desc':
+      return localizations.rest_ermita_desc;
+    case 'rest_clandestina_desc':
+      return localizations.rest_clandestina_desc;
+    case 'rest_locum_desc':
+      return localizations.rest_locum_desc;
+    case 'rest_fabrica_desc':
+      return localizations.rest_fabrica_desc;
+    case 'rest_albero_desc':
+      return localizations.rest_albero_desc;
+    case 'rest_cave_desc':
+      return localizations.rest_cave_desc;
+    // Bars
+    case 'bar_abadia_desc':
+      return localizations.bar_abadia_desc;
+    case 'bar_botero_desc':
+      return localizations.bar_botero_desc;
+    case 'bar_trebol_desc':
+      return localizations.bar_trebol_desc;
+    case 'bar_malquerida_desc':
+      return localizations.bar_malquerida_desc;
+    case 'bar_ludena_desc':
+      return localizations.bar_ludena_desc;
+    case 'bar_skala_desc':
+      return localizations.bar_skala_desc;
+    case 'bar_elpez_desc':
+      return localizations.bar_elpez_desc;
+    case 'bar_elforo_desc':
+      return localizations.bar_elforo_desc;
+    case 'bar_rinconjuan_desc':
+      return localizations.bar_rinconjuan_desc;
+    case 'bar_tabernita_desc':
+      return localizations.bar_tabernita_desc;
+    // Night Activities
+    case 'noche_magico_desc':
+      return localizations.noche_magico_desc;
+    case 'noche_fantasmas_desc':
+      return localizations.noche_fantasmas_desc;
+    case 'noche_circulo_desc':
+      return localizations.noche_circulo_desc;
+    case 'noche_picaro_desc':
+      return localizations.noche_picaro_desc;
+    case 'noche_nuit_desc':
+      return localizations.noche_nuit_desc;
+    case 'noche_candil_desc':
+      return localizations.noche_candil_desc;
+    case 'noche_ultimo_desc':
+      return localizations.noche_ultimo_desc;
+    case 'noche_leyenda_desc':
+      return localizations.noche_leyenda_desc;
+    // Nature Routes
+    case 'ruta_valle_desc':
+      return localizations.ruta_valle_desc;
+    case 'ruta_barrancas_desc':
+      return localizations.ruta_barrancas_desc;
+    case 'ruta_senda_ecologica_desc':
+      return localizations.ruta_senda_ecologica_desc;
+    case 'ruta_cigarrales_desc':
+      return localizations.ruta_cigarrales_desc;
+    case 'ruta_piedra_rey_moro_desc':
+      return localizations.ruta_piedra_rey_moro_desc;
+    case 'ruta_montes_toledo_desc':
+      return localizations.ruta_montes_toledo_desc;
     default:
       return key; // Fallback to key if not found
   }

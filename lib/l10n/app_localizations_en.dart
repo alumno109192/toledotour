@@ -262,4 +262,154 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get navigation_error => 'Error opening navigation';
+
+  @override
+  String get email => 'Email';
+
+  @override
+  String get toledo_guides_desc => 'Explore Toledo with our specialized guides that will help you make the most of your visit to the Imperial City.';
+
+  @override
+  String get guide_one_day_title => 'What to see in Toledo in one day?';
+
+  @override
+  String get guide_one_day_summary => 'Optimized itinerary to discover the essentials of Toledo in one day';
+
+  @override
+  String get guide_gastronomy_title => 'History of Toledo Gastronomy';
+
+  @override
+  String get guide_gastronomy_summary => 'Discover the origins and evolution of traditional Toledo cuisine';
+
+  @override
+  String get guide_cultures_title => 'The Three Cultures in Toledo';
+
+  @override
+  String get guide_cultures_summary => 'A journey through the historical coexistence of Christians, Muslims and Jews';
+
+  @override
+  String get guide_seasons_title => 'Routes by Seasons';
+
+  @override
+  String get guide_seasons_summary => 'The best times and activities to visit Toledo according to the season';
+
+  @override
+  String get cultural_cristo_desc => 'Former 10th century mosque, one of Toledo\'s oldest buildings preserving its original Islamic structure';
+
+  @override
+  String get cultural_santacruz_desc => 'Medieval and Renaissance art museum located in a 16th century palace';
+
+  @override
+  String get cultural_sinagoga_desc => '13th century Mudejar synagogue, one of the best preserved in Spain';
+
+  @override
+  String get cultural_greco_desc => 'Museum dedicated to painter El Greco featuring his most complete collection';
+
+  @override
+  String get cultural_tornerias_desc => '11th century former mosque with impressive horseshoe arches';
+
+  @override
+  String get cultural_sefardi_desc => 'Sephardic Museum located in the El Tránsito Synagogue, jewel of Mudejar art';
+
+  @override
+  String get rest_adolfo_desc => 'Michelin-starred haute cuisine restaurant with Manchego specialties';
+
+  @override
+  String get rest_laorza_desc => 'Traditional Toledo cuisine in a historic setting';
+
+  @override
+  String get rest_alfileritos_desc => 'Specializing in game and typical Manchego dishes';
+
+  @override
+  String get rest_ventaaires_desc => 'Panoramic views of Toledo with signature cuisine';
+
+  @override
+  String get rest_ermita_desc => 'Mediterranean cuisine in a 16th century building';
+
+  @override
+  String get rest_clandestina_desc => 'Creative tapas and fusion cuisine';
+
+  @override
+  String get rest_locum_desc => 'Modern restaurant with traditional cuisine touches';
+
+  @override
+  String get rest_fabrica_desc => 'Former weapons factory converted into restaurant';
+
+  @override
+  String get rest_albero_desc => 'Castilian cuisine with local products';
+
+  @override
+  String get rest_cave_desc => 'Wine bar and gourmet tapas in medieval cave';
+
+  @override
+  String get bar_abadia_desc => 'Traditional Toledo tapas in historic atmosphere';
+
+  @override
+  String get bar_botero_desc => 'Famous for its carcamusas, typical Toledo dish';
+
+  @override
+  String get bar_trebol_desc => 'Tapas bar with terrace in the historic center';
+
+  @override
+  String get bar_malquerida_desc => 'Creative tapas and regional wines';
+
+  @override
+  String get bar_ludena_desc => 'One of the oldest bars in Toledo';
+
+  @override
+  String get bar_skala_desc => 'Modern tapas with cathedral views';
+
+  @override
+  String get bar_elpez_desc => 'Specializing in fresh fish and seafood';
+
+  @override
+  String get bar_elforo_desc => 'Varied tapas in the caves area';
+
+  @override
+  String get bar_rinconjuan_desc => 'Home cooking and generous portions';
+
+  @override
+  String get bar_tabernita_desc => 'Small charming bar in the Jewish quarter';
+
+  @override
+  String get noche_magico_desc => 'Night tour through Toledo\'s most mystical corners';
+
+  @override
+  String get noche_fantasmas_desc => 'Route of legends and mysteries through nighttime Toledo';
+
+  @override
+  String get noche_circulo_desc => 'Art Circle: cultural shows in historic building';
+
+  @override
+  String get noche_picaro_desc => 'Tapas theater in medieval atmosphere';
+
+  @override
+  String get noche_nuit_desc => 'Music bar with panoramic night views';
+
+  @override
+  String get noche_candil_desc => 'Live flamenco in traditional tablao';
+
+  @override
+  String get noche_ultimo_desc => 'Pub with live music in old cave';
+
+  @override
+  String get noche_leyenda_desc => 'Guided tour of Toledo legends under the stars';
+
+  @override
+  String get ruta_valle_desc => 'Valley Route: 8 km family trail along the Tagus River';
+
+  @override
+  String get ruta_barrancas_desc => 'Burujón Ravines: spectacular Grand Canyon-like geological formations';
+
+  @override
+  String get ruta_senda_ecologica_desc => 'Tagus Ecological Path: 10 km of nature and birdwatching';
+
+  @override
+  String get ruta_cigarrales_desc => 'Cigarrales Route: historic estates with panoramic views';
+
+  @override
+  String get ruta_piedra_rey_moro_desc => 'Moorish King\'s Stone: natural viewpoint with historical legend';
+
+  @override
+  String get ruta_montes_toledo_desc => 'Toledo Mountains: hiking trails through natural park';
 }

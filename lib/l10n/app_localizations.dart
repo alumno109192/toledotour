@@ -604,6 +604,306 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Error opening navigation'**
   String get navigation_error;
+
+  /// No description provided for @email.
+  ///
+  /// In en, this message translates to:
+  /// **'Email'**
+  String get email;
+
+  /// No description provided for @toledo_guides_desc.
+  ///
+  /// In en, this message translates to:
+  /// **'Explore Toledo with our specialized guides that will help you make the most of your visit to the Imperial City.'**
+  String get toledo_guides_desc;
+
+  /// No description provided for @guide_one_day_title.
+  ///
+  /// In en, this message translates to:
+  /// **'What to see in Toledo in one day?'**
+  String get guide_one_day_title;
+
+  /// No description provided for @guide_one_day_summary.
+  ///
+  /// In en, this message translates to:
+  /// **'Optimized itinerary to discover the essentials of Toledo in one day'**
+  String get guide_one_day_summary;
+
+  /// No description provided for @guide_gastronomy_title.
+  ///
+  /// In en, this message translates to:
+  /// **'History of Toledo Gastronomy'**
+  String get guide_gastronomy_title;
+
+  /// No description provided for @guide_gastronomy_summary.
+  ///
+  /// In en, this message translates to:
+  /// **'Discover the origins and evolution of traditional Toledo cuisine'**
+  String get guide_gastronomy_summary;
+
+  /// No description provided for @guide_cultures_title.
+  ///
+  /// In en, this message translates to:
+  /// **'The Three Cultures in Toledo'**
+  String get guide_cultures_title;
+
+  /// No description provided for @guide_cultures_summary.
+  ///
+  /// In en, this message translates to:
+  /// **'A journey through the historical coexistence of Christians, Muslims and Jews'**
+  String get guide_cultures_summary;
+
+  /// No description provided for @guide_seasons_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Routes by Seasons'**
+  String get guide_seasons_title;
+
+  /// No description provided for @guide_seasons_summary.
+  ///
+  /// In en, this message translates to:
+  /// **'The best times and activities to visit Toledo according to the season'**
+  String get guide_seasons_summary;
+
+  /// No description provided for @cultural_cristo_desc.
+  ///
+  /// In en, this message translates to:
+  /// **'Former 10th century mosque, one of Toledo\'s oldest buildings preserving its original Islamic structure'**
+  String get cultural_cristo_desc;
+
+  /// No description provided for @cultural_santacruz_desc.
+  ///
+  /// In en, this message translates to:
+  /// **'Medieval and Renaissance art museum located in a 16th century palace'**
+  String get cultural_santacruz_desc;
+
+  /// No description provided for @cultural_sinagoga_desc.
+  ///
+  /// In en, this message translates to:
+  /// **'13th century Mudejar synagogue, one of the best preserved in Spain'**
+  String get cultural_sinagoga_desc;
+
+  /// No description provided for @cultural_greco_desc.
+  ///
+  /// In en, this message translates to:
+  /// **'Museum dedicated to painter El Greco featuring his most complete collection'**
+  String get cultural_greco_desc;
+
+  /// No description provided for @cultural_tornerias_desc.
+  ///
+  /// In en, this message translates to:
+  /// **'11th century former mosque with impressive horseshoe arches'**
+  String get cultural_tornerias_desc;
+
+  /// No description provided for @cultural_sefardi_desc.
+  ///
+  /// In en, this message translates to:
+  /// **'Sephardic Museum located in the El Tránsito Synagogue, jewel of Mudejar art'**
+  String get cultural_sefardi_desc;
+
+  /// No description provided for @rest_adolfo_desc.
+  ///
+  /// In en, this message translates to:
+  /// **'Michelin-starred haute cuisine restaurant with Manchego specialties'**
+  String get rest_adolfo_desc;
+
+  /// No description provided for @rest_laorza_desc.
+  ///
+  /// In en, this message translates to:
+  /// **'Traditional Toledo cuisine in a historic setting'**
+  String get rest_laorza_desc;
+
+  /// No description provided for @rest_alfileritos_desc.
+  ///
+  /// In en, this message translates to:
+  /// **'Specializing in game and typical Manchego dishes'**
+  String get rest_alfileritos_desc;
+
+  /// No description provided for @rest_ventaaires_desc.
+  ///
+  /// In en, this message translates to:
+  /// **'Panoramic views of Toledo with signature cuisine'**
+  String get rest_ventaaires_desc;
+
+  /// No description provided for @rest_ermita_desc.
+  ///
+  /// In en, this message translates to:
+  /// **'Mediterranean cuisine in a 16th century building'**
+  String get rest_ermita_desc;
+
+  /// No description provided for @rest_clandestina_desc.
+  ///
+  /// In en, this message translates to:
+  /// **'Creative tapas and fusion cuisine'**
+  String get rest_clandestina_desc;
+
+  /// No description provided for @rest_locum_desc.
+  ///
+  /// In en, this message translates to:
+  /// **'Modern restaurant with traditional cuisine touches'**
+  String get rest_locum_desc;
+
+  /// No description provided for @rest_fabrica_desc.
+  ///
+  /// In en, this message translates to:
+  /// **'Former weapons factory converted into restaurant'**
+  String get rest_fabrica_desc;
+
+  /// No description provided for @rest_albero_desc.
+  ///
+  /// In en, this message translates to:
+  /// **'Castilian cuisine with local products'**
+  String get rest_albero_desc;
+
+  /// No description provided for @rest_cave_desc.
+  ///
+  /// In en, this message translates to:
+  /// **'Wine bar and gourmet tapas in medieval cave'**
+  String get rest_cave_desc;
+
+  /// No description provided for @bar_abadia_desc.
+  ///
+  /// In en, this message translates to:
+  /// **'Traditional Toledo tapas in historic atmosphere'**
+  String get bar_abadia_desc;
+
+  /// No description provided for @bar_botero_desc.
+  ///
+  /// In en, this message translates to:
+  /// **'Famous for its carcamusas, typical Toledo dish'**
+  String get bar_botero_desc;
+
+  /// No description provided for @bar_trebol_desc.
+  ///
+  /// In en, this message translates to:
+  /// **'Tapas bar with terrace in the historic center'**
+  String get bar_trebol_desc;
+
+  /// No description provided for @bar_malquerida_desc.
+  ///
+  /// In en, this message translates to:
+  /// **'Creative tapas and regional wines'**
+  String get bar_malquerida_desc;
+
+  /// No description provided for @bar_ludena_desc.
+  ///
+  /// In en, this message translates to:
+  /// **'One of the oldest bars in Toledo'**
+  String get bar_ludena_desc;
+
+  /// No description provided for @bar_skala_desc.
+  ///
+  /// In en, this message translates to:
+  /// **'Modern tapas with cathedral views'**
+  String get bar_skala_desc;
+
+  /// No description provided for @bar_elpez_desc.
+  ///
+  /// In en, this message translates to:
+  /// **'Specializing in fresh fish and seafood'**
+  String get bar_elpez_desc;
+
+  /// No description provided for @bar_elforo_desc.
+  ///
+  /// In en, this message translates to:
+  /// **'Varied tapas in the caves area'**
+  String get bar_elforo_desc;
+
+  /// No description provided for @bar_rinconjuan_desc.
+  ///
+  /// In en, this message translates to:
+  /// **'Home cooking and generous portions'**
+  String get bar_rinconjuan_desc;
+
+  /// No description provided for @bar_tabernita_desc.
+  ///
+  /// In en, this message translates to:
+  /// **'Small charming bar in the Jewish quarter'**
+  String get bar_tabernita_desc;
+
+  /// No description provided for @noche_magico_desc.
+  ///
+  /// In en, this message translates to:
+  /// **'Night tour through Toledo\'s most mystical corners'**
+  String get noche_magico_desc;
+
+  /// No description provided for @noche_fantasmas_desc.
+  ///
+  /// In en, this message translates to:
+  /// **'Route of legends and mysteries through nighttime Toledo'**
+  String get noche_fantasmas_desc;
+
+  /// No description provided for @noche_circulo_desc.
+  ///
+  /// In en, this message translates to:
+  /// **'Art Circle: cultural shows in historic building'**
+  String get noche_circulo_desc;
+
+  /// No description provided for @noche_picaro_desc.
+  ///
+  /// In en, this message translates to:
+  /// **'Tapas theater in medieval atmosphere'**
+  String get noche_picaro_desc;
+
+  /// No description provided for @noche_nuit_desc.
+  ///
+  /// In en, this message translates to:
+  /// **'Music bar with panoramic night views'**
+  String get noche_nuit_desc;
+
+  /// No description provided for @noche_candil_desc.
+  ///
+  /// In en, this message translates to:
+  /// **'Live flamenco in traditional tablao'**
+  String get noche_candil_desc;
+
+  /// No description provided for @noche_ultimo_desc.
+  ///
+  /// In en, this message translates to:
+  /// **'Pub with live music in old cave'**
+  String get noche_ultimo_desc;
+
+  /// No description provided for @noche_leyenda_desc.
+  ///
+  /// In en, this message translates to:
+  /// **'Guided tour of Toledo legends under the stars'**
+  String get noche_leyenda_desc;
+
+  /// No description provided for @ruta_valle_desc.
+  ///
+  /// In en, this message translates to:
+  /// **'Valley Route: 8 km family trail along the Tagus River'**
+  String get ruta_valle_desc;
+
+  /// No description provided for @ruta_barrancas_desc.
+  ///
+  /// In en, this message translates to:
+  /// **'Burujón Ravines: spectacular Grand Canyon-like geological formations'**
+  String get ruta_barrancas_desc;
+
+  /// No description provided for @ruta_senda_ecologica_desc.
+  ///
+  /// In en, this message translates to:
+  /// **'Tagus Ecological Path: 10 km of nature and birdwatching'**
+  String get ruta_senda_ecologica_desc;
+
+  /// No description provided for @ruta_cigarrales_desc.
+  ///
+  /// In en, this message translates to:
+  /// **'Cigarrales Route: historic estates with panoramic views'**
+  String get ruta_cigarrales_desc;
+
+  /// No description provided for @ruta_piedra_rey_moro_desc.
+  ///
+  /// In en, this message translates to:
+  /// **'Moorish King\'s Stone: natural viewpoint with historical legend'**
+  String get ruta_piedra_rey_moro_desc;
+
+  /// No description provided for @ruta_montes_toledo_desc.
+  ///
+  /// In en, this message translates to:
+  /// **'Toledo Mountains: hiking trails through natural park'**
+  String get ruta_montes_toledo_desc;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

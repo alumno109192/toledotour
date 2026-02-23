@@ -262,4 +262,154 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get navigation_error => 'Error al abrir la navegación';
+
+  @override
+  String get email => 'Email';
+
+  @override
+  String get toledo_guides_desc => 'Explora Toledo con nuestras guías especializadas que te ayudarán a aprovechar al máximo tu visita a la Ciudad Imperial.';
+
+  @override
+  String get guide_one_day_title => '¿Qué ver en Toledo en un día?';
+
+  @override
+  String get guide_one_day_summary => 'Itinerario optimizado para conocer lo esencial de Toledo en una jornada';
+
+  @override
+  String get guide_gastronomy_title => 'Historia de la Gastronomía Toledana';
+
+  @override
+  String get guide_gastronomy_summary => 'Descubre los orígenes y evolución de la cocina tradicional toledana';
+
+  @override
+  String get guide_cultures_title => 'Las Tres Culturas en Toledo';
+
+  @override
+  String get guide_cultures_summary => 'Un recorrido por la convivencia histórica de cristianos, musulmanes y judíos';
+
+  @override
+  String get guide_seasons_title => 'Rutas por Temporadas';
+
+  @override
+  String get guide_seasons_summary => 'Las mejores épocas y actividades para visitar Toledo según la estación';
+
+  @override
+  String get cultural_cristo_desc => 'Antigua mezquita del siglo X, una de las construcciones más antiguas de Toledo que conserva su estructura original islámica';
+
+  @override
+  String get cultural_santacruz_desc => 'Museo de arte medieval y renacentista ubicado en un antiguo palacio del siglo XVI';
+
+  @override
+  String get cultural_sinagoga_desc => 'Sinagoga mudéjar del siglo XIII, una de las mejor conservadas de España';
+
+  @override
+  String get cultural_greco_desc => 'Museo dedicado al pintor El Greco con su colección más completa de obras';
+
+  @override
+  String get cultural_tornerias_desc => 'Antigua mezquita del siglo XI con impresionantes arcos de herradura';
+
+  @override
+  String get cultural_sefardi_desc => 'Museo Sefardí ubicado en la Sinagoga del Tránsito, joya del arte mudéjar';
+
+  @override
+  String get rest_adolfo_desc => 'Restaurante de alta cocina manchega con estrella Michelin';
+
+  @override
+  String get rest_laorza_desc => 'Cocina tradicional toledana en un entorno histórico';
+
+  @override
+  String get rest_alfileritos_desc => 'Especialidad en caza y platos típicos manchegos';
+
+  @override
+  String get rest_ventaaires_desc => 'Vistas panorámicas de Toledo con cocina de autor';
+
+  @override
+  String get rest_ermita_desc => 'Cocina mediterránea en un edificio del siglo XVI';
+
+  @override
+  String get rest_clandestina_desc => 'Tapas creativas y cocina de fusión';
+
+  @override
+  String get rest_locum_desc => 'Restaurante moderno con toques de cocina tradicional';
+
+  @override
+  String get rest_fabrica_desc => 'Antigua fábrica de armas reconvertida en restaurante';
+
+  @override
+  String get rest_albero_desc => 'Cocina castellana con productos de la tierra';
+
+  @override
+  String get rest_cave_desc => 'Bar de vinos y tapas gourmet en cueva medieval';
+
+  @override
+  String get bar_abadia_desc => 'Tapas tradicionales toledanas en ambiente histórico';
+
+  @override
+  String get bar_botero_desc => 'Famoso por sus carcamusas, plato típico de Toledo';
+
+  @override
+  String get bar_trebol_desc => 'Bar de tapas con terraza en pleno casco histórico';
+
+  @override
+  String get bar_malquerida_desc => 'Tapas creativas y vinos de la región';
+
+  @override
+  String get bar_ludena_desc => 'Uno de los bares más antiguos de Toledo';
+
+  @override
+  String get bar_skala_desc => 'Tapas modernas con vistas a la catedral';
+
+  @override
+  String get bar_elpez_desc => 'Especialidad en pescados y mariscos frescos';
+
+  @override
+  String get bar_elforo_desc => 'Tapas variadas en la zona de las cuevas';
+
+  @override
+  String get bar_rinconjuan_desc => 'Cocina casera y raciones generosas';
+
+  @override
+  String get bar_tabernita_desc => 'Pequeño bar con encanto en el barrio judío';
+
+  @override
+  String get noche_magico_desc => 'Tour nocturno por los rincones más místicos de Toledo';
+
+  @override
+  String get noche_fantasmas_desc => 'Ruta de leyendas y misterios por Toledo nocturno';
+
+  @override
+  String get noche_circulo_desc => 'Círculo de Arte: espectáculos culturales en edificio histórico';
+
+  @override
+  String get noche_picaro_desc => 'Teatro de tapas en ambiente medieval';
+
+  @override
+  String get noche_nuit_desc => 'Bar musical con vistas panorámicas nocturnas';
+
+  @override
+  String get noche_candil_desc => 'Flamenco en vivo en tablao tradicional';
+
+  @override
+  String get noche_ultimo_desc => 'Pub con música en directo en antigua cave';
+
+  @override
+  String get noche_leyenda_desc => 'Tour guiado de leyendas toledanas bajo las estrellas';
+
+  @override
+  String get ruta_valle_desc => 'Ruta del Valle: sendero familiar de 8 km junto al río Tajo';
+
+  @override
+  String get ruta_barrancas_desc => 'Barrancas de Burujón: formaciones geológicas espectaculares tipo Gran Cañón';
+
+  @override
+  String get ruta_senda_ecologica_desc => 'Senda Ecológica del Tajo: 10 km de naturaleza y observación de aves';
+
+  @override
+  String get ruta_cigarrales_desc => 'Ruta de los Cigarrales: fincas históricas con vistas panorámicas';
+
+  @override
+  String get ruta_piedra_rey_moro_desc => 'Piedra del Rey Moro: mirador natural con leyenda histórica';
+
+  @override
+  String get ruta_montes_toledo_desc => 'Montes de Toledo: rutas de senderismo por parque natural';
 }
