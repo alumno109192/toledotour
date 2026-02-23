@@ -1,55 +1,134 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
         xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0">
 
-  <!-- Página principal - HTML estático -->
+  <!-- Página principal ES -->
   <url>
     <loc>https://toledotour-752a0.web.app/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toledotour-752a0.web.app/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toledotour-752a0.web.app/en/"/>
     <lastmod>2026-02-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <mobile:mobile/>
   </url>
 
-  <!-- Turismo Cultural -->
+  <!-- Home EN -->
+  <url>
+    <loc>https://toledotour-752a0.web.app/en/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toledotour-752a0.web.app/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toledotour-752a0.web.app/en/"/>
+    <lastmod>2026-02-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <mobile:mobile/>
+  </url>
+
+  <!-- Turismo Cultural ES -->
   <url>
     <loc>https://toledotour-752a0.web.app/turismo-cultural.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toledotour-752a0.web.app/turismo-cultural.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toledotour-752a0.web.app/en/cultural-tourism.html"/>
     <lastmod>2026-02-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <mobile:mobile/>
   </url>
 
-  <!-- Gastronomía -->
+  <!-- Cultural Tourism EN -->
+  <url>
+    <loc>https://toledotour-752a0.web.app/en/cultural-tourism.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toledotour-752a0.web.app/turismo-cultural.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toledotour-752a0.web.app/en/cultural-tourism.html"/>
+    <lastmod>2026-02-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <mobile:mobile/>
+  </url>
+
+  <!-- Gastronomía ES -->
   <url>
     <loc>https://toledotour-752a0.web.app/gastronomia.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toledotour-752a0.web.app/gastronomia.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toledotour-752a0.web.app/en/gastronomy.html"/>
     <lastmod>2026-02-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <mobile:mobile/>
   </url>
 
-  <!-- Naturaleza y Senderismo -->
+  <!-- Gastronomy EN -->
+  <url>
+    <loc>https://toledotour-752a0.web.app/en/gastronomy.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toledotour-752a0.web.app/gastronomia.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toledotour-752a0.web.app/en/gastronomy.html"/>
+    <lastmod>2026-02-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <mobile:mobile/>
+  </url>
+
+  <!-- Naturaleza ES -->
   <url>
     <loc>https://toledotour-752a0.web.app/naturaleza.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toledotour-752a0.web.app/naturaleza.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toledotour-752a0.web.app/en/nature.html"/>
     <lastmod>2026-02-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <mobile:mobile/>
   </url>
 
-  <!-- Vida Nocturna -->
+  <!-- Nature EN -->
+  <url>
+    <loc>https://toledotour-752a0.web.app/en/nature.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toledotour-752a0.web.app/naturaleza.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toledotour-752a0.web.app/en/nature.html"/>
+    <lastmod>2026-02-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <mobile:mobile/>
+  </url>
+
+  <!-- Vida Nocturna ES -->
   <url>
     <loc>https://toledotour-752a0.web.app/vida-nocturna.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toledotour-752a0.web.app/vida-nocturna.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toledotour-752a0.web.app/en/nightlife.html"/>
     <lastmod>2026-02-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <mobile:mobile/>
   </url>
 
-  <!-- Free Tours -->
+  <!-- Nightlife EN -->
+  <url>
+    <loc>https://toledotour-752a0.web.app/en/nightlife.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toledotour-752a0.web.app/vida-nocturna.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toledotour-752a0.web.app/en/nightlife.html"/>
+    <lastmod>2026-02-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <mobile:mobile/>
+  </url>
+
+  <!-- Free Tour ES -->
   <url>
     <loc>https://toledotour-752a0.web.app/free-tour.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toledotour-752a0.web.app/free-tour.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toledotour-752a0.web.app/en/free-tour.html"/>
+    <lastmod>2026-02-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <mobile:mobile/>
+  </url>
+
+  <!-- Free Tour EN -->
+  <url>
+    <loc>https://toledotour-752a0.web.app/en/free-tour.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toledotour-752a0.web.app/free-tour.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toledotour-752a0.web.app/en/free-tour.html"/>
     <lastmod>2026-02-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
