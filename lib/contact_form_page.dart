@@ -2,7 +2,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:toledotour/l10n/app_localizations.dart';
+import 'package:toledotour/l10n/translation_helper.dart';
 import 'package:toledotour/email_service.dart';
 
 class ContactFormPage extends StatefulWidget {

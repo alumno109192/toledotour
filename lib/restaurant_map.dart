@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:toledotour/l10n/app_localizations.dart';
+import 'package:toledotour/l10n/translation_helper.dart';
 
 class RestaurantMapPage extends StatefulWidget {
   const RestaurantMapPage({super.key});

@@ -1,0 +1,187 @@
+import 'package:flutter/widgets.dart';
+import 'app_localizations.dart';
+
+/// Helper function to translate a key using AppLocalizations
+/// Usage: tr(context, 'app_title')
+String tr(BuildContext context, String key) {
+  final localizations = AppLocalizations.of(context);
+  if (localizations == null) {
+    return key; // Fallback to key if localizations not initialized
+  }
+
+  // Map keys to their corresponding getters
+  switch (key) {
+    case 'appTitle':
+      return localizations.appTitle;
+    case 'explore_toledo':
+      return localizations.explore_toledo;
+    case 'cultural_tourism_desc':
+      return localizations.cultural_tourism_desc;
+    case 'gastronomy_desc':
+      return localizations.gastronomy_desc;
+    case 'nature_desc':
+      return localizations.nature_desc;
+    case 'nightlife_desc':
+      return localizations.nightlife_desc;
+    case 'free_tour_desc':
+      return localizations.free_tour_desc;
+    case 'cultural_tourism':
+      return localizations.cultural_tourism;
+    case 'gastronomy':
+      return localizations.gastronomy;
+    case 'nature':
+      return localizations.nature;
+    case 'nightlife':
+      return localizations.nightlife;
+    case 'free_tour':
+      return localizations.free_tour;
+    case 'nightlife_intro_title':
+      return localizations.nightlife_intro_title;
+    case 'nightlife_intro_text':
+      return localizations.nightlife_intro_text;
+    case 'night_activities_title':
+      return localizations.night_activities_title;
+    case 'night_activities_text':
+      return localizations.night_activities_text;
+    case 'nature_intro_title':
+      return localizations.nature_intro_title;
+    case 'nature_intro_text':
+      return localizations.nature_intro_text;
+    case 'natural_routes_title':
+      return localizations.natural_routes_title;
+    case 'natural_routes_text':
+      return localizations.natural_routes_text;
+    case 'free_tour_intro_title':
+      return localizations.free_tour_intro_title;
+    case 'free_tour_intro_text':
+      return localizations.free_tour_intro_text;
+    case 'free_tour_benefits_title':
+      return localizations.free_tour_benefits_title;
+    case 'free_tour_benefits_text':
+      return localizations.free_tour_benefits_text;
+    case 'reserva':
+      return localizations.reserva;
+    case 'como_llegar':
+      return localizations.como_llegar;
+    case 'error_opening_maps':
+      return localizations.error_opening_maps;
+    case 'select_language':
+      return localizations.select_language;
+    case 'spanish':
+      return localizations.spanish;
+    case 'english':
+      return localizations.english;
+    case 'welcome_title':
+      return localizations.welcome_title;
+    case 'welcome_intro_text':
+      return localizations.welcome_intro_text;
+    case 'history_title':
+      return localizations.history_title;
+    case 'history_text':
+      return localizations.history_text;
+    case 'heritage_title':
+      return localizations.heritage_title;
+    case 'heritage_text':
+      return localizations.heritage_text;
+    case 'title':
+      return localizations.title;
+    case 'welcome':
+      return localizations.welcome;
+    case 'start_tour':
+      return localizations.start_tour;
+    case 'app_info':
+      return localizations.app_info;
+    case 'contact':
+      return localizations.contact;
+    case 'privacy_policy':
+      return localizations.privacy_policy;
+    case 'terms_of_service':
+      return localizations.terms_of_service;
+    case 'loading':
+      return localizations.loading;
+    case 'error':
+      return localizations.error;
+    case 'try_again':
+      return localizations.try_again;
+    case 'back':
+      return localizations.back;
+    case 'next':
+      return localizations.next;
+    case 'close':
+      return localizations.close;
+    case 'your_location':
+      return localizations.your_location;
+    case 'current_position':
+      return localizations.current_position;
+    case 'center_on_map':
+      return localizations.center_on_map;
+    case 'directions':
+      return localizations.directions;
+    case 'restaurant_map':
+      return localizations.restaurant_map;
+    case 'my_location':
+      return localizations.my_location;
+    case 'refresh':
+      return localizations.refresh;
+    case 'choose_experience':
+      return localizations.choose_experience;
+    case 'app_information':
+      return localizations.app_information;
+    case 'app_name':
+      return localizations.app_name;
+    case 'version':
+      return localizations.version;
+    case 'contact_us':
+      return localizations.contact_us;
+    case 'toledo_guides':
+      return localizations.toledo_guides;
+    case 'contact_form_description':
+      return localizations.contact_form_description;
+    case 'name':
+      return localizations.name;
+    case 'name_required':
+      return localizations.name_required;
+    case 'email_required':
+      return localizations.email_required;
+    case 'email_invalid':
+      return localizations.email_invalid;
+    case 'subject':
+      return localizations.subject;
+    case 'subject_required':
+      return localizations.subject_required;
+    case 'message':
+      return localizations.message;
+    case 'message_required':
+      return localizations.message_required;
+    case 'attachments':
+      return localizations.attachments;
+    case 'add_photo':
+      return localizations.add_photo;
+    case 'add_file':
+      return localizations.add_file;
+    case 'attached_files':
+      return localizations.attached_files;
+    case 'sending':
+      return localizations.sending;
+    case 'send':
+      return localizations.send;
+    case 'email_sent_success':
+      return localizations.email_sent_success;
+    case 'email_send_error':
+      return localizations.email_send_error;
+    case 'sort_alphabetically':
+      return localizations.sort_alphabetically;
+    case 'sort_by_distance':
+      return localizations.sort_by_distance;
+    case 'restaurants':
+      return localizations.restaurants;
+    case 'bars':
+      return localizations.bars;
+    case 'how_to_get':
+      return localizations.how_to_get;
+    case 'navigation_error':
+      return localizations.navigation_error;
+    default:
+      return key; // Fallback to key if not found
+  }
+}

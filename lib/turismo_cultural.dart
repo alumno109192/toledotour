@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:toledotour/l10n/app_localizations.dart';
+import 'package:toledotour/l10n/translation_helper.dart';
 import 'destino_simple.dart';
 import 'icon_utils.dart';
 

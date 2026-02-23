@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:package_info_plus/package_info_plus.dart';
-import 'package:toledotour/l10n/app_localizations.dart';
+import 'package:toledotour/l10n/translation_helper.dart';
 import 'package:toledotour/contact_form_page.dart';
 
 class AppInfoPage extends StatefulWidget {

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
 import 'package:toledotour/gastronomia.dart';
-import 'package:toledotour/l10n/app_localizations.dart';
 import 'package:toledotour/naturaleza.dart';
 import 'package:toledotour/nocturno.dart';
 import 'package:toledotour/turismo_cultural.dart';
@@ -11,6 +10,7 @@ import 'package:toledotour/free_tour.dart';
 import 'package:toledotour/toledo_guide_page.dart';
 import 'package:flutter/foundation.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
+import 'package:toledotour/l10n/translation_helper.dart';
 // NO importar widgets de anuncios para evitar uso accidental en web
 
 final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
