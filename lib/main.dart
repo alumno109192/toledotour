@@ -11,6 +11,7 @@ import 'package:toledotour/toledo_guide_page.dart';
 import 'package:flutter/foundation.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:toledotour/l10n/translation_helper.dart';
+import 'package:toledotour/l10n/app_localizations.dart';
 // NO importar widgets de anuncios para evitar uso accidental en web
 
 final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
@@ -56,6 +57,7 @@ class MyApp extends StatelessWidget {
       locale: localeProvider.locale,
       supportedLocales: const [Locale('es'), Locale('en')],
       localizationsDelegates: const [
+        AppLocalizations.delegate,
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
