@@ -157,6 +157,28 @@
     <mobile:mobile/>
   </url>
 
+  <!-- Sobre Nosotros ES -->
+  <url>
+    <loc>https://toledotour-752a0.web.app/sobre-nosotros</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toledotour-752a0.web.app/sobre-nosotros"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toledotour-752a0.web.app/en/about"/>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+    <mobile:mobile/>
+  </url>
+
+  <!-- About Us EN -->
+  <url>
+    <loc>https://toledotour-752a0.web.app/en/about</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toledotour-752a0.web.app/sobre-nosotros"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toledotour-752a0.web.app/en/about"/>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+    <mobile:mobile/>
+  </url>
+
   <!-- Política de privacidad -->
   <url>
     <loc>https://toledotour-752a0.web.app/privacy-policy.html</loc>
