@@ -18,6 +18,7 @@ Allow: /
 Crawl-delay: 1
 
 # Bloquear archivos innecesarios para SEO
+Disallow: /qr-code.html
 Disallow: /flutter_service_worker.js
 Disallow: /main.dart.js
 Disallow: /flutter.js

@@ -8,6 +8,180 @@
     <loc>https://toledotour.es/</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://toledotour.es/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://toledotour.es/en/"/>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <mobile:mobile/>
+  </url>
+
+  <!-- Home EN -->
+  <url>
+    <loc>https://toledotour.es/en/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toledotour.es/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toledotour.es/en/"/>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <mobile:mobile/>
+  </url>
+
+  <!-- Turismo Cultural ES -->
+  <url>
+    <loc>https://toledotour.es/turismo-cultural</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toledotour.es/turismo-cultural"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toledotour.es/en/cultural-tourism"/>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <mobile:mobile/>
+  </url>
+
+  <!-- Cultural Tourism EN -->
+  <url>
+    <loc>https://toledotour.es/en/cultural-tourism</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toledotour.es/turismo-cultural"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toledotour.es/en/cultural-tourism"/>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <mobile:mobile/>
+  </url>
+
+  <!-- Gastronomía ES -->
+  <url>
+    <loc>https://toledotour.es/gastronomia</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toledotour.es/gastronomia"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toledotour.es/en/gastronomy"/>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <mobile:mobile/>
+  </url>
+
+  <!-- Gastronomy EN -->
+  <url>
+    <loc>https://toledotour.es/en/gastronomy</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toledotour.es/gastronomia"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toledotour.es/en/gastronomy"/>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <mobile:mobile/>
+  </url>
+
+  <!-- Naturaleza ES -->
+  <url>
+    <loc>https://toledotour.es/naturaleza</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toledotour.es/naturaleza"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toledotour.es/en/nature"/>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <mobile:mobile/>
+  </url>
+
+  <!-- Nature EN -->
+  <url>
+    <loc>https://toledotour.es/en/nature</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toledotour.es/naturaleza"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toledotour.es/en/nature"/>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <mobile:mobile/>
+  </url>
+
+  <!-- Vida Nocturna ES -->
+  <url>
+    <loc>https://toledotour.es/vida-nocturna</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toledotour.es/vida-nocturna"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toledotour.es/en/nightlife"/>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <mobile:mobile/>
+  </url>
+
+  <!-- Nightlife EN -->
+  <url>
+    <loc>https://toledotour.es/en/nightlife</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toledotour.es/vida-nocturna"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toledotour.es/en/nightlife"/>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <mobile:mobile/>
+  </url>
+
+  <!-- Free Tour ES -->
+  <url>
+    <loc>https://toledotour.es/free-tour</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toledotour.es/free-tour"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toledotour.es/en/free-tour"/>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <mobile:mobile/>
+  </url>
+
+  <!-- Free Tour EN -->
+  <url>
+    <loc>https://toledotour.es/en/free-tour</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toledotour.es/free-tour"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toledotour.es/en/free-tour"/>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <mobile:mobile/>
+  </url>
+
+  <!-- Guía Completa de Toledo ES -->
+  <url>
+    <loc>https://toledotour.es/guia-completa-toledo</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toledotour.es/guia-completa-toledo"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toledotour.es/en/complete-guide"/>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <mobile:mobile/>
+  </url>
+
+  <!-- Complete Guide EN -->
+  <url>
+    <loc>https://toledotour.es/en/complete-guide</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toledotour.es/guia-completa-toledo"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toledotour.es/en/complete-guide"/>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <mobile:mobile/>
+  </url>
+
+  <!-- Sobre Nosotros ES -->
+  <url>
+    <loc>https://toledotour.es/sobre-nosotros</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toledotour.es/sobre-nosotros"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toledotour.es/en/about"/>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+    <mobile:mobile/>
+  </url>
+
+  <!-- About Us EN -->
+  <url>
+    <loc>https://toledotour.es/en/about</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toledotour.es/sobre-nosotros"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toledotour.es/en/about"/>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+    <mobile:mobile/>
+  </url>
+
+</urlset>
+    <xhtml:link rel="alternate" hreflang="es" href="https://toledotour.es/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toledotour.es/en/"/>
     <lastmod>2026-02-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
